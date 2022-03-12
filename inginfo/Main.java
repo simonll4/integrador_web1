@@ -1,8 +1,7 @@
-package java;
+package inginfo;
 
 //clases propias
-import java.Students;
-import java.io.InputStream;
+import inginfo.*;
 //clases api
 import java.util.Scanner;
 
@@ -23,9 +22,6 @@ public class Main {
             option = menu();
             switch(option){
                 case 0:
-                System.out.print("");
-                System.out.print("");
-                System.out.print("");
                     break;
                 case 1:
                     break;
