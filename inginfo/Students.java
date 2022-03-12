@@ -1,6 +1,6 @@
 package inginfo;
 
-public class Students {
+class Students implements Comparable<Students>{
     // atributos
     private int id;
     private String name;
@@ -55,5 +55,13 @@ public class Students {
 
     public int getYearstudy(){
         return yearStudy;
+    }
+
+    @Override
+    public int compareTo(Students s){
+        if(this.yearStudy != s.getYearstudy()){
+            return this.yearStudy - s.getYearstudy();
+        }
+        return this.name.compareTo(s.getName());
     }
 }
