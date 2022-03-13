@@ -1,0 +1,38 @@
+System.out.println("ingrese cadena o numero");
+            cadena = consola.nextLine();
+            if(cadena.matches("[+-]?\\d*(\\.\\d+)?") == true){
+                System.out.println("es numero");
+            }
+            if(cadena.matches("^[a-zA-Z]*$") == true){
+                System.out.println("es string");
+            }
+
+//search
+          Scanner dataEntry = new Scanner(System.in);
+        Students[] wanted = new Students[5];
+        //String word;
+        String lyrics1, lyrics2;
+        int jj = 0;
+        
+        System.out.println("BUSCADOR DE ALUMNOS -IUA-");
+        var word = dataEntry.nextLine();
+        
+
+        lyrics1 = word.substring(0, 1);
+        lyrics1 = lyrics1.toLowerCase();
+
+        System.out.println("ID" + "\t" + "NOMBRE" + "\t\t\t\t" +
+                "EDAD" + "\t\t" + "ORIGEN" + "\t\t" + "ANIO DE ESTUDIO");
+        
+        for (int ii = 0; ii < iua.length; ii++) {
+            lyrics2 = iua[ii].getName().toLowerCase().substring(0, 1);
+            if (iua[ii].getName().equalsIgnoreCase(word) || lyrics1.charAt(0) == lyrics2.charAt(0)) {
+                System.out.println("\n\n" + iua[ii].getId() + "\t"
+                            + iua[ii].getName() + "\t\t" + iua[ii].getAge()
+                            + "\t\t" + iua[ii].getOrigin() + "\t\t\t" + iua[ii].getYearstudy() + "\n");
+                            wanted[jj] = new Students(iua[ii].getId(), iua[ii].getName(),iua[ii].getAge(),iua[ii].getOrigin(), iua[ii].getYearstudy());
+                            jj++;
+            }
+            
+        }
+    }   

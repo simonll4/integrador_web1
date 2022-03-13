@@ -3,11 +3,10 @@ package inginfo;
 //clases propias
 import inginfo.*;
 
-import java.io.InputStream;
 //clases api
 import java.util.*;
 import java.text.*;
-import java.text.Normalizer.Form;
+import java.io.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -22,6 +21,9 @@ public class Main {
         iua[2] = new Students(3, "Franco Ipollitti", 21, "Carlos Paz", 3);
         iua[3] = new Students(4, "Nicolas Gutierrez", 20, "Cordoba", 2);
         iua[4] = new Students(5, "Martin Rodriguez", 19, "La Falda", 2);
+
+        String cadena;
+        Scanner consola = new Scanner(System.in);
 
         do {
             option = menu();
@@ -42,7 +44,6 @@ public class Main {
                     System.out.println("ingrese un opcion correcta por favor");
             }
         } while (option != 0);
-
     }
 
     public static int menu() {
@@ -58,14 +59,14 @@ public class Main {
         return option;
     }
 
-    public static void showStudents(Students[] iua) {
+    public static void showStudents(Students[] array) {
         System.out.println("LISTADO DE ALUMNOS");
         System.out.println("ID" + "\t" + "NOMBRE" + "\t\t\t\t" +
                 "EDAD" + "\t\t" + "ORIGEN" + "\t\t" + "ANIO DE ESTUDIO");
-        for (int ii = 0; ii < iua.length; ii++) {
-            System.out.println(iua[ii].getId() + "\t"
-                    + iua[ii].getName() + "\t\t" + iua[ii].getAge() +
-                    "\t\t" + iua[ii].getOrigin() + "\t\t" + iua[ii].getYearstudy());
+        for (int ii = 0; ii < array.length; ii++) {
+            System.out.println(array[ii].getId() + "\t"
+                    + array[ii].getName() + "\t\t" + array[ii].getAge() +
+                    "\t\t" + array[ii].getOrigin() + "\t\t" + array[ii].getYearstudy());
         }
     }
 
@@ -75,31 +76,36 @@ public class Main {
     }
 
     public static void search(Students[] iua) {
+        String search;
+        int aux;
         Scanner dataEntry = new Scanner(System.in);
-        Students[] wanted = new Students[5];
-        String word;
-        String lyrics1, lyrics2;
+        System.out.println("Ingrese dato");
+        search = dataEntry.nextLine();
+        String prueba1,prueba2;
 
-        System.out.println("BUSCADOR DE ALUMNOS -IUA-");
-        word = dataEntry.nextLine();
-        
-
-        lyrics1 = word.substring(0, 1);
-        lyrics1 = lyrics1.toLowerCase();
-
-        System.out.println("ID" + "\t" + "NOMBRE" + "\t\t\t\t" +
-                "EDAD" + "\t\t" + "ORIGEN" + "\t\t" + "ANIO DE ESTUDIO");
-        for (int ii = 0; ii < iua.length; ii++) {
-            lyrics2 = iua[ii].getName().toLowerCase().substring(0, 1);
-
-            if (iua[ii].getName().equalsIgnoreCase(word) || lyrics1.charAt(0) == lyrics2.charAt(0)) {
-                System.out.println("\n\n" + iua[ii].getId() + "\t"
+        if (search.matches("[+-]?\\d*(\\.\\d+)?")) {
+            aux = Integer.parseInt(search);
+            for (int ii = 0; ii < iua.length; ii++) {
+                if (iua[ii].getId() == aux || iua[ii].getAge() == aux || iua[ii].getYearstudy() == aux) {
+                    System.out.println("\n\n" + iua[ii].getId() + "\t"
                             + iua[ii].getName() + "\t\t" + iua[ii].getAge()
                             + "\t\t" + iua[ii].getOrigin() + "\t\t\t" + iua[ii].getYearstudy() + "\n");
-                wanted[ii] = iua[ii]; 
+                }
             }
-            
         }
-    }
+        if (search.matches("^[a-zA-Z]*$")) {
+            search = search.toLowerCase();
+            for (int ii = 0; ii < iua.length; ii++) {
+                prueba1 = iua[ii].getName().toLowerCase().substring(0, search.length());
+                prueba2 = iua[ii].getOrigin().toLowerCase().substring(0, search.length());
+                if (prueba1.matches(search)
+                        || prueba2.matches(search)) {
+                    System.out.println("\n\n" + iua[ii].getId() + "\t"
+                            + iua[ii].getName() + "\t\t" + iua[ii].getAge()
+                            + "\t\t" + iua[ii].getOrigin() + "\t\t\t" + iua[ii].getYearstudy() + "\n");
+                }
+            }
+        }
 
+    }
 }
