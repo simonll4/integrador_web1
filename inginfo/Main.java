@@ -81,7 +81,6 @@ public class Main {
         Scanner dataEntry = new Scanner(System.in);
         System.out.println("Ingrese dato");
         search = dataEntry.nextLine();
-        String prueba1,prueba2;
 
         if (search.matches("[+-]?\\d*(\\.\\d+)?")) {
             aux = Integer.parseInt(search);
@@ -96,10 +95,8 @@ public class Main {
         if (search.matches("^[a-zA-Z]*$")) {
             search = search.toLowerCase();
             for (int ii = 0; ii < iua.length; ii++) {
-                prueba1 = iua[ii].getName().toLowerCase().substring(0, search.length());
-                prueba2 = iua[ii].getOrigin().toLowerCase().substring(0, search.length());
-                if (prueba1.matches(search)
-                        || prueba2.matches(search)) {
+                if (iua[ii].getName().toLowerCase().substring(0, search.length()).matches(search)
+                        || iua[ii].getOrigin().toLowerCase().substring(0, search.length()).matches(search)) {
                     System.out.println("\n\n" + iua[ii].getId() + "\t"
                             + iua[ii].getName() + "\t\t" + iua[ii].getAge()
                             + "\t\t" + iua[ii].getOrigin() + "\t\t\t" + iua[ii].getYearstudy() + "\n");
