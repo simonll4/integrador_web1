@@ -54,7 +54,7 @@ public class Main {
         System.out.println("0-salir.");
         System.out.println("1-Listado de alumnos.");
         System.out.println("2-Ordenar por anio de cursado.");
-        System.out.println("3-Buscar alumnos por nombre.");
+        System.out.println("3-Buscar alumnos.");
         option = dataEntry.nextInt();
         return option;
     }

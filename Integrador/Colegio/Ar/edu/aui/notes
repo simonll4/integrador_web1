@@ -1,0 +1,24 @@
+Para negocios
+- Crear un login.java con usuario y contrasenia, validar ambos. 
+- register (opcional)
+- para formulario : todos los atributos o parte de los mismos (se reciben el formulario terminado) 
+(crear un metodo alta que reciba un formulario, 
+
+Antes de la dataBase se valida la edad del candidato, (que no supere los 13)
+Que tenga al menos un tutor (nop aceptamos huerfanos)
+Que tenga todos los datos (que no haya numeros? wtf)
+Si alguna regla es incorrecta se guarda igual con el estado RECHAZADO (motivo?)
+
+luego meterla en la base de datos como un array) 
+
+
+Para basededatos:
+- usuario (crear arrays de todos los tipos)
+
+Agregar el sistema de BUSQUEDA (general) y ORDENAMIENTO
+
+Para despues
+
+usuario, hora, modificacion, lo que hace, que busca, que pingo quiere, ayuda
+
+agregar modificar formulario y cancelar
