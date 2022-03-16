@@ -1,6 +1,6 @@
-package inginfo;
+package ingweb;
 
-class Students implements Comparable<Students>{
+public class Students implements Comparable<Students>{
     // atributos
     private int id;
     private String name;
