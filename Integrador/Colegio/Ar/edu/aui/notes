@@ -7,6 +7,8 @@ Para negocios
 Antes de la dataBase se valida la edad del candidato, (que no supere los 13)
 Que tenga al menos un tutor (nop aceptamos huerfanos)
 Que tenga todos los datos (que no haya numeros? wtf)
+Fecha de creacion del formulario debe coincidir con el periodo de inscripcion
+Debe haber al menos UN contacto de emergencia
 Si alguna regla es incorrecta se guarda igual con el estado RECHAZADO (motivo?)
 
 luego meterla en la base de datos como un array) 
@@ -22,3 +24,12 @@ Para despues
 usuario, hora, modificacion, lo que hace, que busca, que quiere, ayuda
 
 agregar modificar formulario y cancelar
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Agregar periodo de inscripcion para Formulario Inscripcion y Turno *Desde / Hasta // Fecha + hora // Titulo
+Pueden haber varios *se inscriben para el anio proximo*
+Despues del titulo, va el formulario de inscripcion
+
+Si el usuario ingresa 2 palabras para buscar, debemos partir esas 2 palabras en 2 strings distintos, y recien ahi buscar
+
