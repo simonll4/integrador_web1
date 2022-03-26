@@ -1,5 +1,6 @@
 package Integrador.Colegio.Ar.edu.aui.persist;
 
+import Integrador.Colegio.Ar.edu.aui.model.Person;
 import Integrador.Colegio.Ar.edu.aui.model.RegistrationForm;
 
 public class DataBase {
@@ -11,6 +12,4 @@ public class DataBase {
     static public RegistrationForm[] registrationForms = new RegistrationForm[MAX_ITEMS];
     public static Person[] people = new Person[MAX_ITEMS];
 
-
-    
 }
