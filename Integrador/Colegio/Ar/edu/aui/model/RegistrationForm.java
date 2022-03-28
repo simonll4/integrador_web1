@@ -1,5 +1,4 @@
 package Integrador.Colegio.Ar.edu.aui.model;
-enum Estado {APROBED, PROCESS, DRAFT, REJECTED, CANCELED}
 
 public class RegistrationForm {
     

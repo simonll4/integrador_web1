@@ -6,6 +6,11 @@ public class Login {
     private String user;
     private String password;
 
+    // roles
+    /*private enum schoolRole {
+        PROFESSOR, STUDENT
+    }*/
+
     // constructor
     public Login(String user, String password) {
         this.user = user;
@@ -13,13 +18,14 @@ public class Login {
     }
 
     // setters
-    public void setUser(String user){
+    public void setUser(String user) {
         this.user = user;
     }
 
-    public void setPassword(String password){
+    public void setPassword(String password) {
         this.password = password;
     }
+
     // getters
     public String getUser() {
         return user;
@@ -28,4 +34,5 @@ public class Login {
     public String getPassword() {
         return password;
     }
+
 }

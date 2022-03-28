@@ -1,4 +1,4 @@
-package Integrador.Colegio.Ar.edu.aui.front;
+package ingweb;
 
 import Integrador.Colegio.Ar.edu.aui.*;
 

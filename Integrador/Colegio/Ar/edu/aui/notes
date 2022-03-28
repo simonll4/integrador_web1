@@ -33,3 +33,4 @@ Despues del titulo, va el formulario de inscripcion
 
 Si el usuario ingresa 2 palabras para buscar, debemos partir esas 2 palabras en 2 strings distintos, y recien ahi buscar
 
+
