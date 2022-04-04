@@ -17,6 +17,10 @@ public class Turn {
         this.finishHour = finishHour;
     }
 
+    public Turn(){
+        
+    }
+
     // setters
     public void setCode(int code) {
         this.code = code;
@@ -49,6 +53,16 @@ public class Turn {
 
     public int getFinishHour() {
         return finishHour;
+    }
+
+    public String toString(){
+        return this.code + "";
+    }
+
+    public boolean equals(Turn other){
+        if(other == null) return false;
+
+        return this.code == other.code;
     }
 
 }

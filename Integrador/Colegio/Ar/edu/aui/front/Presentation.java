@@ -13,6 +13,7 @@ public class Presentation extends JFrame implements ActionListener {
     private JPasswordField password;
     private JLabel askUser, askPassword;
     private JButton join;
+    private JButton register;
     
     private Toolkit window;
     private Dimension size;
@@ -41,12 +42,19 @@ public class Presentation extends JFrame implements ActionListener {
         user.setBounds(120,100,180,30);
         password = new JPasswordField(8);
         password.setBounds(120,200,180,30);
-        join = new JButton("ingresar");
-        join.setBounds(250, 300, 120, 40);
+
+        join = new JButton("Ingresar");
+        join.setBounds(120, 300, 120, 40);
         join.setBackground(Color.LIGHT_GRAY);
         join.setForeground(Color.BLACK);
+
+        register = new JButton("Register");
+        register.setBounds(250, 300, 120, 40);
+        register.setBackground(Color.LIGHT_GRAY);
+        register.setForeground(Color.BLACK);
         
         add(join);
+        add(register);
         add(askUser);
         add(user);
         add(askPassword);
@@ -69,7 +77,7 @@ public class Presentation extends JFrame implements ActionListener {
                 }
             }
             else{
-                JOptionPane.showMessageDialog(null,"usuario o contraseña incorrectos");  
+                JOptionPane.showMessageDialog(null,"Usuario o contraseña incorrectos");  
             }
         }  
     }

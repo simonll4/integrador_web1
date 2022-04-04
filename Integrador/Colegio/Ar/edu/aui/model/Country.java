@@ -49,4 +49,17 @@ public class Country {
     public String getNationality() {
         return nationality;
     }
+
+    public String toString(){
+        return this.name + "";
+    }
+
+    public boolean equals(Country other){
+        if(other==null) return false;
+        return this.name == other.name;
+    }
+
+
+
+    
 }

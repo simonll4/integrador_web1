@@ -43,4 +43,13 @@ public class RegistrationForm {
     public void setEmergencyContact(Person emergencyContact) {
         this.emergencyContact = emergencyContact;
     }
+
+    public String toString(){
+        //return this.candidate + "";
+    }
+
+    public boolean equals (RegistrationForm other){
+        if(other==null) return false;
+        return this.candidate == other.candidate;
+    }
 }

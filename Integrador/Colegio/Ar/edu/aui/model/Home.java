@@ -132,4 +132,13 @@ public class Home {
     public double getLongitude() {
         return longitude;
     }
+
+    public String toString(){
+        return this.street + this.num + this.country + this.postalCode + "";
+    }
+
+    public boolean equals(Home other){
+        if(other==null) return false;
+        //return this.latitude == other.latitude && this.longitude == other.longitude;
+    }
 }

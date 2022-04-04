@@ -7,8 +7,9 @@ public class User {
     private String password;
 
     // Constructors
-    public User(String userName) {
+    public User(String userName, String password) {
         this.userName = userName;
+        this.password = password;
     }
 
     // setters

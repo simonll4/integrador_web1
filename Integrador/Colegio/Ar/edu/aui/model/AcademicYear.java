@@ -18,4 +18,16 @@ public class AcademicYear {
     public int getYear() {
         return year;
     }
+
+    public String toString(){
+        return this.year + "";
+    }
+
+    public boolean equals(AcademicYear other){
+
+        if(other==null) return false;
+        
+        return this.year == other.year;
+    }
+
 }

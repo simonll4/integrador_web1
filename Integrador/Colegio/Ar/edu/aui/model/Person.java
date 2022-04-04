@@ -34,6 +34,10 @@ public class Person {
         this.emisorID = emisorID;
     }
 
+    public Person(){
+        
+    }
+
     // setters
     public void setID(String id) {
         this.id = id;
@@ -112,5 +116,14 @@ public class Person {
     
     public Country getEmisorID() {
         return emisorID;
+    }
+
+    public String toString(){
+        return this.name + this.lastname + "";
+    }
+
+    public boolean equals(Person other){
+        if(other==null) return false;
+        return this.id == other.id;
     }
 }
