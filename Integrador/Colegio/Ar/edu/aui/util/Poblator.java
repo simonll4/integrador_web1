@@ -14,41 +14,75 @@ public class Poblator {
 
     // BloodType
     private int[] code = {};
-    private String[] type = { "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", };
+    private String[] type = { "A+", "O+", "B+", "AB+", "A-", "O-", "B-", "AB-"};
 
     // Country
-    private String[] nameCountry = { "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", };
-    private String[] nacionality = { "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", };
-    private String[] code2 = { "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", };
-    private String[] code3 = { "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", };
+    private String[] nameCountry = { null, "Argentina", "Peru", null, "Brasil", "Argentina", "Argentina", 
+    "Chile", null, "Argentina", null, "Argentina", "Argentina", "Bolivia", null, "Argentina", 
+    "Surinam", "Argentina", "Argentina", "Guyana", "Argentina","Argentina"};
+
+    private String[] nacionality = { "argentino/a", "peruano/a", "brasilero/a", "chileno/a", 
+    "guyano", "guyanes", "boliviano/a"};
+
+    private String[] code2 = { "AR", "BR", "BO", "CL", "CO", "GY", "PE", null};
+
+    private String[] code3 = { "ARG", "BRA", "BOL", "CHL", "COL", "GYN", "PER", null};
 
     // home
     private String[] tower = { "1", "2", "3" };
-    private String[] country = { "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
-            "", };
-    private String[] street = { "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
-            "", };
-    private String[] postalCodes = { "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
-            "", };
-    private String[] neighborhood = { "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
-            "", "", };
-    private String[] namesLocations = { "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
-            "", "" };
+
+    private String[] country = { null, "Argentina", "Peru", null, "Brasil", "Argentina", "Argentina", 
+    "Chile", null, "Argentina", null, "Argentina", "Argentina", "Bolivia", null, "Argentina", 
+    "Surinam", "Argentina", "Argentina", "Guyana", "Argentina","Argentina"};
+
+    private String[] street = { "Bariloche", "La Paz", "Gral. Llamosas", "Jorge Newbery", "Los Monos", 
+    "Las Naranjas", "Salvador", "Talleres", "San Martin", null, "Merlo", "Av. De Las Camelias", 
+    null, "La Barra", "Richeri", "Ruggeri", null, "Int. Guillalba", "Punta del Norte", "Hawai", 
+    null, "Los Angeles"};
+
+    private String[] postalCodes = { "5000", "5010", "5015", "5020", "4000", "4010", "4015", "4020", 
+    "3000", "3010", "3015", "3020", "2000", "2010", "2015", "2020", "1000", "1010", "1015", "1020", 
+    "900", "910", };
+
+    private String[] neighborhood = { "Las Palmas", "Quilmes", "Guemes", "Pueyrredon", "Los Olmos", 
+    "Villa El Libertador", "Paz Carlos", "San Jose", "La Quintana", "Gral. Guillalba", 
+    "Parque Las Pradas", "Parque America", "Villavicencio", "Las Pradas 1", "Las Pradas 2", "Newells", 
+    "Los Sauces", "Las Gacelas", "Las Gacelas Anexo", "Bonavena", "Van Dame", "Los Monos"};
+
+    private String[] namesLocations = { "Capital", "Capital Federal", "Unquillo", "Sarmiento", "Roca", 
+    "Agua de Plata", "Alejo Gacela", "Alma Debil", "Marito Juarez", "Bouwer", "Mialet Basse", "Vell Bille", 
+    "Balnearios", "Tercero Abajo", "Unidos", "Rio Septimo", "San Injusto", "Rio Blanco", "Calamuchito", 
+    "Roque Peña", "Ferrari", "Luther King"};
+
     private double[] latitude = {};
     private double[] longitude = {};
 
     // Person
-    private String[] id = { "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
-            "", };
-    private String[] name = { "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
-            "", };
-    private String[] lastName = { "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
-            "", };
+    private String[] id = { "47782444", "47495523", "47554715", "69531161", "46275063", "76874464", 
+    "85357399Y", "71836034L", "75324014A", "74115380L", "16988532L", "32369962S", "34037170E", "22920980P", 
+    "20851837Z", "55192555F", "31768382T", "13944350W", "46829254N", "54059316R", "14061055M", "72781211B"};
+    
+    private String[] name = { "Alberto", "Ana", "Benjamin", "Brenda", "Carlos", "Carmen", "Dylan", "Delfina", 
+    "Elias", "Eliana", "Federico", "Fernanda", "German", "Gabriel", "Hernan", "Heliana", "Ismael", "Irina", 
+    "Jorge", "Juliana", "Kilian", "Karmen", "Lionel", "Lucila", "Matias", "Micaela", "Nahuel", "Natalia", 
+    "Osvaldo", "Oriana", "Pablo", "Paola", "Quinto", "Quetzal", "Raul", "Rocio", "Simon", "Sabrina",
+    "Tadeo", "Taehyung", "Uriel", "Ulda", "Valentin", "Viviana", "Walter", "Wanda", "Xavi", "Ximena", 
+    "Yoshua", "Yessica", "Zacarias", "Zara"};
+
+    private String[] lastName = { "Carrizo", "Rodriguez", "Otamendi", "Messi", "Gates", "Musk", 
+    "Luna", "Villalba", "Llamosas", "Besos", "De La Serna", "De La Fuente", "De Armas", "Guillaumet", 
+    "Ponce", "Sosa", "Olivera", "Ragessi", "Joaquin", "Quiroga", "Van Dame", "Dominguez"};
+    
     private LocalDate[] dateBirth = {};
-    private String[] email = { "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
-            "", };
-    private String[] phone = { "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
-            "", };
+    
+    private String[] email = { "masitas12", "bananas2", "emailrandom", "claro3", "talleresmivida4", 
+    "yc23vub", "lwenhgiuo2", "caviar5", "condor9", "vivaperon15", "menem7", "maildemessi", "billgates", "rtj4", 
+    "wiufehu1", "bastadecastear", "ojebf99", "lolaso12", "iu34ty2i", "vegeta777", "microhard", "a32"};
+    
+    private String[] phone = { "3545768561 ", "3510100710", "3212991844 ", "3654181123", "3510955567", 
+    "3237875974", "3717335875", "3589331667", "3316312998", "3117527369", "3516226468", "3222728590", 
+    "3510674431", "3569673029", "3894238816", "3278894893", "3116021441", "3576871168", "3998146207", 
+    "3519668696", null, null};
 
     // Turn
     private String[] turnName = {};
@@ -56,7 +90,10 @@ public class Poblator {
     private String[][] finishHour = { { "", "" }, { "", "" } };
 
     // User
-    private String[] usersNames = { null, "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", };
+    private String[] usersNames = { null, "admin23", "mcreg5", "fullpipe2", "orion8", "12k34b", "kgb2", 
+    "mqbo3rb", "kjnh3", "blem88", "mcig1ue", "talleres12", "messi214", "eeee1", "mattgode", "thor1", 
+    "agustinolix", "river13", "aadqf12", "qwert13"};
+
     private String[] userPassword = { "123456", "password", "123456789", "12345678", "12345", "111111", "1234567",
             "sunshine",
             "qwerty", "iloveyou", "princess", "welcome", "666666", "666666",
@@ -127,8 +164,8 @@ public class Poblator {
         for (int ii = 0; ii < count; ii++) {
             aux.setID(id[(int) Math.random() * id.length]);
             aux.setName(name[(int) Math.random() * name.length]);
-            aux.setLastname(lastName[(int) Math.random() * 19]);
-            aux.setEmail(email[(int) Math.random() * 19]);
+            aux.setLastname(lastName[(int) Math.random() * lastName.length]);
+            aux.setEmail(email[(int) Math.random() * 19] + "@gmail.com");
             aux.setPhone(phone[(int) Math.random() * 19]);
             aux.setBloodType(b1.get((int) Math.random() * b1.size()));
             aux.setResidence(h1.get((int) Math.random() * h1.size()));
