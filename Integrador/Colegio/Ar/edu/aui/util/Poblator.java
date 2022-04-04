@@ -17,14 +17,14 @@ public class Poblator {
     private String[] type = { "A+", "O+", "B+", "AB+", "A-", "O-", "B-", "AB-"};
 
     // Country
-    private String[] nameCountry = { null, "Argentina", "Peru", null, "Brasil", "Argentina", "Argentina", 
+    private String[] nameCountry = { null, "Argentina", "Peru", null, null, "Argentina", "Argentina", 
     "Chile", null, "Argentina", null, "Argentina", "Argentina", "Bolivia", null, "Argentina", 
     "Surinam", "Argentina", "Argentina", "Guyana", "Argentina","Argentina"};
 
     private String[] nacionality = { "argentino/a", "peruano/a", "brasilero/a", "chileno/a", 
     "guyano", "guyanes", "boliviano/a"};
 
-    private String[] code2 = { "AR", "BR", "BO", "CL", "CO", "GY", "PE", null};
+    private String[] code2 = { "AR", null, "BO", "CL", "CO", "GY", "PE", null};
 
     private String[] code3 = { "ARG", "BRA", "BOL", "CHL", "COL", "GYN", "PER", null};
 
@@ -81,7 +81,7 @@ public class Poblator {
     
     private String[] phone = { "3545768561 ", "3510100710", "3212991844 ", "3654181123", "3510955567", 
     "3237875974", "3717335875", "3589331667", "3316312998", "3117527369", "3516226468", "3222728590", 
-    "3510674431", "3569673029", "3894238816", "3278894893", "3116021441", "3576871168", "3998146207", 
+    "3510674431", "3569673029", "3894238816", "3278894893", "3116021441", "3576871168", "3998146207",null, 
     "3519668696", null, null};
 
     // Turn
@@ -165,8 +165,8 @@ public class Poblator {
             aux.setID(id[(int) Math.random() * id.length]);
             aux.setName(name[(int) Math.random() * name.length]);
             aux.setLastname(lastName[(int) Math.random() * lastName.length]);
-            aux.setEmail(email[(int) Math.random() * 19] + "@gmail.com");
-            aux.setPhone(phone[(int) Math.random() * 19]);
+            aux.setEmail(email[(int) Math.random() * email.length] + "@gmail.com");
+            aux.setPhone(phone[(int) Math.random() * phone.length]);
             aux.setBloodType(b1.get((int) Math.random() * b1.size()));
             aux.setResidence(h1.get((int) Math.random() * h1.size()));
             aux.setNationality(c1.get((int) Math.random() * c1.size()));
