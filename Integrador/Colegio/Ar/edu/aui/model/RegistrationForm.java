@@ -1,15 +1,15 @@
 package Integrador.Colegio.Ar.edu.aui.model;
 
 public class RegistrationForm {
-    
-    //Variables
+
+    // Variables
     Turn turn;
     Person candidate;
     Person[] tutors;
     Person emergencyContact;
 
-    //constructor
-    public RegistrationForm(){
+    // constructor
+    public RegistrationForm() {
     }
 
     public Turn getTurn() {
@@ -44,12 +44,22 @@ public class RegistrationForm {
         this.emergencyContact = emergencyContact;
     }
 
-    public String toString(){
-        //return this.candidate + "";
-    }
+    /*
+     * public String toString(){
+     * //return this.candidate + "";
+     * }
+     */
 
-    public boolean equals (RegistrationForm other){
-        if(other==null) return false;
-        return this.candidate == other.candidate;
+    public boolean equals(RegistrationForm other) {
+        boolean flag = false;
+        if (other == null)
+            flag = false;
+        if (this.candidate == null)
+            flag = false;
+        if (other.candidate == null)
+            flag = false;
+        if (other.candidate == this.candidate)
+            flag = true;
+        return flag;
     }
 }

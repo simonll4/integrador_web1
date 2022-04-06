@@ -35,12 +35,22 @@ public class Home {
         this.longitude = longitude;
     }
 
+    public Home(){
+
+    }
+
     // setters
     public void setCountry(String country) {
+        if (country != null) {
+            country = country.trim();
+        }
         this.country = country;
     }
 
     public void setStreet(String street) {
+        if (street != null) {
+            street = street.trim();
+        }
         this.street = street;
     }
 
@@ -49,6 +59,9 @@ public class Home {
     }
 
     public void setPostalCode(String postalCode) {
+        if (postalCode != null) {
+            postalCode = postalCode.trim();
+        }
         this.postalCode = postalCode;
     }
 
@@ -57,6 +70,9 @@ public class Home {
     }
 
     public void setTower(String tower) {
+        if (tower != null) {
+            tower = tower.trim();
+        }
         this.tower = tower;
     }
 
@@ -65,14 +81,23 @@ public class Home {
     }
 
     public void setNeighborhood(String neighborhood) {
+        if (neighborhood != null) {
+            neighborhood = neighborhood.trim();
+        }
         this.neighborhood = neighborhood;
     }
 
     public void setLocation(String location) {
+        if (location != null) {
+            location = location.trim();
+        }
         this.location = location;
     }
 
     public void setComments(String comments) {
+        if (comments != null) {
+            comments = comments.trim();
+        }
         this.comments = comments;
     }
 
@@ -133,12 +158,20 @@ public class Home {
         return longitude;
     }
 
-    public String toString(){
+    public String toString() {
         return this.street + this.num + this.country + this.postalCode + "";
     }
 
-    public boolean equals(Home other){
-        if(other==null) return false;
-        //return this.latitude == other.latitude && this.longitude == other.longitude;
+    public boolean equals(Home other) {
+        boolean flag = false;
+        if (other == null)
+            flag = false;
+        if (other.latitude == 0 || other.longitude == 0)
+            flag = false;
+        if (this.latitude == 0 || this.longitude == 0)
+            flag = false;
+        if (other.longitude == this.longitude && other.latitude == this.latitude)
+            flag = true;
+        return flag;
     }
 }

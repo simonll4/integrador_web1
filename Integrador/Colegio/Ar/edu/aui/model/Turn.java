@@ -17,8 +17,8 @@ public class Turn {
         this.finishHour = finishHour;
     }
 
-    public Turn(){
-        
+    public Turn() {
+
     }
 
     // setters
@@ -27,6 +27,9 @@ public class Turn {
     }
 
     public void setTurnName(String turnName) {
+        if (turnName != null) {
+            turnName = turnName.trim();
+        }
         this.turnName = turnName;
     }
 
@@ -55,14 +58,28 @@ public class Turn {
         return finishHour;
     }
 
-    public String toString(){
+    public String toString() {
         return this.code + "";
     }
 
-    public boolean equals(Turn other){
-        if(other == null) return false;
+    public boolean equals(Turn other) {
+        boolean flag = false;
+        if (other == null)
+            flag = false;
+        if (other.code == 0)
+            flag = false;
+        if (this.code == 0)
+            flag = false;
+        if (other.turnName == null)
+            flag = false;
+        if (this.turnName == null)
+            flag = false;
+        if (this.turnName == other.turnName)
+            flag = true;
+        if (this.code == other.code)
+            flag = true;
+        return flag;
 
-        return this.code == other.code;
     }
 
 }
