@@ -34,16 +34,29 @@ public class Person {
         this.emisorID = emisorID;
     }
 
+    public Person() {
+
+    }
+
     // setters
     public void setID(String id) {
+        if (id != null) {
+            id = id.trim();
+        }
         this.id = id;
     }
 
     public void setName(String name) {
+        if (name != null) {
+            name = name.trim();
+        }
         this.name = name;
     }
 
     public void setLastname(String lastname) {
+        if (lastname != null) {
+            lastname = lastname.trim();
+        }
         this.lastname = lastname;
     }
 
@@ -52,10 +65,16 @@ public class Person {
     }
 
     public void setEmail(String email) {
+        if (email != null) {
+            email = email.trim();
+        }
         this.email = email;
     }
 
     public void setPhone(String phone) {
+        if (phone != null) {
+            phone = phone.trim();
+        }
         this.phone = phone;
     }
 
@@ -87,30 +106,61 @@ public class Person {
     public String getLastname() {
         return lastname;
     }
-    public LocalDate getDatebirth(){
+
+    public LocalDate getDatebirth() {
         return dateBirth;
     }
-    public String getEmail(){
+
+    public String getEmail() {
         return email;
     }
 
-    public String getPhone(){
+    public String getPhone() {
         return phone;
     }
-    
-    public BloodType getBloobType(){
+
+    public BloodType getBloobType() {
         return bloodType;
     }
-    
-    public Home getResidence(){
+
+    public Home getResidence() {
         return residence;
     }
-    
-    public Country getNationality(){
+
+    public Country getNationality() {
         return nationality;
     }
-    
+
     public Country getEmisorID() {
         return emisorID;
+    }
+
+    public String toString() {
+        return this.name + this.lastname + "";
+    }
+
+    public boolean equals(Person other) {
+        boolean flag = false;
+        if (other == null)
+            flag = false;
+        if (other.id == null)
+            flag = false;
+        if (this.id == null)
+            flag = false;
+        if (other.name == null)
+            flag = false;
+        if (other.lastname == null)
+            flag = false;
+        if (this.name == null)
+            flag = false;
+        if (this.lastname == null)
+            flag = false;
+        if (this.id == other.id)
+            flag = true;
+        if (this.name == other.name)
+            flag = true;
+        if (this.lastname == other.lastname)
+            flag = true;
+        return flag;
     }
 }

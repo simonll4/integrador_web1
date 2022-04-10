@@ -1,16 +1,27 @@
 package Integrador.Colegio.Ar.edu.aui.persist;
 
-import Integrador.Colegio.Ar.edu.aui.model.RegistrationForm;
+import java.util.ArrayList;
+import java.util.List;
+
+import Integrador.Colegio.Ar.edu.aui.business.Login;
+import Integrador.Colegio.Ar.edu.aui.model.*;
 
 public class DataBase {
 
-    static private final int MAX_ITEMS = 100;
+    // variables
+    public static List<RegistrationForm> registrationForms = new ArrayList<RegistrationForm>();
+    public static List<Person> people = new ArrayList<Person>();
+    public static List<Home> home = new ArrayList<Home>();
+    public static List<Country> country = new ArrayList<Country>();
+    public static List<Turn> turn = new ArrayList<Turn>();
+    public static List<AcademicYear> academicYear = new ArrayList<AcademicYear>();
 
-    //variables
-
-    static public RegistrationForm[] registrationForms = new RegistrationForm[MAX_ITEMS];
-    public static Person[] people = new Person[MAX_ITEMS];
-
-
+    //datebase users
+    public static List<User> users = new ArrayList<User>();
     
+    public DataBase(){
+        
+        
+
+    }
 }

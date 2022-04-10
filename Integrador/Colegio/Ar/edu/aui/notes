@@ -33,3 +33,29 @@ Despues del titulo, va el formulario de inscripcion
 
 Si el usuario ingresa 2 palabras para buscar, debemos partir esas 2 palabras en 2 strings distintos, y recien ahi buscar
 
+
+9 de mayo primer parcial
+13 de junio segundo parcial
+
+model:
+- setter y getters
+- toString (cada clase)
+- equals (cada clase)
++ Diagrama UML de las clases
+
+persist:
+- dataBase
+- List (static public) por cada clase de model (menos BloodType)
+
+------POBLADOR------- que pase por el uper 
+
+business:
+- uperRegistrationForm (por cada clase)
+- find
+
+util:
+- POBLADOR
+
+public String toString(){
+        
+    }

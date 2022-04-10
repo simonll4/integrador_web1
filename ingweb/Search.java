@@ -1,9 +1,10 @@
-package Integrador.Colegio.Ar.edu.aui.front;
+package ingweb;
 
 import Integrador.Colegio.Ar.edu.aui.*;
+
 import java.util.*;
 
-public class Search {
+/*public class Search {
     public Search() {
     } 
     public void searchByData(Students[] aui){
@@ -44,3 +45,4 @@ public class Search {
 
 
 
+*/
