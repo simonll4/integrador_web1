@@ -1,8 +1,8 @@
 package ingweb;
 
-import Integrador.Colegio.Ar.edu.aui.*;
-
 import java.util.*;
+
+import ingweb.Integrador.Colegio.Ar.edu.aui.*;
 
 /*public class Search {
     public Search() {
