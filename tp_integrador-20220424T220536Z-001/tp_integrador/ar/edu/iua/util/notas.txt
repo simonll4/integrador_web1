@@ -1,8 +1,0 @@
-cuchame raviol vo tene 4 formas de hacer casteo:
-- la primera es casteando todo como un enfermo
-- la segunda no la segunda no la se
-- la tercecra¡rqwefuwghf
-- y la cuarta es hacer como diego es decir separando todas las clases en clases mas chicas asi podes reutilziar si te hacve falta jajashfojahjdfhaklhefi
-
-hacer las clases por separado  
-estructuras de horario, docentes, alumnos, inscripcion (posible parcial)  
