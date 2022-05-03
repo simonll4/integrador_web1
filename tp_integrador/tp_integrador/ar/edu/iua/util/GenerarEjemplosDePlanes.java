@@ -206,7 +206,6 @@ public class GenerarEjemplosDePlanes {
                                 "Tecnicas de Trabajo Intelectual I", 2.0));
                 primero2014.getMaterias().add(new MateriaImpl(primero2014, codigoMateria++, "Informatica I", 2.0));
                 primero2014.getMaterias().add(new MateriaImpl(primero2014, codigoMateria++, "Educacion Fisica I", 2.0));                
-              
 
                 // MATEIAS DEL PLAN 2014 - SEGUNDO AÑO
 
@@ -356,10 +355,10 @@ public class GenerarEjemplosDePlanes {
 
                 // MATERIAS DEL PLAN 2001 - SEGUNDO AÑO
 
-                codigoMateria = 0;
+                codigoMateria = 1;
 
                 segundo2001.getMaterias()
-                                .add(new MateriaImpl(segundo2001, codigoMateria++, "Lengua y Literatura II", 5.0));
+                                .add(new MateriaImpl(segundo2001, codigoMateria, "Lengua y Literatura II", 5.0));
                 segundo2001.getMaterias()
                                 .add(new MateriaImpl(segundo2001, codigoMateria++, "Lengua y Cultura Latinas II", 5.0));
                 segundo2001.getMaterias().add(new MateriaImpl(segundo2001, codigoMateria++, "Ingles II", 3.0));
