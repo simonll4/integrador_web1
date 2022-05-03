@@ -38,28 +38,33 @@ public class UtilRandom {
         }
 
         for (int ii = 0; ii < 5; ii++) {
+            int zz = 0;
             AnioPlan anioAleatorio = new AnioPlanImpl();
-            Materia materia = new MateriaImpl();
             
+           
             for (int jj = 0; jj < 12; jj++) {
-                anioAleatorio = planObtenido.getPlan(listaPlanes).getAnios().get(ii);
+                Materia materia = new MateriaImpl();
+                anioAleatorio = planObtenido.getPlan(listaPlanes).getAnios().get(zz);
+                zz++;
                 if (jj == 0) {
                     materia = materiaObtenida.getMateria(anioAleatorio);
                     materiasPlan.add(materia);
-                    break;
                 }
-                materia = materiaObtenida.getMateria(anioAleatorio);
-                for (int kk = 0; kk < materiasPlan.size(); kk++) {
-                    Boolean bandera = false;
-                    if (materiasPlan.get(kk).getCodigo().equals(materia.getCodigo())) {
-                        bandera = false;
-                        jj--;
-                        break;
-                    } else if (kk == materiasPlan.size() - 1) {
-                        bandera = true;
-                    }
-                    if (bandera) {
-                        materiasPlan.add(materia);
+                else{
+                    materia = materiaObtenida.getMateria(anioAleatorio);
+                    for (int kk = 0; kk < materiasPlan.size(); kk++) {
+                        Boolean bandera = false;
+                        if (materiasPlan.get(kk).getCodigo().equals(materia.getCodigo())) {
+                            bandera = false;
+                            jj--;
+                            break;
+                        } else if (kk == materiasPlan.size() - 1) {
+                            bandera = true;
+                        }
+                        if (bandera) {
+                            materiasPlan.add(materia);
+                            break;
+                        }
                     }
                 }
             }
