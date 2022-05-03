@@ -182,6 +182,14 @@ public class GenerarEjemplosDePlanes {
                 AnioPlan sexto2001 = new AnioPlanImpl(plan2001, 6, "Sexto año");
                 AnioPlan septimo2001 = new AnioPlanImpl(plan2001, 7, "Septimo año");
 
+                plan2001.getAnios().add(primero2001);
+                plan2001.getAnios().add(segundo2001);
+                plan2001.getAnios().add(tercero2001);
+                plan2001.getAnios().add(cuarto2001);
+                plan2001.getAnios().add(quinto2001);
+                plan2001.getAnios().add(sexto2001);
+                plan2001.getAnios().add(septimo2001);
+
                 // MATERIAS DEL PLAN 2001 - PRIMER AÑO
 
                 codigoMateria = 0;
@@ -351,6 +359,9 @@ public class GenerarEjemplosDePlanes {
                 septimo2001.getMaterias().add(new MateriaImpl(septimo2001, codigoMateria++, "Fisica II", 3.0));
 
                 System.out.println("LARGO DE LA LISTA PLANES EN GENERAREJEMPLOS" + planes.size() + "");
+
+
+
                 // ==========================================================================
 
                 generarYAgregarPlanesAleatoriamente(cantidadAGenerar, planes);
