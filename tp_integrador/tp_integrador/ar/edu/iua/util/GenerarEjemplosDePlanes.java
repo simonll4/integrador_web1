@@ -43,15 +43,15 @@ public class GenerarEjemplosDePlanes {
 
                 int codigoMateria = 1;
 
-                Materia m1 = new MateriaImpl(primero, codigoMateria, "Ciencias de la Vida y de la Tierra ", 3.0);
-                Materia m2 = new MateriaImpl(primero, codigoMateria++, "Lengua y Literatura Castellanas I", 5.0);
-                Materia m3 = new MateriaImpl(primero, codigoMateria++, "Lengua y Cultura Latinas I ", 4.0);
-                Materia m4 = new MateriaImpl(primero, codigoMateria++, "Lengua y Cultura Inglesas I ", 3.0);
-                Materia m5 = new MateriaImpl(primero, codigoMateria++, "Formación Musical I ", 3.0);
-                Materia m6 = new MateriaImpl(primero, codigoMateria++, "Formación Plástica I ", 3.0);
-                Materia m7 = new MateriaImpl(primero, codigoMateria++, "Matemática I", 4.0);
-                Materia m8 = new MateriaImpl(primero, codigoMateria++, "Geografía I ", 3.0);
-                Materia m9 = new MateriaImpl(primero, codigoMateria++, "Historia I", 3.0);
+                Materia m1 = new MateriaImpl(primero, codigoMateria, "Lengua y Literatura Castellanas I", 5.0);
+                Materia m2 = new MateriaImpl(primero, codigoMateria++, "Lengua y Cultura Latinas I ", 4.0);
+                Materia m3 = new MateriaImpl(primero, codigoMateria++, "Lengua y Cultura Inglesas I ", 3.0);
+                Materia m4 = new MateriaImpl(primero, codigoMateria++, "Geografía I ", 3.0);
+                Materia m5 = new MateriaImpl(primero, codigoMateria++, "Historia I", 3.0);
+                Materia m6 = new MateriaImpl(primero, codigoMateria++, "Matemática I", 4.0);
+                Materia m7 = new MateriaImpl(primero, codigoMateria++, "Formación Plástica I ", 3.0);
+                Materia m8 = new MateriaImpl(primero, codigoMateria++, "Formación Musical I ", 3.0);
+                Materia m9 = new MateriaImpl(primero, codigoMateria++, "Ciencias de la Vida y de la Tierra ", 3.0);
                 Materia m10 = new MateriaImpl(primero, codigoMateria++, "Formación Ética y Ciudadana I", 3.0);
                 Materia m11 = new MateriaImpl(primero, codigoMateria++,
                                 "Estrategias de Aprendizaje y Entornos Virtuales",
@@ -75,93 +75,236 @@ public class GenerarEjemplosDePlanes {
 
                 codigoMateria = 1;
 
-                segundo.getMaterias().add(new MateriaImpl(segundo, codigoMateria, "Educación para la Salud", 4.0));
                 segundo.getMaterias()
-                                .add(new MateriaImpl(segundo, codigoMateria++, "Lengua y Literatura Castellanas II ",
+                                .add(new MateriaImpl(segundo, codigoMateria, "Lengua y Literatura Castellanas II ",
                                                 5.0));
                 segundo.getMaterias()
                                 .add(new MateriaImpl(segundo, codigoMateria++, "Lengua y Cultura Latinas II ", 4.0));
                 segundo.getMaterias()
                                 .add(new MateriaImpl(segundo, codigoMateria++, "Lengua y Cultura Inglesas II  ", 3.0));
-                segundo.getMaterias().add(new MateriaImpl(segundo, codigoMateria++, "Formación Musical II ", 3.0));
-                segundo.getMaterias().add(new MateriaImpl(segundo, codigoMateria++, "Formación Plástica II ", 3.0));
-                segundo.getMaterias().add(new MateriaImpl(segundo, codigoMateria++, "Matemática II ", 4.0));
-                segundo.getMaterias().add(new MateriaImpl(segundo, codigoMateria++, "Geografía II ", 3.0));
-                segundo.getMaterias().add(new MateriaImpl(segundo, codigoMateria++, "Historia II", 3.0));
                 segundo.getMaterias()
                                 .add(new MateriaImpl(segundo, codigoMateria++, "Formación Ética y Ciudadana II", 3.0));
+                segundo.getMaterias().add(new MateriaImpl(segundo, codigoMateria++, "Geografía II ", 3.0));
+                segundo.getMaterias().add(new MateriaImpl(segundo, codigoMateria++, "Historia II", 3.0));
+                segundo.getMaterias().add(new MateriaImpl(segundo, codigoMateria++, "Matemática II ", 4.0));
+                segundo.getMaterias().add(new MateriaImpl(segundo, codigoMateria++, "Formación Plástica II ", 3.0));
+                segundo.getMaterias().add(new MateriaImpl(segundo, codigoMateria++, "Formación Musical II ", 3.0));
+                segundo.getMaterias().add(new MateriaImpl(segundo, codigoMateria++, "Educación para la Salud", 4.0));
+                segundo.getMaterias().add(new MateriaImpl(segundo, codigoMateria++, "Espacios Optativos 2022", 3.0));
                 segundo.getMaterias()
                                 .add(new MateriaImpl(segundo, codigoMateria++, "Educación Física y Deportes II", 3.0));
                 segundo.getMaterias()
                                 .add(new MateriaImpl(segundo, codigoMateria++, "Espacios Optativos 2019/2021", 3.0));
-                segundo.getMaterias().add(new MateriaImpl(segundo, codigoMateria++, "Espacios Optativos 2022", 3.0));
 
                 // MATERIAS DEL PLAN 2018 - TERCER AÑO
 
                 codigoMateria = 1;
 
-                tercero.getMaterias().add(new MateriaImpl(tercero, codigoMateria, "Ciencias Naturales", 3.0));
                 tercero.getMaterias()
-                                .add(new MateriaImpl(tercero, codigoMateria++, "Lengua y Literatura Castellanas III",
+                                .add(new MateriaImpl(tercero, codigoMateria, "Lengua y Literatura Castellanas III",
                                                 5.0));
                 tercero.getMaterias()
                                 .add(new MateriaImpl(tercero, codigoMateria++, "Lengua y Cultura Latinas III", 4.0));
                 tercero.getMaterias()
                                 .add(new MateriaImpl(tercero, codigoMateria++, "Lengua y Cultura Inglesas III", 3.0));
-                tercero.getMaterias().add(new MateriaImpl(tercero, codigoMateria++, "Formacion Plastica III", 3.0));
-                tercero.getMaterias().add(new MateriaImpl(tercero, codigoMateria++, "Matematica III", 4.0));
+                tercero.getMaterias()
+                                .add(new MateriaImpl(tercero, codigoMateria++, "Formacion Etica y Ciudadana III", 3.0));
                 tercero.getMaterias().add(new MateriaImpl(tercero, codigoMateria++, "Geografia III", 3.0));
                 tercero.getMaterias().add(new MateriaImpl(tercero, codigoMateria++, "Historia III", 4.0));
                 tercero.getMaterias()
-                                .add(new MateriaImpl(tercero, codigoMateria++, "Formacion Etica y Ciudadana III", 3.0));
-                tercero.getMaterias().add(new MateriaImpl(tercero, codigoMateria++, "Educacion Tecnologica", 3.0));
+                                .add(new MateriaImpl(tercero, codigoMateria++, "Espacios Optativos 2020/2021", 3.0));
+                tercero.getMaterias().add(new MateriaImpl(tercero, codigoMateria++, "Formacion Plastica III", 3.0));
+                tercero.getMaterias().add(new MateriaImpl(tercero, codigoMateria++, "Espacios Optativos 2021", 3.0));
+                tercero.getMaterias().add(new MateriaImpl(tercero, codigoMateria++, "Ciencias Naturales", 3.0));
+                tercero.getMaterias().add(new MateriaImpl(tercero, codigoMateria++, "Matematica III", 4.0));
                 tercero.getMaterias()
                                 .add(new MateriaImpl(tercero, codigoMateria++, "Educacion Fisica y Deportes III", 3.0));
-                tercero.getMaterias()
-                                .add(new MateriaImpl(tercero, codigoMateria++, "Espacios Optativos 2020/2021", 3.0));
-                tercero.getMaterias().add(new MateriaImpl(tercero, codigoMateria++, "Espacios Optativos 2021", 3.0));
+                tercero.getMaterias().add(new MateriaImpl(tercero, codigoMateria++, "Educacion Tecnologica", 3.0));
                 tercero.getMaterias().add(new MateriaImpl(tercero, codigoMateria++, "Espacios Optativos 2022", 3.0));
 
                 // MATERIAS DEL PLAN 2018 - CUARTO AÑO
 
                 codigoMateria = 1;
 
-                cuarto.getMaterias().add(new MateriaImpl(cuarto, codigoMateria, "Biologia I", 3.0));
-                cuarto.getMaterias().add(new MateriaImpl(cuarto, codigoMateria++, "Fisico-Quimica", 3.0));
                 cuarto.getMaterias().add(
-                                new MateriaImpl(cuarto, codigoMateria++, "Lengua y Literatura Castellanas IV", 4.0));
+                                new MateriaImpl(cuarto, codigoMateria, "Lengua y Literatura Castellanas IV", 4.0));
                 cuarto.getMaterias().add(new MateriaImpl(cuarto, codigoMateria++, "Lengua y Cultura Latinas IV", 4.0));
                 cuarto.getMaterias().add(new MateriaImpl(cuarto, codigoMateria++, "Lengua y Cultura Inglesas IV", 3.0));
-                cuarto.getMaterias().add(new MateriaImpl(cuarto, codigoMateria++, "Lengua y Cultura Francesas I", 3.0));
-                cuarto.getMaterias().add(new MateriaImpl(cuarto, codigoMateria++, "Historia del Arte", 3.0));
-                cuarto.getMaterias().add(new MateriaImpl(cuarto, codigoMateria++, "Matematica IV", 5.0));
                 cuarto.getMaterias().add(new MateriaImpl(cuarto, codigoMateria++, "Geografia IV", 3.0));
                 cuarto.getMaterias().add(new MateriaImpl(cuarto, codigoMateria++, "Historia IV", 4.0));
+                cuarto.getMaterias().add(new MateriaImpl(cuarto, codigoMateria++, "Lengua y Cultura Francesas I", 3.0));
+                cuarto.getMaterias().add(new MateriaImpl(cuarto, codigoMateria++, "Historia del Arte", 3.0));
+                cuarto.getMaterias()
+                                .add(new MateriaImpl(cuarto, codigoMateria++, "Espacios Optativos 2020/2021", 3.0));
+                cuarto.getMaterias().add(new MateriaImpl(cuarto, codigoMateria++, "Matematica IV", 5.0));
+                cuarto.getMaterias().add(new MateriaImpl(cuarto, codigoMateria++, "Biologia I", 3.0));
+                cuarto.getMaterias().add(new MateriaImpl(cuarto, codigoMateria++, "Fisico-Quimica", 3.0));
                 cuarto.getMaterias()
                                 .add(new MateriaImpl(cuarto, codigoMateria++, "Educacion Fisica y Escuadras I", 3.0));
-                cuarto.getMaterias()
-                                .add(new MateriaImpl(tercero, codigoMateria++, "Espacios Optativos 2020/2021", 3.0));
-                cuarto.getMaterias().add(new MateriaImpl(tercero, codigoMateria++, "Espacios Optativos 2021", 3.0));
-                cuarto.getMaterias().add(new MateriaImpl(tercero, codigoMateria++, "Espacios Optativos 2022", 3.0));
+                cuarto.getMaterias().add(new MateriaImpl(cuarto, codigoMateria++, "Espacios Optativos 2021", 3.0));
+                cuarto.getMaterias().add(new MateriaImpl(cuarto, codigoMateria++, "Espacios Optativos 2022", 3.0));
 
                 // MATERIAS DEL PLAN 2018 - QUINTO AÑO
 
                 codigoMateria = 1;
 
-                quinto.getMaterias().add(new MateriaImpl(quinto, codigoMateria, "Biologia II", 3.0));
-                quinto.getMaterias().add(new MateriaImpl(quinto, codigoMateria++, "Quimica", 4.0));
                 quinto.getMaterias().add(
-                                new MateriaImpl(quinto, codigoMateria++, "Lengua y Literatura Castellana IV", 4.0));
+                                new MateriaImpl(quinto, codigoMateria, "Lengua y Literatura Castellana IV", 4.0));
+                quinto.getMaterias().add(new MateriaImpl(quinto, codigoMateria++, "Espacios Optativos", 3.0));
                 quinto.getMaterias().add(new MateriaImpl(quinto, codigoMateria++, "Lengua y Culturas Griegas", 3.0));
                 quinto.getMaterias().add(new MateriaImpl(quinto, codigoMateria++, "Lengua y Cultura Inglesas IV", 3.0));
                 quinto.getMaterias()
                                 .add(new MateriaImpl(quinto, codigoMateria++, "Lengua y Cultura Francesas II", 3.0));
-                quinto.getMaterias().add(new MateriaImpl(quinto, codigoMateria++, "Matematica V", 5.0));
                 quinto.getMaterias().add(new MateriaImpl(quinto, codigoMateria++, "Geografia V", 3.0));
                 quinto.getMaterias().add(new MateriaImpl(quinto, codigoMateria++, "Historia V", 4.0));
+                quinto.getMaterias().add(new MateriaImpl(quinto, codigoMateria++, "Quimica", 4.0));
+                quinto.getMaterias().add(new MateriaImpl(quinto, codigoMateria++, "Biologia II", 3.0));
+                quinto.getMaterias().add(new MateriaImpl(quinto, codigoMateria++, "Matematica V", 5.0));
                 quinto.getMaterias().add(new MateriaImpl(quinto, codigoMateria++, "Logica", 3.0));
                 quinto.getMaterias().add(new MateriaImpl(quinto, codigoMateria++, "Educacion Fisica y Escuadras", 3.0));
-                quinto.getMaterias().add(new MateriaImpl(quinto, codigoMateria++, "Espacios Optativos", 3.0));
+
+                // PLAN 2014
+
+                Plan plan2014 = new PlanImpl();
+
+                plan2014.setAnio(2014);
+                plan2014.setEstadoNoActivo();
+
+                planes.add(plan2014);
+
+                // AÑOS DEL PLAN 2014
+
+                AnioPlan primero2014 = new AnioPlanImpl(plan2014, 1, "Primer año");
+                AnioPlan segundo2014 = new AnioPlanImpl(plan2014, 2, "Segundo año");
+                AnioPlan tercero2014 = new AnioPlanImpl(plan2014, 3, "Tercero año");
+                AnioPlan cuarto2014 = new AnioPlanImpl(plan2014, 4, "Cuarto año");
+                AnioPlan quinto2014 = new AnioPlanImpl(plan2014, 5, "Quinto año");
+
+                plan2014.getAnios().add(primero2014);
+                plan2014.getAnios().add(segundo2014);
+                plan2014.getAnios().add(tercero2014);
+                plan2014.getAnios().add(cuarto2014);
+                plan2014.getAnios().add(quinto2014);
+
+                // MATERIAS DEL PLAN 2014 - PRIMER AÑO
+
+                codigoMateria = 1;
+
+                primero2014.getMaterias()
+                                .add(new MateriaImpl(primero2014, codigoMateria, "Lengua y Literatura I", 5.0));
+                primero2014.getMaterias()
+                                .add(new MateriaImpl(primero2014, codigoMateria++, "Lengua y Culturas Latinas I", 5.0));
+                primero2014.getMaterias().add(new MateriaImpl(primero2014, codigoMateria++, "Ingles I", 3.0));
+                primero2014.getMaterias().add(new MateriaImpl(primero2014, codigoMateria++, "Geografia I", 3.0));
+                primero2014.getMaterias().add(new MateriaImpl(primero2014, codigoMateria++, "Historia I", 2.0));
+                primero2014.getMaterias().add(new MateriaImpl(primero2014, codigoMateria++, "Matematica I", 4.0));
+                primero2014.getMaterias().add(new MateriaImpl(primero2014, codigoMateria++, "Plastica I", 2.0));
+                primero2014.getMaterias().add(new MateriaImpl(primero2014, codigoMateria++, "Musica I", 2.0));
+                primero2014.getMaterias()
+                                .add(new MateriaImpl(primero2014, codigoMateria++, "Ciencias Naturales I", 3.0));
+                primero2014.getMaterias().add(new MateriaImpl(primero2014, codigoMateria++,
+                                "Tecnicas de Trabajo Intelectual I", 2.0));
+                primero2014.getMaterias().add(new MateriaImpl(primero2014, codigoMateria++, "Informatica I", 2.0));
+                primero2014.getMaterias().add(new MateriaImpl(primero2014, codigoMateria++, "Educacion Fisica I", 2.0));                
+              
+
+                // MATEIAS DEL PLAN 2014 - SEGUNDO AÑO
+
+                codigoMateria = 1;
+
+                segundo2014.getMaterias()
+                                .add(new MateriaImpl(segundo2014, codigoMateria, "Lengua y Literatura Castellanas II ",
+                                                5.0));
+                segundo2014.getMaterias()
+                                .add(new MateriaImpl(segundo2014, codigoMateria++, "Lengua y Cultura Latinas II ", 4.0));
+                segundo2014.getMaterias()
+                                .add(new MateriaImpl(segundo2014, codigoMateria++, "Lengua y Cultura Inglesas II  ", 3.0));
+                segundo2014.getMaterias()
+                                .add(new MateriaImpl(segundo2014, codigoMateria++, "Formación Ética y Ciudadana II", 3.0));
+                segundo2014.getMaterias().add(new MateriaImpl(segundo2014, codigoMateria++, "Geografía II ", 3.0));
+                segundo2014.getMaterias().add(new MateriaImpl(segundo2014, codigoMateria++, "Historia II", 3.0));
+                segundo2014.getMaterias().add(new MateriaImpl(segundo2014, codigoMateria++, "Matemática II ", 4.0));
+                segundo2014.getMaterias().add(new MateriaImpl(segundo2014, codigoMateria++, "Formación Plástica II ", 3.0));
+                segundo2014.getMaterias().add(new MateriaImpl(segundo2014, codigoMateria++, "Formación Musical II ", 3.0));
+                segundo2014.getMaterias().add(new MateriaImpl(segundo2014, codigoMateria++, "Educación para la Salud", 4.0));
+                segundo2014.getMaterias().add(new MateriaImpl(segundo2014, codigoMateria++, "Espacios Optativos 2022", 3.0));
+                segundo2014.getMaterias()
+                                .add(new MateriaImpl(segundo2014, codigoMateria++, "Educación Física y Deportes II", 3.0));
+                segundo2014.getMaterias()
+                                .add(new MateriaImpl(segundo2014, codigoMateria++, "Espacios Optativos 2019/2021", 3.0));
+
+                // MATERIAS DEL PLAN 2014 - TERCER AÑO
+
+                codigoMateria = 0;
+
+                tercero2014.getMaterias()
+                                .add(new MateriaImpl(tercero2014, codigoMateria++, "Lengua y Literatura III", 5.0));
+                tercero2014.getMaterias()
+                                .add(new MateriaImpl(tercero2014, codigoMateria++, "Lengua y Cultura Latinas III",
+                                                4.0));
+                tercero2014.getMaterias().add(new MateriaImpl(tercero2014, codigoMateria++, "Ingles III", 3.0));
+                tercero2014.getMaterias()
+                                .add(new MateriaImpl(tercero2014, codigoMateria++, "Formacion Etica y Civica II", 2.0));
+                tercero2014.getMaterias().add(new MateriaImpl(tercero2014, codigoMateria++, "Geografía III", 3.0));
+                tercero2014.getMaterias().add(new MateriaImpl(tercero2014, codigoMateria++, "Historia III", 4.0));
+                tercero2014.getMaterias()
+                                .add(new MateriaImpl(tercero2014, codigoMateria++, "Historia Del Arte I", 2.0));
+                tercero2014.getMaterias().add(new MateriaImpl(tercero2014, codigoMateria++, "Plastica III", 2.0));
+                tercero2014.getMaterias().add(new MateriaImpl(tercero2014, codigoMateria++, "Musica III", 2.0));
+                tercero2014.getMaterias()
+                                .add(new MateriaImpl(tercero2014, codigoMateria++, "Ciencias Naturales III", 3.0));
+                tercero2014.getMaterias().add(new MateriaImpl(tercero2014, codigoMateria++, "Matemática III", 5.0));
+                tercero2014.getMaterias()
+                                .add(new MateriaImpl(tercero2014, codigoMateria++, "Educacion Fisica III", 2.0));
+
+                // MATERIAS DEL PLAN 2014 - CUARTO AÑO
+
+                codigoMateria = 1;
+
+                cuarto2014.getMaterias().add(
+                                new MateriaImpl(cuarto2014, codigoMateria, "Lengua y Literatura Castellanas IV", 4.0));
+                cuarto2014.getMaterias().add(new MateriaImpl(cuarto2014, codigoMateria++, "Lengua y Cultura Latinas IV", 4.0));
+                cuarto2014.getMaterias().add(new MateriaImpl(cuarto2014, codigoMateria++, "Lengua y Cultura Inglesas IV", 3.0));
+                cuarto2014.getMaterias().add(new MateriaImpl(cuarto2014, codigoMateria++, "Geografia IV", 3.0));
+                cuarto2014.getMaterias().add(new MateriaImpl(cuarto2014, codigoMateria++, "Historia IV", 4.0));
+                cuarto2014.getMaterias().add(new MateriaImpl(cuarto2014, codigoMateria++, "Lengua y Cultura Francesas I", 3.0));
+                cuarto2014.getMaterias().add(new MateriaImpl(cuarto2014, codigoMateria++, "Historia del Arte", 3.0));
+                cuarto2014.getMaterias()
+                                .add(new MateriaImpl(cuarto2014, codigoMateria++, "Espacios Optativos 2020/2021", 3.0));
+                cuarto2014.getMaterias().add(new MateriaImpl(cuarto2014, codigoMateria++, "Matematica IV", 5.0));
+                cuarto2014.getMaterias().add(new MateriaImpl(cuarto2014, codigoMateria++, "Biologia I", 3.0));
+                cuarto2014.getMaterias().add(new MateriaImpl(cuarto2014, codigoMateria++, "Fisico-Quimica", 3.0));
+                cuarto2014.getMaterias()
+                                .add(new MateriaImpl(cuarto2014, codigoMateria++, "Educacion Fisica y Escuadras I", 3.0));
+                cuarto2014.getMaterias().add(new MateriaImpl(cuarto2014, codigoMateria++, "Espacios Optativos 2021", 3.0));
+                cuarto2014.getMaterias().add(new MateriaImpl(cuarto2014, codigoMateria++, "Espacios Optativos 2022", 3.0));
+
+                // MATERIAS DEL PLAN 2014 - QUINTO AÑO
+
+                codigoMateria = 0;
+
+                quinto2014.getMaterias()
+                                .add(new MateriaImpl(quinto2014, codigoMateria++, "Lengua y Literatura V", 4.0));
+                quinto2014.getMaterias()
+                                .add(new MateriaImpl(quinto2014, codigoMateria++, "Lengua y Cultura Latinas V", 2.0));
+                quinto2014.getMaterias()
+                                .add(new MateriaImpl(quinto2014, codigoMateria++, "Lengua y Cultura Griegas I", 4.0));
+                quinto2014.getMaterias().add(new MateriaImpl(quinto2014, codigoMateria++, "Ingles V", 3.0));
+                quinto2014.getMaterias().add(new MateriaImpl(quinto2014, codigoMateria++, "Frances I", 3.0));
+                quinto2014.getMaterias().add(new MateriaImpl(quinto2014, codigoMateria++, "Geografía V", 3.0));
+                quinto2014.getMaterias().add(new MateriaImpl(quinto2014, codigoMateria++, "Historia V", 4.0));
+                quinto2014.getMaterias().add(new MateriaImpl(quinto2014, codigoMateria++, "Quimica I", 2.0));
+                quinto2014.getMaterias().add(new MateriaImpl(quinto2014, codigoMateria++, "Biologia II", 2.0));
+                quinto2014.getMaterias()
+                                .add(new MateriaImpl(quinto2014, codigoMateria++, "Matemática V - Algebra ", 3.0));
+                quinto2014.getMaterias()
+                                .add(new MateriaImpl(quinto2014, codigoMateria++, "Estadistica y Probabilidades", 3.0));
+                quinto2014.getMaterias().add(new MateriaImpl(quinto2014, codigoMateria++, "Educacion Fisica V", 2.0));
+                quinto2014.getMaterias().add(new MateriaImpl(quinto2014, codigoMateria++, "Informatica II", 2.0));
+                quinto2014.getMaterias()
+                                .add(new MateriaImpl(quinto2014, codigoMateria++, "Metodologia De La Investigacion",
+                                                2.0));
+                quinto2014.getMaterias().add(new MateriaImpl(quinto2014, codigoMateria++, "Filosofia I", 2.0));
 
                 // PLAN 2001
 
@@ -206,13 +349,12 @@ public class GenerarEjemplosDePlanes {
                 primero2001.getMaterias().add(new MateriaImpl(primero2001, codigoMateria++, "Musica I", 2.0));
                 primero2001.getMaterias()
                                 .add(new MateriaImpl(primero2001, codigoMateria++, "Ciencias Naturales I", 3.0));
-                primero2001.getMaterias()
-                                .add(new MateriaImpl(primero2001, codigoMateria++, "Tecnicas de Trabajo Intelectual I",
-                                                2.0));
+                primero2001.getMaterias().add(new MateriaImpl(primero2001, codigoMateria++,
+                                "Tecnicas de Trabajo Intelectual I", 2.0));
                 primero2001.getMaterias().add(new MateriaImpl(primero2001, codigoMateria++, "Informatica I", 2.0));
                 primero2001.getMaterias().add(new MateriaImpl(primero2001, codigoMateria++, "Educacion Fisica I", 2.0));
 
-                // MATEIAS DEL PLAN 2001 - SEGUNDO AÑO
+                // MATERIAS DEL PLAN 2001 - SEGUNDO AÑO
 
                 codigoMateria = 0;
 
@@ -230,13 +372,12 @@ public class GenerarEjemplosDePlanes {
                 segundo2001.getMaterias().add(new MateriaImpl(segundo2001, codigoMateria++, "Musica II", 2.0));
                 segundo2001.getMaterias()
                                 .add(new MateriaImpl(segundo2001, codigoMateria++, "Ciencias Naturales II", 3.0));
-                segundo2001.getMaterias()
-                                .add(new MateriaImpl(segundo2001, codigoMateria++, "Tecnicas De Trabajo Intelectual II",
-                                                2.0));
+                segundo2001.getMaterias().add(new MateriaImpl(segundo2001, codigoMateria++,
+                                "Tecnicas De Trabajo Intelectual II", 2.0));
                 segundo2001.getMaterias()
                                 .add(new MateriaImpl(segundo2001, codigoMateria++, "Educacion Fisica II", 2.0));
 
-                // MATEIAS DEL PLAN 2001 - TERCER AÑO
+                // MATERIAS DEL PLAN 2001 - TERCER AÑO
 
                 codigoMateria = 0;
 
@@ -260,7 +401,7 @@ public class GenerarEjemplosDePlanes {
                 tercero2001.getMaterias()
                                 .add(new MateriaImpl(tercero2001, codigoMateria++, "Educacion Fisica III", 2.0));
 
-                // MATEIAS DEL PLAN 2001 - CUARTO AÑO
+                // MATERIAS DEL PLAN 2001 - CUARTO AÑO
 
                 codigoMateria = 0;
 
@@ -280,7 +421,7 @@ public class GenerarEjemplosDePlanes {
                 cuarto2001.getMaterias().add(new MateriaImpl(cuarto2001, codigoMateria++, "Fisico-quimica", 3.0));
                 cuarto2001.getMaterias().add(new MateriaImpl(cuarto2001, codigoMateria++, "Educacion Fisica IV", 2.0));
 
-                // MATEIAS DEL PLAN 2001 - QUINTO AÑO
+                // MATERIAS DEL PLAN 2001 - QUINTO AÑO
 
                 codigoMateria = 0;
 
@@ -300,14 +441,14 @@ public class GenerarEjemplosDePlanes {
                                 .add(new MateriaImpl(quinto2001, codigoMateria++, "Matemática V - Algebra ", 3.0));
                 quinto2001.getMaterias()
                                 .add(new MateriaImpl(quinto2001, codigoMateria++, "Estadistica y Probabilidades", 3.0));
+                quinto2001.getMaterias().add(new MateriaImpl(quinto2001, codigoMateria++, "Educacion Fisica V", 2.0));
                 quinto2001.getMaterias().add(new MateriaImpl(quinto2001, codigoMateria++, "Informatica II", 2.0));
                 quinto2001.getMaterias()
                                 .add(new MateriaImpl(quinto2001, codigoMateria++, "Metodologia De La Investigacion",
                                                 2.0));
-                quinto2001.getMaterias().add(new MateriaImpl(quinto2001, codigoMateria++, "Folosofia I", 2.0));
-                quinto2001.getMaterias().add(new MateriaImpl(quinto2001, codigoMateria++, "Educacion Fisica V", 2.0));
+                quinto2001.getMaterias().add(new MateriaImpl(quinto2001, codigoMateria++, "Filosofia I", 2.0));
 
-                // MATEIAS DEL PLAN 2001 - SEXTO AÑO
+                // MATERIAS DEL PLAN 2001 - SEXTO AÑO
 
                 codigoMateria = 0;
 
@@ -330,7 +471,7 @@ public class GenerarEjemplosDePlanes {
                 sexto2001.getMaterias().add(new MateriaImpl(sexto2001, codigoMateria++, "Informatica III", 2.0));
                 sexto2001.getMaterias().add(new MateriaImpl(sexto2001, codigoMateria++, "Educacion Fisica VI", 2.0));
 
-                // MATEIAS DEL PLAN 2001 - SEPTIMO AÑO
+                // MATERIAS DEL PLAN 2001 - SEPTIMO AÑO
 
                 codigoMateria = 0;
 
@@ -357,10 +498,6 @@ public class GenerarEjemplosDePlanes {
                 septimo2001.getMaterias()
                                 .add(new MateriaImpl(septimo2001, codigoMateria++, "Educacion Fisica VII", 2.0));
                 septimo2001.getMaterias().add(new MateriaImpl(septimo2001, codigoMateria++, "Fisica II", 3.0));
-
-                System.out.println("LARGO DE LA LISTA PLANES EN GENERAREJEMPLOS" + planes.size() + "");
-
-
 
                 // ==========================================================================
 

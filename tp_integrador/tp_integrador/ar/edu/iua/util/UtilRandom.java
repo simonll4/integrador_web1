@@ -17,7 +17,6 @@ public class UtilRandom {
 
     public Plan construirPlan(List<Plan> listaPlanes) {
         Plan planAleatorio = new PlanImpl();
-        Plan aux1 = new PlanImpl();
 
         ObtenerAnioPlan anioObtenido = new ObtenerAnioPlan();
         ObtenerMateria materiaObtenida = new ObtenerMateria();
@@ -25,9 +24,6 @@ public class UtilRandom {
 
         List<AnioPlan> aniosPlan = new ArrayList<AnioPlan>();
         List<Materia> materiasPlan = new ArrayList<Materia>();
-
-        System.out.println("LARGO DE LA LISTA PLANES EN UTILRANDOM"+ listaPlanes.size() + "");
-
         
         planAleatorio.setAnio((int) (Math.random() + 2018));
 
@@ -39,12 +35,13 @@ public class UtilRandom {
         }
 
         for (int ii = 0; ii < 5; ii++) {
+            System.out.println(ii);
             AnioPlan anioAleatorio = new AnioPlanImpl();
             for (int jj = 0; jj < 12; jj++) {
                 Materia materia = new MateriaImpl();
-                aux1 = planObtenido.getPlan(listaPlanes);
-                anioAleatorio = aux1.getAnios().get(ii);
-                //anioAleatorio = planObtenido.getPlan(listaPlanes).getAnios().get(ii);
+                //aux1 = planObtenido.getPlan(listaPlanes);
+                //anioAleatorio = aux1.getAnios().get(ii);
+                anioAleatorio = planObtenido.getPlan(listaPlanes).getAnios().get(ii);
                 if (jj == 0) {
                     materia = materiaObtenida.getMateria(anioAleatorio);
                     materiasPlan.add(materia);
