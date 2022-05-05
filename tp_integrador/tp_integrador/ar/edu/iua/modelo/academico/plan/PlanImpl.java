@@ -47,6 +47,9 @@ public class PlanImpl extends Plan {
         return estado == Estado.NO_ACTIVO;
     }
 
+    public boolean isEstadoNulo() {
+        return estado == null;
+    }
     public List<AnioPlan> getAnios() {
         return anios;
     }
