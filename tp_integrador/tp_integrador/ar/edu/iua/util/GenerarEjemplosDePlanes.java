@@ -41,22 +41,30 @@ public class GenerarEjemplosDePlanes {
 
                 // MATERIAS DEL PLAN 2018 - PRIMER AÑO
 
+                int codigoVerificacion = 1;
                 int codigoMateria = 1;
 
-                Materia m1 = new MateriaImpl(primero, codigoMateria, "Lengua y Literatura Castellanas I", 5.0);
-                Materia m2 = new MateriaImpl(primero, codigoMateria++, "Lengua y Cultura Latinas I ", 4.0);
-                Materia m3 = new MateriaImpl(primero, codigoMateria++, "Lengua y Cultura Inglesas I ", 3.0);
-                Materia m4 = new MateriaImpl(primero, codigoMateria++, "Geografía I ", 3.0);
-                Materia m5 = new MateriaImpl(primero, codigoMateria++, "Historia I", 3.0);
-                Materia m6 = new MateriaImpl(primero, codigoMateria++, "Matemática I", 4.0);
-                Materia m7 = new MateriaImpl(primero, codigoMateria++, "Formación Plástica I ", 3.0);
-                Materia m8 = new MateriaImpl(primero, codigoMateria++, "Formación Musical I ", 3.0);
-                Materia m9 = new MateriaImpl(primero, codigoMateria++, "Ciencias de la Vida y de la Tierra ", 3.0);
-                Materia m10 = new MateriaImpl(primero, codigoMateria++, "Formación Ética y Ciudadana I", 3.0);
-                Materia m11 = new MateriaImpl(primero, codigoMateria++,
+                Materia m1 = new MateriaImpl(primero, codigoVerificacion++, codigoMateria,
+                                "Lengua y Literatura Castellanas I", 5.0);
+                Materia m2 = new MateriaImpl(primero, codigoVerificacion++, codigoMateria,
+                                "Lengua y Cultura Latinas I ", 4.0);
+                Materia m3 = new MateriaImpl(primero, codigoVerificacion++, codigoMateria,
+                                "Lengua y Cultura Inglesas I ", 3.0);
+                Materia m4 = new MateriaImpl(primero, codigoVerificacion++, codigoMateria, "Geografía I ", 3.0);
+                Materia m5 = new MateriaImpl(primero, codigoVerificacion++, codigoMateria, "Historia I", 3.0);
+                Materia m6 = new MateriaImpl(primero, codigoVerificacion++, codigoMateria, "Matemática I", 4.0);
+                Materia m7 = new MateriaImpl(primero, codigoVerificacion++, codigoMateria, "Formación Plástica I ",
+                                3.0);
+                Materia m8 = new MateriaImpl(primero, codigoVerificacion++, codigoMateria, "Formación Musical I ", 3.0);
+                Materia m9 = new MateriaImpl(primero, codigoVerificacion++, codigoMateria,
+                                "Ciencias de la Vida y de la Tierra ", 3.0);
+                Materia m10 = new MateriaImpl(primero, codigoVerificacion++, codigoMateria,
+                                "Formación Ética y Ciudadana I", 3.0);
+                Materia m11 = new MateriaImpl(primero, codigoVerificacion++, codigoMateria,
                                 "Estrategias de Aprendizaje y Entornos Virtuales",
                                 4.0);
-                Materia m12 = new MateriaImpl(primero, codigoMateria++, "Educación Física y Deportes I", 0.0);
+                Materia m12 = new MateriaImpl(primero, codigoVerificacion++, codigoMateria,
+                                "Educación Física y Deportes I", 0.0);
 
                 primero.getMaterias().add(m1);
                 primero.getMaterias().add(m2);
@@ -71,97 +79,174 @@ public class GenerarEjemplosDePlanes {
                 primero.getMaterias().add(m11);
                 primero.getMaterias().add(m12);
 
+                for (int ii = 0; ii < primero.getMaterias().size(); ii++) {
+                        primero.getMaterias().get(ii).setCodigo(Integer.valueOf(""
+                                        + primero.getPlan().getAnio().toString()
+                                        + primero.getNumero().toString()
+                                        + primero.getMaterias().get(ii).getCodigoVerificacion().toString()));
+                }
+
                 // MATEIAS DEL PLAN 2018 - SEGUNDO AÑO
 
-                codigoMateria = 1;
-
                 segundo.getMaterias()
-                                .add(new MateriaImpl(segundo, codigoMateria, "Lengua y Literatura Castellanas II ",
+                                .add(new MateriaImpl(segundo, codigoVerificacion++, codigoMateria,
+                                                "Lengua y Literatura Castellanas II ",
                                                 5.0));
                 segundo.getMaterias()
-                                .add(new MateriaImpl(segundo, codigoMateria++, "Lengua y Cultura Latinas II ", 4.0));
+                                .add(new MateriaImpl(segundo, codigoVerificacion++, codigoMateria,
+                                                "Lengua y Cultura Latinas II ", 4.0));
                 segundo.getMaterias()
-                                .add(new MateriaImpl(segundo, codigoMateria++, "Lengua y Cultura Inglesas II  ", 3.0));
+                                .add(new MateriaImpl(segundo, codigoVerificacion++, codigoMateria,
+                                                "Lengua y Cultura Inglesas II  ", 3.0));
                 segundo.getMaterias()
-                                .add(new MateriaImpl(segundo, codigoMateria++, "Formación Ética y Ciudadana II", 3.0));
-                segundo.getMaterias().add(new MateriaImpl(segundo, codigoMateria++, "Geografía II ", 3.0));
-                segundo.getMaterias().add(new MateriaImpl(segundo, codigoMateria++, "Historia II", 3.0));
-                segundo.getMaterias().add(new MateriaImpl(segundo, codigoMateria++, "Matemática II ", 4.0));
-                segundo.getMaterias().add(new MateriaImpl(segundo, codigoMateria++, "Formación Plástica II ", 3.0));
-                segundo.getMaterias().add(new MateriaImpl(segundo, codigoMateria++, "Formación Musical II ", 3.0));
-                segundo.getMaterias().add(new MateriaImpl(segundo, codigoMateria++, "Educación para la Salud", 4.0));
-                segundo.getMaterias().add(new MateriaImpl(segundo, codigoMateria++, "Espacios Optativos 2022", 3.0));
+                                .add(new MateriaImpl(segundo, codigoVerificacion++, codigoMateria,
+                                                "Formación Ética y Ciudadana II", 3.0));
+                segundo.getMaterias().add(
+                                new MateriaImpl(segundo, codigoVerificacion++, codigoMateria, "Geografía II ", 3.0));
                 segundo.getMaterias()
-                                .add(new MateriaImpl(segundo, codigoMateria++, "Educación Física y Deportes II", 3.0));
+                                .add(new MateriaImpl(segundo, codigoVerificacion++, codigoMateria, "Historia II", 3.0));
+                segundo.getMaterias().add(
+                                new MateriaImpl(segundo, codigoVerificacion++, codigoMateria, "Matemática II ", 4.0));
+                segundo.getMaterias().add(new MateriaImpl(segundo, codigoVerificacion++, codigoMateria,
+                                "Formación Plástica II ", 3.0));
+                segundo.getMaterias().add(new MateriaImpl(segundo, codigoVerificacion++, codigoMateria,
+                                "Formación Musical II ", 3.0));
+                segundo.getMaterias().add(new MateriaImpl(segundo, codigoVerificacion++, codigoMateria,
+                                "Educación para la Salud", 4.0));
+                segundo.getMaterias().add(new MateriaImpl(segundo, codigoVerificacion++, codigoMateria,
+                                "Espacios Optativos 2022", 3.0));
                 segundo.getMaterias()
-                                .add(new MateriaImpl(segundo, codigoMateria++, "Espacios Optativos 2019/2021", 3.0));
+                                .add(new MateriaImpl(segundo, codigoVerificacion++, codigoMateria,
+                                                "Educación Física y Deportes II", 3.0));
+                segundo.getMaterias()
+                                .add(new MateriaImpl(segundo, codigoVerificacion++, codigoMateria,
+                                                "Espacios Optativos 2019/2021", 3.0));
+
+                for (int ii = 0; ii < segundo.getMaterias().size(); ii++) {
+                        segundo.getMaterias().get(ii).setCodigo(Integer.valueOf(""
+                                        + segundo.getPlan().getAnio().toString()
+                                        + segundo.getNumero().toString()
+                                        + segundo.getMaterias().get(ii).getCodigoVerificacion().toString()));
+                }
 
                 // MATERIAS DEL PLAN 2018 - TERCER AÑO
 
-                codigoMateria = 1;
-
                 tercero.getMaterias()
-                                .add(new MateriaImpl(tercero, codigoMateria, "Lengua y Literatura Castellanas III",
+                                .add(new MateriaImpl(tercero, codigoVerificacion++, codigoMateria,
+                                                "Lengua y Literatura Castellanas III",
                                                 5.0));
                 tercero.getMaterias()
-                                .add(new MateriaImpl(tercero, codigoMateria++, "Lengua y Cultura Latinas III", 4.0));
+                                .add(new MateriaImpl(tercero, codigoVerificacion++, codigoMateria,
+                                                "Lengua y Cultura Latinas III", 4.0));
                 tercero.getMaterias()
-                                .add(new MateriaImpl(tercero, codigoMateria++, "Lengua y Cultura Inglesas III", 3.0));
+                                .add(new MateriaImpl(tercero, codigoVerificacion++, codigoMateria,
+                                                "Lengua y Cultura Inglesas III", 3.0));
                 tercero.getMaterias()
-                                .add(new MateriaImpl(tercero, codigoMateria++, "Formacion Etica y Ciudadana III", 3.0));
-                tercero.getMaterias().add(new MateriaImpl(tercero, codigoMateria++, "Geografia III", 3.0));
-                tercero.getMaterias().add(new MateriaImpl(tercero, codigoMateria++, "Historia III", 4.0));
+                                .add(new MateriaImpl(tercero, codigoVerificacion++, codigoMateria,
+                                                "Formacion Etica y Ciudadana III", 3.0));
+                tercero.getMaterias().add(
+                                new MateriaImpl(tercero, codigoVerificacion++, codigoMateria, "Geografia III", 3.0));
+                tercero.getMaterias().add(
+                                new MateriaImpl(tercero, codigoVerificacion++, codigoMateria, "Historia III", 4.0));
                 tercero.getMaterias()
-                                .add(new MateriaImpl(tercero, codigoMateria++, "Espacios Optativos 2020/2021", 3.0));
-                tercero.getMaterias().add(new MateriaImpl(tercero, codigoMateria++, "Formacion Plastica III", 3.0));
-                tercero.getMaterias().add(new MateriaImpl(tercero, codigoMateria++, "Espacios Optativos 2021", 3.0));
-                tercero.getMaterias().add(new MateriaImpl(tercero, codigoMateria++, "Ciencias Naturales", 3.0));
-                tercero.getMaterias().add(new MateriaImpl(tercero, codigoMateria++, "Matematica III", 4.0));
+                                .add(new MateriaImpl(tercero, codigoVerificacion++, codigoMateria,
+                                                "Espacios Optativos 2020/2021", 3.0));
+                tercero.getMaterias().add(new MateriaImpl(tercero, codigoVerificacion++, codigoMateria,
+                                "Formacion Plastica III", 3.0));
+                tercero.getMaterias().add(new MateriaImpl(tercero, codigoVerificacion++, codigoMateria,
+                                "Espacios Optativos 2021", 3.0));
+                tercero.getMaterias().add(new MateriaImpl(tercero, codigoVerificacion++, codigoMateria,
+                                "Ciencias Naturales", 3.0));
+                tercero.getMaterias().add(
+                                new MateriaImpl(tercero, codigoVerificacion++, codigoMateria, "Matematica III", 4.0));
                 tercero.getMaterias()
-                                .add(new MateriaImpl(tercero, codigoMateria++, "Educacion Fisica y Deportes III", 3.0));
-                tercero.getMaterias().add(new MateriaImpl(tercero, codigoMateria++, "Educacion Tecnologica", 3.0));
-                tercero.getMaterias().add(new MateriaImpl(tercero, codigoMateria++, "Espacios Optativos 2022", 3.0));
+                                .add(new MateriaImpl(tercero, codigoVerificacion++, codigoMateria,
+                                                "Educacion Fisica y Deportes III", 3.0));
+                tercero.getMaterias().add(new MateriaImpl(tercero, codigoVerificacion++, codigoMateria,
+                                "Educacion Tecnologica", 3.0));
+                tercero.getMaterias().add(new MateriaImpl(tercero, codigoVerificacion++, codigoMateria,
+                                "Espacios Optativos 2022", 3.0));
+
+                for (int ii = 0; ii < tercero.getMaterias().size(); ii++) {
+                        tercero.getMaterias().get(ii).setCodigo(Integer.valueOf(""
+                                        + tercero.getPlan().getAnio().toString()
+                                        + tercero.getNumero().toString()
+                                        + tercero.getMaterias().get(ii).getCodigoVerificacion().toString()));
+                }
 
                 // MATERIAS DEL PLAN 2018 - CUARTO AÑO
 
-                codigoMateria = 1;
-
                 cuarto.getMaterias().add(
-                                new MateriaImpl(cuarto, codigoMateria, "Lengua y Literatura Castellanas IV", 4.0));
-                cuarto.getMaterias().add(new MateriaImpl(cuarto, codigoMateria++, "Lengua y Cultura Latinas IV", 4.0));
-                cuarto.getMaterias().add(new MateriaImpl(cuarto, codigoMateria++, "Lengua y Cultura Inglesas IV", 3.0));
-                cuarto.getMaterias().add(new MateriaImpl(cuarto, codigoMateria++, "Geografia IV", 3.0));
-                cuarto.getMaterias().add(new MateriaImpl(cuarto, codigoMateria++, "Historia IV", 4.0));
-                cuarto.getMaterias().add(new MateriaImpl(cuarto, codigoMateria++, "Lengua y Cultura Francesas I", 3.0));
-                cuarto.getMaterias().add(new MateriaImpl(cuarto, codigoMateria++, "Historia del Arte", 3.0));
+                                new MateriaImpl(cuarto, codigoVerificacion++, codigoMateria,
+                                                "Lengua y Literatura Castellanas IV", 4.0));
+                cuarto.getMaterias().add(new MateriaImpl(cuarto, codigoVerificacion++, codigoMateria,
+                                "Lengua y Cultura Latinas IV", 4.0));
+                cuarto.getMaterias().add(new MateriaImpl(cuarto, codigoVerificacion++, codigoMateria,
+                                "Lengua y Cultura Inglesas IV", 3.0));
                 cuarto.getMaterias()
-                                .add(new MateriaImpl(cuarto, codigoMateria++, "Espacios Optativos 2020/2021", 3.0));
-                cuarto.getMaterias().add(new MateriaImpl(cuarto, codigoMateria++, "Matematica IV", 5.0));
-                cuarto.getMaterias().add(new MateriaImpl(cuarto, codigoMateria++, "Biologia I", 3.0));
-                cuarto.getMaterias().add(new MateriaImpl(cuarto, codigoMateria++, "Fisico-Quimica", 3.0));
+                                .add(new MateriaImpl(cuarto, codigoVerificacion++, codigoMateria, "Geografia IV", 3.0));
                 cuarto.getMaterias()
-                                .add(new MateriaImpl(cuarto, codigoMateria++, "Educacion Fisica y Escuadras I", 3.0));
-                cuarto.getMaterias().add(new MateriaImpl(cuarto, codigoMateria++, "Espacios Optativos 2021", 3.0));
-                cuarto.getMaterias().add(new MateriaImpl(cuarto, codigoMateria++, "Espacios Optativos 2022", 3.0));
+                                .add(new MateriaImpl(cuarto, codigoVerificacion++, codigoMateria, "Historia IV", 4.0));
+                cuarto.getMaterias().add(new MateriaImpl(cuarto, codigoVerificacion++, codigoMateria,
+                                "Lengua y Cultura Francesas I", 3.0));
+                cuarto.getMaterias().add(
+                                new MateriaImpl(cuarto, codigoVerificacion++, codigoMateria, "Historia del Arte", 3.0));
+                cuarto.getMaterias()
+                                .add(new MateriaImpl(cuarto, codigoVerificacion++, codigoMateria,
+                                                "Espacios Optativos 2020/2021", 3.0));
+                cuarto.getMaterias().add(
+                                new MateriaImpl(cuarto, codigoVerificacion++, codigoMateria, "Matematica IV", 5.0));
+                cuarto.getMaterias()
+                                .add(new MateriaImpl(cuarto, codigoVerificacion++, codigoMateria, "Biologia I", 3.0));
+                cuarto.getMaterias().add(
+                                new MateriaImpl(cuarto, codigoVerificacion++, codigoMateria, "Fisico-Quimica", 3.0));
+                cuarto.getMaterias()
+                                .add(new MateriaImpl(cuarto, codigoVerificacion++, codigoMateria,
+                                                "Educacion Fisica y Escuadras I", 3.0));
+                cuarto.getMaterias().add(new MateriaImpl(cuarto, codigoVerificacion++, codigoMateria,
+                                "Espacios Optativos 2021", 3.0));
+                cuarto.getMaterias().add(new MateriaImpl(cuarto, codigoVerificacion++, codigoMateria,
+                                "Espacios Optativos 2022", 3.0));
 
+                for (int ii = 0; ii < cuarto.getMaterias().size(); ii++) {
+                        cuarto.getMaterias().get(ii).setCodigo(Integer.valueOf(""
+                                        + cuarto.getPlan().getAnio().toString()
+                                        + cuarto.getNumero().toString()
+                                        + cuarto.getMaterias().get(ii).getCodigoVerificacion().toString()));
+                }
                 // MATERIAS DEL PLAN 2018 - QUINTO AÑO
 
-                codigoMateria = 1;
-
                 quinto.getMaterias().add(
-                                new MateriaImpl(quinto, codigoMateria, "Lengua y Literatura Castellana IV", 4.0));
-                quinto.getMaterias().add(new MateriaImpl(quinto, codigoMateria++, "Espacios Optativos", 3.0));
-                quinto.getMaterias().add(new MateriaImpl(quinto, codigoMateria++, "Lengua y Culturas Griegas", 3.0));
-                quinto.getMaterias().add(new MateriaImpl(quinto, codigoMateria++, "Lengua y Cultura Inglesas IV", 3.0));
+                                new MateriaImpl(quinto, codigoVerificacion++, codigoMateria,
+                                                "Lengua y Literatura Castellana IV", 4.0));
+                quinto.getMaterias().add(new MateriaImpl(quinto, codigoVerificacion++, codigoMateria,
+                                "Espacios Optativos", 3.0));
+                quinto.getMaterias().add(new MateriaImpl(quinto, codigoVerificacion++, codigoMateria,
+                                "Lengua y Culturas Griegas", 3.0));
+                quinto.getMaterias().add(new MateriaImpl(quinto, codigoVerificacion++, codigoMateria,
+                                "Lengua y Cultura Inglesas IV", 3.0));
                 quinto.getMaterias()
-                                .add(new MateriaImpl(quinto, codigoMateria++, "Lengua y Cultura Francesas II", 3.0));
-                quinto.getMaterias().add(new MateriaImpl(quinto, codigoMateria++, "Geografia V", 3.0));
-                quinto.getMaterias().add(new MateriaImpl(quinto, codigoMateria++, "Historia V", 4.0));
-                quinto.getMaterias().add(new MateriaImpl(quinto, codigoMateria++, "Quimica", 4.0));
-                quinto.getMaterias().add(new MateriaImpl(quinto, codigoMateria++, "Biologia II", 3.0));
-                quinto.getMaterias().add(new MateriaImpl(quinto, codigoMateria++, "Matematica V", 5.0));
-                quinto.getMaterias().add(new MateriaImpl(quinto, codigoMateria++, "Logica", 3.0));
-                quinto.getMaterias().add(new MateriaImpl(quinto, codigoMateria++, "Educacion Fisica y Escuadras", 3.0));
+                                .add(new MateriaImpl(quinto, codigoVerificacion++, codigoMateria,
+                                                "Lengua y Cultura Francesas II", 3.0));
+                quinto.getMaterias()
+                                .add(new MateriaImpl(quinto, codigoVerificacion++, codigoMateria, "Geografia V", 3.0));
+                quinto.getMaterias()
+                                .add(new MateriaImpl(quinto, codigoVerificacion++, codigoMateria, "Historia V", 4.0));
+                quinto.getMaterias().add(new MateriaImpl(quinto, codigoVerificacion++, codigoMateria, "Quimica", 4.0));
+                quinto.getMaterias()
+                                .add(new MateriaImpl(quinto, codigoVerificacion++, codigoMateria, "Biologia II", 3.0));
+                quinto.getMaterias()
+                                .add(new MateriaImpl(quinto, codigoVerificacion++, codigoMateria, "Matematica V", 5.0));
+                quinto.getMaterias().add(new MateriaImpl(quinto, codigoVerificacion++, codigoMateria, "Logica", 3.0));
+                quinto.getMaterias().add(new MateriaImpl(quinto, codigoVerificacion++, codigoMateria,
+                                "Educacion Fisica y Escuadras", 3.0));
+
+                for (int ii = 0; ii < quinto.getMaterias().size(); ii++) {
+                        quinto.getMaterias().get(ii).setCodigo(Integer.valueOf(""
+                                        + quinto.getPlan().getAnio().toString()
+                                        + quinto.getNumero().toString()
+                                        + quinto.getMaterias().get(ii).getCodigoVerificacion().toString()));
+                }
 
                 // PLAN 2014
 
@@ -188,122 +273,214 @@ public class GenerarEjemplosDePlanes {
 
                 // MATERIAS DEL PLAN 2014 - PRIMER AÑO
 
-                codigoMateria = 1;
+                codigoVerificacion = 1;
 
                 primero2014.getMaterias()
-                                .add(new MateriaImpl(primero2014, codigoMateria, "Lengua y Literatura I", 5.0));
+                                .add(new MateriaImpl(primero2014, codigoVerificacion++, codigoMateria,
+                                                "Lengua y Literatura I", 5.0));
                 primero2014.getMaterias()
-                                .add(new MateriaImpl(primero2014, codigoMateria++, "Lengua y Culturas Latinas I", 5.0));
-                primero2014.getMaterias().add(new MateriaImpl(primero2014, codigoMateria++, "Ingles I", 3.0));
-                primero2014.getMaterias().add(new MateriaImpl(primero2014, codigoMateria++, "Geografia I", 3.0));
-                primero2014.getMaterias().add(new MateriaImpl(primero2014, codigoMateria++, "Historia I", 2.0));
-                primero2014.getMaterias().add(new MateriaImpl(primero2014, codigoMateria++, "Matematica I", 4.0));
-                primero2014.getMaterias().add(new MateriaImpl(primero2014, codigoMateria++, "Plastica I", 2.0));
-                primero2014.getMaterias().add(new MateriaImpl(primero2014, codigoMateria++, "Musica I", 2.0));
+                                .add(new MateriaImpl(primero2014, codigoVerificacion++, codigoMateria,
+                                                "Lengua y Culturas Latinas I", 5.0));
+                primero2014.getMaterias().add(
+                                new MateriaImpl(primero2014, codigoVerificacion++, codigoMateria, "Ingles I", 3.0));
+                primero2014.getMaterias().add(
+                                new MateriaImpl(primero2014, codigoVerificacion++, codigoMateria, "Geografia I", 3.0));
+                primero2014.getMaterias().add(
+                                new MateriaImpl(primero2014, codigoVerificacion++, codigoMateria, "Historia I", 2.0));
+                primero2014.getMaterias().add(
+                                new MateriaImpl(primero2014, codigoVerificacion++, codigoMateria, "Matematica I", 4.0));
+                primero2014.getMaterias().add(
+                                new MateriaImpl(primero2014, codigoVerificacion++, codigoMateria, "Plastica I", 2.0));
+                primero2014.getMaterias().add(
+                                new MateriaImpl(primero2014, codigoVerificacion++, codigoMateria, "Musica I", 2.0));
                 primero2014.getMaterias()
-                                .add(new MateriaImpl(primero2014, codigoMateria++, "Ciencias Naturales I", 3.0));
-                primero2014.getMaterias().add(new MateriaImpl(primero2014, codigoMateria++,
+                                .add(new MateriaImpl(primero2014, codigoVerificacion++, codigoMateria,
+                                                "Ciencias Naturales I", 3.0));
+                primero2014.getMaterias().add(new MateriaImpl(primero2014, codigoVerificacion++, codigoMateria,
                                 "Tecnicas de Trabajo Intelectual I", 2.0));
-                primero2014.getMaterias().add(new MateriaImpl(primero2014, codigoMateria++, "Informatica I", 2.0));
-                primero2014.getMaterias().add(new MateriaImpl(primero2014, codigoMateria++, "Educacion Fisica I", 2.0));                
+                primero2014.getMaterias().add(new MateriaImpl(primero2014, codigoVerificacion++, codigoMateria,
+                                "Informatica I", 2.0));
+                primero2014.getMaterias().add(new MateriaImpl(primero2014, codigoVerificacion++, codigoMateria,
+                                "Educacion Fisica I", 2.0));
+
+                for (int ii = 0; ii < primero2014.getMaterias().size(); ii++) {
+                        primero2014.getMaterias().get(ii).setCodigo(Integer.valueOf(""
+                                        + primero2014.getPlan().getAnio().toString()
+                                        + primero2014.getNumero().toString()
+                                        + primero2014.getMaterias().get(ii).getCodigoVerificacion().toString()));
+                }
 
                 // MATEIAS DEL PLAN 2014 - SEGUNDO AÑO
 
-                codigoMateria = 1;
-
                 segundo2014.getMaterias()
-                                .add(new MateriaImpl(segundo2014, codigoMateria, "Lengua y Literatura Castellanas II ",
+                                .add(new MateriaImpl(segundo2014, codigoVerificacion++, codigoMateria,
+                                                "Lengua y Literatura Castellanas II ",
                                                 5.0));
                 segundo2014.getMaterias()
-                                .add(new MateriaImpl(segundo2014, codigoMateria++, "Lengua y Cultura Latinas II ", 4.0));
+                                .add(new MateriaImpl(segundo2014, codigoVerificacion++, codigoMateria,
+                                                "Lengua y Cultura Latinas II ", 4.0));
                 segundo2014.getMaterias()
-                                .add(new MateriaImpl(segundo2014, codigoMateria++, "Lengua y Cultura Inglesas II  ", 3.0));
+                                .add(new MateriaImpl(segundo2014, codigoVerificacion++, codigoMateria,
+                                                "Lengua y Cultura Inglesas II  ", 3.0));
                 segundo2014.getMaterias()
-                                .add(new MateriaImpl(segundo2014, codigoMateria++, "Formación Ética y Ciudadana II", 3.0));
-                segundo2014.getMaterias().add(new MateriaImpl(segundo2014, codigoMateria++, "Geografía II ", 3.0));
-                segundo2014.getMaterias().add(new MateriaImpl(segundo2014, codigoMateria++, "Historia II", 3.0));
-                segundo2014.getMaterias().add(new MateriaImpl(segundo2014, codigoMateria++, "Matemática II ", 4.0));
-                segundo2014.getMaterias().add(new MateriaImpl(segundo2014, codigoMateria++, "Formación Plástica II ", 3.0));
-                segundo2014.getMaterias().add(new MateriaImpl(segundo2014, codigoMateria++, "Formación Musical II ", 3.0));
-                segundo2014.getMaterias().add(new MateriaImpl(segundo2014, codigoMateria++, "Educación para la Salud", 4.0));
-                segundo2014.getMaterias().add(new MateriaImpl(segundo2014, codigoMateria++, "Espacios Optativos 2022", 3.0));
+                                .add(new MateriaImpl(segundo2014, codigoVerificacion++, codigoMateria,
+                                                "Formación Ética y Ciudadana II", 3.0));
+                segundo2014.getMaterias().add(new MateriaImpl(segundo2014, codigoVerificacion++, codigoMateria,
+                                "Geografía II ", 3.0));
+                segundo2014.getMaterias().add(
+                                new MateriaImpl(segundo2014, codigoVerificacion++, codigoMateria, "Historia II", 3.0));
+                segundo2014.getMaterias().add(new MateriaImpl(segundo2014, codigoVerificacion++, codigoMateria,
+                                "Matemática II ", 4.0));
+                segundo2014.getMaterias().add(new MateriaImpl(segundo2014, codigoVerificacion++, codigoMateria,
+                                "Formación Plástica II ", 3.0));
+                segundo2014.getMaterias().add(new MateriaImpl(segundo2014, codigoVerificacion++, codigoMateria,
+                                "Formación Musical II ", 3.0));
+                segundo2014.getMaterias().add(new MateriaImpl(segundo2014, codigoVerificacion++, codigoMateria,
+                                "Educación para la Salud", 4.0));
+                segundo2014.getMaterias().add(new MateriaImpl(segundo2014, codigoVerificacion++, codigoMateria,
+                                "Espacios Optativos 2022", 3.0));
                 segundo2014.getMaterias()
-                                .add(new MateriaImpl(segundo2014, codigoMateria++, "Educación Física y Deportes II", 3.0));
+                                .add(new MateriaImpl(segundo2014, codigoVerificacion++, codigoMateria,
+                                                "Educación Física y Deportes II", 3.0));
                 segundo2014.getMaterias()
-                                .add(new MateriaImpl(segundo2014, codigoMateria++, "Espacios Optativos 2019/2021", 3.0));
+                                .add(new MateriaImpl(segundo2014, codigoVerificacion++, codigoMateria,
+                                                "Espacios Optativos 2019/2021", 3.0));
+
+                for (int ii = 0; ii < segundo2014.getMaterias().size(); ii++) {
+                        segundo2014.getMaterias().get(ii).setCodigo(Integer.valueOf(""
+                                        + segundo2014.getPlan().getAnio().toString()
+                                        + segundo2014.getNumero().toString()
+                                        + segundo2014.getMaterias().get(ii).getCodigoVerificacion().toString()));
+                }
 
                 // MATERIAS DEL PLAN 2014 - TERCER AÑO
 
-                codigoMateria = 0;
-
                 tercero2014.getMaterias()
-                                .add(new MateriaImpl(tercero2014, codigoMateria++, "Lengua y Literatura III", 5.0));
+                                .add(new MateriaImpl(tercero2014, codigoVerificacion++, codigoMateria,
+                                                "Lengua y Literatura III", 5.0));
                 tercero2014.getMaterias()
-                                .add(new MateriaImpl(tercero2014, codigoMateria++, "Lengua y Cultura Latinas III",
+                                .add(new MateriaImpl(tercero2014, codigoVerificacion++, codigoMateria,
+                                                "Lengua y Cultura Latinas III",
                                                 4.0));
-                tercero2014.getMaterias().add(new MateriaImpl(tercero2014, codigoMateria++, "Ingles III", 3.0));
+                tercero2014.getMaterias().add(
+                                new MateriaImpl(tercero2014, codigoVerificacion++, codigoMateria, "Ingles III", 3.0));
                 tercero2014.getMaterias()
-                                .add(new MateriaImpl(tercero2014, codigoMateria++, "Formacion Etica y Civica II", 2.0));
-                tercero2014.getMaterias().add(new MateriaImpl(tercero2014, codigoMateria++, "Geografía III", 3.0));
-                tercero2014.getMaterias().add(new MateriaImpl(tercero2014, codigoMateria++, "Historia III", 4.0));
+                                .add(new MateriaImpl(tercero2014, codigoVerificacion++, codigoMateria,
+                                                "Formacion Etica y Civica II", 2.0));
+                tercero2014.getMaterias().add(new MateriaImpl(tercero2014, codigoVerificacion++, codigoMateria,
+                                "Geografía III", 3.0));
+                tercero2014.getMaterias().add(
+                                new MateriaImpl(tercero2014, codigoVerificacion++, codigoMateria, "Historia III", 4.0));
                 tercero2014.getMaterias()
-                                .add(new MateriaImpl(tercero2014, codigoMateria++, "Historia Del Arte I", 2.0));
-                tercero2014.getMaterias().add(new MateriaImpl(tercero2014, codigoMateria++, "Plastica III", 2.0));
-                tercero2014.getMaterias().add(new MateriaImpl(tercero2014, codigoMateria++, "Musica III", 2.0));
+                                .add(new MateriaImpl(tercero2014, codigoVerificacion++, codigoMateria,
+                                                "Historia Del Arte I", 2.0));
+                tercero2014.getMaterias().add(
+                                new MateriaImpl(tercero2014, codigoVerificacion++, codigoMateria, "Plastica III", 2.0));
+                tercero2014.getMaterias().add(
+                                new MateriaImpl(tercero2014, codigoVerificacion++, codigoMateria, "Musica III", 2.0));
                 tercero2014.getMaterias()
-                                .add(new MateriaImpl(tercero2014, codigoMateria++, "Ciencias Naturales III", 3.0));
-                tercero2014.getMaterias().add(new MateriaImpl(tercero2014, codigoMateria++, "Matemática III", 5.0));
+                                .add(new MateriaImpl(tercero2014, codigoVerificacion++, codigoMateria,
+                                                "Ciencias Naturales III", 3.0));
+                tercero2014.getMaterias().add(new MateriaImpl(tercero2014, codigoVerificacion++, codigoMateria,
+                                "Matemática III", 5.0));
                 tercero2014.getMaterias()
-                                .add(new MateriaImpl(tercero2014, codigoMateria++, "Educacion Fisica III", 2.0));
+                                .add(new MateriaImpl(tercero2014, codigoVerificacion++, codigoMateria,
+                                                "Educacion Fisica III", 2.0));
+
+                for (int ii = 0; ii < tercero2014.getMaterias().size(); ii++) {
+                        tercero2014.getMaterias().get(ii).setCodigo(Integer.valueOf(""
+                                        + tercero2014.getPlan().getAnio().toString()
+                                        + tercero2014.getNumero().toString()
+                                        + tercero2014.getMaterias().get(ii).getCodigoVerificacion().toString()));
+                }
 
                 // MATERIAS DEL PLAN 2014 - CUARTO AÑO
 
-                codigoMateria = 1;
-
                 cuarto2014.getMaterias().add(
-                                new MateriaImpl(cuarto2014, codigoMateria, "Lengua y Literatura Castellanas IV", 4.0));
-                cuarto2014.getMaterias().add(new MateriaImpl(cuarto2014, codigoMateria++, "Lengua y Cultura Latinas IV", 4.0));
-                cuarto2014.getMaterias().add(new MateriaImpl(cuarto2014, codigoMateria++, "Lengua y Cultura Inglesas IV", 3.0));
-                cuarto2014.getMaterias().add(new MateriaImpl(cuarto2014, codigoMateria++, "Geografia IV", 3.0));
-                cuarto2014.getMaterias().add(new MateriaImpl(cuarto2014, codigoMateria++, "Historia IV", 4.0));
-                cuarto2014.getMaterias().add(new MateriaImpl(cuarto2014, codigoMateria++, "Lengua y Cultura Francesas I", 3.0));
-                cuarto2014.getMaterias().add(new MateriaImpl(cuarto2014, codigoMateria++, "Historia del Arte", 3.0));
+                                new MateriaImpl(cuarto2014, codigoVerificacion++, codigoMateria,
+                                                "Lengua y Literatura Castellanas IV", 4.0));
+                cuarto2014.getMaterias().add(new MateriaImpl(cuarto2014, codigoVerificacion++, codigoMateria,
+                                "Lengua y Cultura Latinas IV", 4.0));
+                cuarto2014.getMaterias().add(new MateriaImpl(cuarto2014, codigoVerificacion++, codigoMateria,
+                                "Lengua y Cultura Inglesas IV", 3.0));
+                cuarto2014.getMaterias().add(
+                                new MateriaImpl(cuarto2014, codigoVerificacion++, codigoMateria, "Geografia IV", 3.0));
+                cuarto2014.getMaterias().add(
+                                new MateriaImpl(cuarto2014, codigoVerificacion++, codigoMateria, "Historia IV", 4.0));
+                cuarto2014.getMaterias().add(new MateriaImpl(cuarto2014, codigoVerificacion++, codigoMateria,
+                                "Lengua y Cultura Francesas I", 3.0));
+                cuarto2014.getMaterias().add(new MateriaImpl(cuarto2014, codigoVerificacion++, codigoMateria,
+                                "Historia del Arte", 3.0));
                 cuarto2014.getMaterias()
-                                .add(new MateriaImpl(cuarto2014, codigoMateria++, "Espacios Optativos 2020/2021", 3.0));
-                cuarto2014.getMaterias().add(new MateriaImpl(cuarto2014, codigoMateria++, "Matematica IV", 5.0));
-                cuarto2014.getMaterias().add(new MateriaImpl(cuarto2014, codigoMateria++, "Biologia I", 3.0));
-                cuarto2014.getMaterias().add(new MateriaImpl(cuarto2014, codigoMateria++, "Fisico-Quimica", 3.0));
+                                .add(new MateriaImpl(cuarto2014, codigoVerificacion++, codigoMateria,
+                                                "Espacios Optativos 2020/2021", 3.0));
+                cuarto2014.getMaterias().add(
+                                new MateriaImpl(cuarto2014, codigoVerificacion++, codigoMateria, "Matematica IV", 5.0));
+                cuarto2014.getMaterias().add(
+                                new MateriaImpl(cuarto2014, codigoVerificacion++, codigoMateria, "Biologia I", 3.0));
+                cuarto2014.getMaterias().add(new MateriaImpl(cuarto2014, codigoVerificacion++, codigoMateria,
+                                "Fisico-Quimica", 3.0));
                 cuarto2014.getMaterias()
-                                .add(new MateriaImpl(cuarto2014, codigoMateria++, "Educacion Fisica y Escuadras I", 3.0));
-                cuarto2014.getMaterias().add(new MateriaImpl(cuarto2014, codigoMateria++, "Espacios Optativos 2021", 3.0));
-                cuarto2014.getMaterias().add(new MateriaImpl(cuarto2014, codigoMateria++, "Espacios Optativos 2022", 3.0));
+                                .add(new MateriaImpl(cuarto2014, codigoVerificacion++, codigoMateria,
+                                                "Educacion Fisica y Escuadras I", 3.0));
+                cuarto2014.getMaterias().add(new MateriaImpl(cuarto2014, codigoVerificacion++, codigoMateria,
+                                "Espacios Optativos 2021", 3.0));
+                cuarto2014.getMaterias().add(new MateriaImpl(cuarto2014, codigoVerificacion++, codigoMateria,
+                                "Espacios Optativos 2022", 3.0));
+
+                for (int ii = 0; ii < cuarto2014.getMaterias().size(); ii++) {
+                        cuarto2014.getMaterias().get(ii).setCodigo(Integer.valueOf(""
+                                        + cuarto2014.getPlan().getAnio().toString()
+                                        + cuarto2014.getNumero().toString()
+                                        + cuarto2014.getMaterias().get(ii).getCodigoVerificacion().toString()));
+                }
 
                 // MATERIAS DEL PLAN 2014 - QUINTO AÑO
 
-                codigoMateria = 0;
-
                 quinto2014.getMaterias()
-                                .add(new MateriaImpl(quinto2014, codigoMateria++, "Lengua y Literatura V", 4.0));
+                                .add(new MateriaImpl(quinto2014, codigoVerificacion++, codigoMateria,
+                                                "Lengua y Literatura V", 4.0));
                 quinto2014.getMaterias()
-                                .add(new MateriaImpl(quinto2014, codigoMateria++, "Lengua y Cultura Latinas V", 2.0));
+                                .add(new MateriaImpl(quinto2014, codigoVerificacion++, codigoMateria,
+                                                "Lengua y Cultura Latinas V", 2.0));
                 quinto2014.getMaterias()
-                                .add(new MateriaImpl(quinto2014, codigoMateria++, "Lengua y Cultura Griegas I", 4.0));
-                quinto2014.getMaterias().add(new MateriaImpl(quinto2014, codigoMateria++, "Ingles V", 3.0));
-                quinto2014.getMaterias().add(new MateriaImpl(quinto2014, codigoMateria++, "Frances I", 3.0));
-                quinto2014.getMaterias().add(new MateriaImpl(quinto2014, codigoMateria++, "Geografía V", 3.0));
-                quinto2014.getMaterias().add(new MateriaImpl(quinto2014, codigoMateria++, "Historia V", 4.0));
-                quinto2014.getMaterias().add(new MateriaImpl(quinto2014, codigoMateria++, "Quimica I", 2.0));
-                quinto2014.getMaterias().add(new MateriaImpl(quinto2014, codigoMateria++, "Biologia II", 2.0));
+                                .add(new MateriaImpl(quinto2014, codigoVerificacion++, codigoMateria,
+                                                "Lengua y Cultura Griegas I", 4.0));
                 quinto2014.getMaterias()
-                                .add(new MateriaImpl(quinto2014, codigoMateria++, "Matemática V - Algebra ", 3.0));
+                                .add(new MateriaImpl(quinto2014, codigoVerificacion++, codigoMateria, "Ingles V", 3.0));
+                quinto2014.getMaterias().add(
+                                new MateriaImpl(quinto2014, codigoVerificacion++, codigoMateria, "Frances I", 3.0));
+                quinto2014.getMaterias().add(
+                                new MateriaImpl(quinto2014, codigoVerificacion++, codigoMateria, "Geografía V", 3.0));
+                quinto2014.getMaterias().add(
+                                new MateriaImpl(quinto2014, codigoVerificacion++, codigoMateria, "Historia V", 4.0));
+                quinto2014.getMaterias().add(
+                                new MateriaImpl(quinto2014, codigoVerificacion++, codigoMateria, "Quimica I", 2.0));
+                quinto2014.getMaterias().add(
+                                new MateriaImpl(quinto2014, codigoVerificacion++, codigoMateria, "Biologia II", 2.0));
                 quinto2014.getMaterias()
-                                .add(new MateriaImpl(quinto2014, codigoMateria++, "Estadistica y Probabilidades", 3.0));
-                quinto2014.getMaterias().add(new MateriaImpl(quinto2014, codigoMateria++, "Educacion Fisica V", 2.0));
-                quinto2014.getMaterias().add(new MateriaImpl(quinto2014, codigoMateria++, "Informatica II", 2.0));
+                                .add(new MateriaImpl(quinto2014, codigoVerificacion++, codigoMateria,
+                                                "Matemática V - Algebra ", 3.0));
                 quinto2014.getMaterias()
-                                .add(new MateriaImpl(quinto2014, codigoMateria++, "Metodologia De La Investigacion",
+                                .add(new MateriaImpl(quinto2014, codigoVerificacion++, codigoMateria,
+                                                "Estadistica y Probabilidades", 3.0));
+                quinto2014.getMaterias().add(new MateriaImpl(quinto2014, codigoVerificacion++, codigoMateria,
+                                "Educacion Fisica V", 2.0));
+                quinto2014.getMaterias().add(new MateriaImpl(quinto2014, codigoVerificacion++, codigoMateria,
+                                "Informatica II", 2.0));
+                quinto2014.getMaterias()
+                                .add(new MateriaImpl(quinto2014, codigoVerificacion++, codigoMateria,
+                                                "Metodologia De La Investigacion",
                                                 2.0));
-                quinto2014.getMaterias().add(new MateriaImpl(quinto2014, codigoMateria++, "Filosofia I", 2.0));
+                quinto2014.getMaterias().add(
+                                new MateriaImpl(quinto2014, codigoVerificacion++, codigoMateria, "Filosofia I", 2.0));
+
+                for (int ii = 0; ii < quinto2014.getMaterias().size(); ii++) {
+                        quinto2014.getMaterias().get(ii).setCodigo(Integer.valueOf(""
+                                        + quinto2014.getPlan().getAnio().toString()
+                                        + quinto2014.getNumero().toString()
+                                        + quinto2014.getMaterias().get(ii).getCodigoVerificacion().toString()));
+                }
 
                 // PLAN 2001
 
@@ -333,170 +510,295 @@ public class GenerarEjemplosDePlanes {
                 plan2001.getAnios().add(septimo2001);
 
                 // MATERIAS DEL PLAN 2001 - PRIMER AÑO
+                codigoVerificacion = 1;
 
-                codigoMateria = 0;
-
                 primero2001.getMaterias()
-                                .add(new MateriaImpl(primero2001, codigoMateria++, "Lengua y Literatura I", 5.0));
+                                .add(new MateriaImpl(primero2001, codigoVerificacion++, codigoMateria,
+                                                "Lengua y Literatura I", 5.0));
                 primero2001.getMaterias()
-                                .add(new MateriaImpl(primero2001, codigoMateria++, "Lengua y Culturas Latinas I", 5.0));
-                primero2001.getMaterias().add(new MateriaImpl(primero2001, codigoMateria++, "Ingles I", 3.0));
-                primero2001.getMaterias().add(new MateriaImpl(primero2001, codigoMateria++, "Geografia I", 3.0));
-                primero2001.getMaterias().add(new MateriaImpl(primero2001, codigoMateria++, "Historia I", 2.0));
-                primero2001.getMaterias().add(new MateriaImpl(primero2001, codigoMateria++, "Matematica I", 4.0));
-                primero2001.getMaterias().add(new MateriaImpl(primero2001, codigoMateria++, "Plastica I", 2.0));
-                primero2001.getMaterias().add(new MateriaImpl(primero2001, codigoMateria++, "Musica I", 2.0));
+                                .add(new MateriaImpl(primero2001, codigoVerificacion++, codigoMateria,
+                                                "Lengua y Culturas Latinas I", 5.0));
+                primero2001.getMaterias().add(
+                                new MateriaImpl(primero2001, codigoVerificacion++, codigoMateria, "Ingles I", 3.0));
+                primero2001.getMaterias().add(
+                                new MateriaImpl(primero2001, codigoVerificacion++, codigoMateria, "Geografia I", 3.0));
+                primero2001.getMaterias().add(
+                                new MateriaImpl(primero2001, codigoVerificacion++, codigoMateria, "Historia I", 2.0));
+                primero2001.getMaterias().add(
+                                new MateriaImpl(primero2001, codigoVerificacion++, codigoMateria, "Matematica I", 4.0));
+                primero2001.getMaterias().add(
+                                new MateriaImpl(primero2001, codigoVerificacion++, codigoMateria, "Plastica I", 2.0));
+                primero2001.getMaterias().add(
+                                new MateriaImpl(primero2001, codigoVerificacion++, codigoMateria, "Musica I", 2.0));
                 primero2001.getMaterias()
-                                .add(new MateriaImpl(primero2001, codigoMateria++, "Ciencias Naturales I", 3.0));
-                primero2001.getMaterias().add(new MateriaImpl(primero2001, codigoMateria++,
+                                .add(new MateriaImpl(primero2001, codigoVerificacion++, codigoMateria,
+                                                "Ciencias Naturales I", 3.0));
+                primero2001.getMaterias().add(new MateriaImpl(primero2001, codigoVerificacion++, codigoMateria,
                                 "Tecnicas de Trabajo Intelectual I", 2.0));
-                primero2001.getMaterias().add(new MateriaImpl(primero2001, codigoMateria++, "Informatica I", 2.0));
-                primero2001.getMaterias().add(new MateriaImpl(primero2001, codigoMateria++, "Educacion Fisica I", 2.0));
+                primero2001.getMaterias().add(new MateriaImpl(primero2001, codigoVerificacion++, codigoMateria,
+                                "Informatica I", 2.0));
+                primero2001.getMaterias().add(new MateriaImpl(primero2001, codigoVerificacion++, codigoMateria,
+                                "Educacion Fisica I", 2.0));
+
+                for (int ii = 0; ii < primero2001.getMaterias().size(); ii++) {
+                        primero2001.getMaterias().get(ii).setCodigo(Integer.valueOf(""
+                                        + primero2001.getPlan().getAnio().toString()
+                                        + primero2001.getNumero().toString()
+                                        + primero2001.getMaterias().get(ii).getCodigoVerificacion().toString()));
+                }
 
                 // MATERIAS DEL PLAN 2001 - SEGUNDO AÑO
 
-                codigoMateria = 1;
-
                 segundo2001.getMaterias()
-                                .add(new MateriaImpl(segundo2001, codigoMateria, "Lengua y Literatura II", 5.0));
+                                .add(new MateriaImpl(segundo2001, codigoVerificacion++, codigoMateria,
+                                                "Lengua y Literatura II", 5.0));
                 segundo2001.getMaterias()
-                                .add(new MateriaImpl(segundo2001, codigoMateria++, "Lengua y Cultura Latinas II", 5.0));
-                segundo2001.getMaterias().add(new MateriaImpl(segundo2001, codigoMateria++, "Ingles II", 3.0));
+                                .add(new MateriaImpl(segundo2001, codigoVerificacion++, codigoMateria,
+                                                "Lengua y Cultura Latinas II", 5.0));
+                segundo2001.getMaterias().add(
+                                new MateriaImpl(segundo2001, codigoVerificacion++, codigoMateria, "Ingles II", 3.0));
                 segundo2001.getMaterias()
-                                .add(new MateriaImpl(segundo2001, codigoMateria++, "Formacion Etica y Civica I", 2.0));
-                segundo2001.getMaterias().add(new MateriaImpl(segundo2001, codigoMateria++, "Geografía II", 3.0));
-                segundo2001.getMaterias().add(new MateriaImpl(segundo2001, codigoMateria++, "Historia II", 4.0));
-                segundo2001.getMaterias().add(new MateriaImpl(segundo2001, codigoMateria++, "Matemática II", 4.0));
-                segundo2001.getMaterias().add(new MateriaImpl(segundo2001, codigoMateria++, "Plastica II", 2.0));
-                segundo2001.getMaterias().add(new MateriaImpl(segundo2001, codigoMateria++, "Musica II", 2.0));
+                                .add(new MateriaImpl(segundo2001, codigoVerificacion++, codigoMateria,
+                                                "Formacion Etica y Civica I", 2.0));
+                segundo2001.getMaterias().add(
+                                new MateriaImpl(segundo2001, codigoVerificacion++, codigoMateria, "Geografía II", 3.0));
+                segundo2001.getMaterias().add(
+                                new MateriaImpl(segundo2001, codigoVerificacion++, codigoMateria, "Historia II", 4.0));
+                segundo2001.getMaterias().add(new MateriaImpl(segundo2001, codigoVerificacion++, codigoMateria,
+                                "Matemática II", 4.0));
+                segundo2001.getMaterias().add(
+                                new MateriaImpl(segundo2001, codigoVerificacion++, codigoMateria, "Plastica II", 2.0));
+                segundo2001.getMaterias().add(
+                                new MateriaImpl(segundo2001, codigoVerificacion++, codigoMateria, "Musica II", 2.0));
                 segundo2001.getMaterias()
-                                .add(new MateriaImpl(segundo2001, codigoMateria++, "Ciencias Naturales II", 3.0));
-                segundo2001.getMaterias().add(new MateriaImpl(segundo2001, codigoMateria++,
+                                .add(new MateriaImpl(segundo2001, codigoVerificacion++, codigoMateria,
+                                                "Ciencias Naturales II", 3.0));
+                segundo2001.getMaterias().add(new MateriaImpl(segundo2001, codigoVerificacion++, codigoMateria,
                                 "Tecnicas De Trabajo Intelectual II", 2.0));
                 segundo2001.getMaterias()
-                                .add(new MateriaImpl(segundo2001, codigoMateria++, "Educacion Fisica II", 2.0));
+                                .add(new MateriaImpl(segundo2001, codigoVerificacion++, codigoMateria,
+                                                "Educacion Fisica II", 2.0));
+
+                for (int ii = 0; ii < segundo2001.getMaterias().size(); ii++) {
+                        segundo2001.getMaterias().get(ii).setCodigo(Integer.valueOf(""
+                                        + segundo2001.getPlan().getAnio().toString()
+                                        + segundo2001.getNumero().toString()
+                                        + segundo2001.getMaterias().get(ii).getCodigoVerificacion().toString()));
+                }
 
                 // MATERIAS DEL PLAN 2001 - TERCER AÑO
 
-                codigoMateria = 0;
-
                 tercero2001.getMaterias()
-                                .add(new MateriaImpl(tercero2001, codigoMateria++, "Lengua y Literatura III", 5.0));
+                                .add(new MateriaImpl(tercero2001, codigoVerificacion++, codigoMateria,
+                                                "Lengua y Literatura III", 5.0));
                 tercero2001.getMaterias()
-                                .add(new MateriaImpl(tercero2001, codigoMateria++, "Lengua y Cultura Latinas III",
+                                .add(new MateriaImpl(tercero2001, codigoVerificacion++, codigoMateria,
+                                                "Lengua y Cultura Latinas III",
                                                 4.0));
-                tercero2001.getMaterias().add(new MateriaImpl(tercero2001, codigoMateria++, "Ingles III", 3.0));
+                tercero2001.getMaterias().add(
+                                new MateriaImpl(tercero2001, codigoVerificacion++, codigoMateria, "Ingles III", 3.0));
                 tercero2001.getMaterias()
-                                .add(new MateriaImpl(tercero2001, codigoMateria++, "Formacion Etica y Civica II", 2.0));
-                tercero2001.getMaterias().add(new MateriaImpl(tercero2001, codigoMateria++, "Geografía III", 3.0));
-                tercero2001.getMaterias().add(new MateriaImpl(tercero2001, codigoMateria++, "Historia III", 4.0));
+                                .add(new MateriaImpl(tercero2001, codigoVerificacion++, codigoMateria,
+                                                "Formacion Etica y Civica II", 2.0));
+                tercero2001.getMaterias().add(new MateriaImpl(tercero2001, codigoVerificacion++, codigoMateria,
+                                "Geografía III", 3.0));
+                tercero2001.getMaterias().add(
+                                new MateriaImpl(tercero2001, codigoVerificacion++, codigoMateria, "Historia III", 4.0));
                 tercero2001.getMaterias()
-                                .add(new MateriaImpl(tercero2001, codigoMateria++, "Historia Del Arte I", 2.0));
-                tercero2001.getMaterias().add(new MateriaImpl(tercero2001, codigoMateria++, "Plastica III", 2.0));
-                tercero2001.getMaterias().add(new MateriaImpl(tercero2001, codigoMateria++, "Musica III", 2.0));
+                                .add(new MateriaImpl(tercero2001, codigoVerificacion++, codigoMateria,
+                                                "Historia Del Arte I", 2.0));
+                tercero2001.getMaterias().add(
+                                new MateriaImpl(tercero2001, codigoVerificacion++, codigoMateria, "Plastica III", 2.0));
+                tercero2001.getMaterias().add(
+                                new MateriaImpl(tercero2001, codigoVerificacion++, codigoMateria, "Musica III", 2.0));
                 tercero2001.getMaterias()
-                                .add(new MateriaImpl(tercero2001, codigoMateria++, "Ciencias Naturales III", 3.0));
-                tercero2001.getMaterias().add(new MateriaImpl(tercero2001, codigoMateria++, "Matemática III", 5.0));
+                                .add(new MateriaImpl(tercero2001, codigoVerificacion++, codigoMateria,
+                                                "Ciencias Naturales III", 3.0));
+                tercero2001.getMaterias().add(new MateriaImpl(tercero2001, codigoVerificacion++, codigoMateria,
+                                "Matemática III", 5.0));
                 tercero2001.getMaterias()
-                                .add(new MateriaImpl(tercero2001, codigoMateria++, "Educacion Fisica III", 2.0));
+                                .add(new MateriaImpl(tercero2001, codigoVerificacion++, codigoMateria,
+                                                "Educacion Fisica III", 2.0));
+
+                for (int ii = 0; ii < tercero2001.getMaterias().size(); ii++) {
+                        tercero2001.getMaterias().get(ii).setCodigo(Integer.valueOf(""
+                                        + tercero2001.getPlan().getAnio().toString()
+                                        + tercero2001.getNumero().toString()
+                                        + tercero2001.getMaterias().get(ii).getCodigoVerificacion().toString()));
+                }
 
                 // MATERIAS DEL PLAN 2001 - CUARTO AÑO
 
-                codigoMateria = 0;
+                cuarto2001.getMaterias()
+                                .add(new MateriaImpl(cuarto2001, codigoVerificacion++, codigoMateria,
+                                                "Lengua y Literatura IV", 4.0));
+                cuarto2001.getMaterias()
+                                .add(new MateriaImpl(cuarto2001, codigoVerificacion++, codigoMateria,
+                                                "Lengua y Cultura Latinas IV", 5.0));
+                cuarto2001.getMaterias().add(
+                                new MateriaImpl(cuarto2001, codigoVerificacion++, codigoMateria, "Ingles IV", 3.0));
+                cuarto2001.getMaterias().add(
+                                new MateriaImpl(cuarto2001, codigoVerificacion++, codigoMateria, "Geografía IV", 3.0));
+                cuarto2001.getMaterias().add(
+                                new MateriaImpl(cuarto2001, codigoVerificacion++, codigoMateria, "Historia IV", 4.0));
+                cuarto2001.getMaterias()
+                                .add(new MateriaImpl(cuarto2001, codigoVerificacion++, codigoMateria,
+                                                "Formacion Etica y Civica III", 2.0));
+                cuarto2001.getMaterias().add(new MateriaImpl(cuarto2001, codigoVerificacion++, codigoMateria,
+                                "Historia Del Arte II", 2.0));
+                cuarto2001.getMaterias().add(
+                                new MateriaImpl(cuarto2001, codigoVerificacion++, codigoMateria, "Plastica IV", 2.0));
+                cuarto2001.getMaterias().add(
+                                new MateriaImpl(cuarto2001, codigoVerificacion++, codigoMateria, "Matemática IV", 5.0));
+                cuarto2001.getMaterias().add(
+                                new MateriaImpl(cuarto2001, codigoVerificacion++, codigoMateria, "Biologia I", 2.0));
+                cuarto2001.getMaterias().add(new MateriaImpl(cuarto2001, codigoVerificacion++, codigoMateria,
+                                "Fisico-quimica", 3.0));
+                cuarto2001.getMaterias().add(new MateriaImpl(cuarto2001, codigoVerificacion++, codigoMateria,
+                                "Educacion Fisica IV", 2.0));
 
-                cuarto2001.getMaterias()
-                                .add(new MateriaImpl(cuarto2001, codigoMateria++, "Lengua y Literatura IV", 4.0));
-                cuarto2001.getMaterias()
-                                .add(new MateriaImpl(cuarto2001, codigoMateria++, "Lengua y Cultura Latinas IV", 5.0));
-                cuarto2001.getMaterias().add(new MateriaImpl(cuarto2001, codigoMateria++, "Ingles IV", 3.0));
-                cuarto2001.getMaterias().add(new MateriaImpl(cuarto2001, codigoMateria++, "Geografía IV", 3.0));
-                cuarto2001.getMaterias().add(new MateriaImpl(cuarto2001, codigoMateria++, "Historia IV", 4.0));
-                cuarto2001.getMaterias()
-                                .add(new MateriaImpl(cuarto2001, codigoMateria++, "Formacion Etica y Civica III", 2.0));
-                cuarto2001.getMaterias().add(new MateriaImpl(cuarto2001, codigoMateria++, "Historia Del Arte II", 2.0));
-                cuarto2001.getMaterias().add(new MateriaImpl(cuarto2001, codigoMateria++, "Plastica IV", 2.0));
-                cuarto2001.getMaterias().add(new MateriaImpl(cuarto2001, codigoMateria++, "Matemática IV", 5.0));
-                cuarto2001.getMaterias().add(new MateriaImpl(cuarto2001, codigoMateria++, "Biologia I", 2.0));
-                cuarto2001.getMaterias().add(new MateriaImpl(cuarto2001, codigoMateria++, "Fisico-quimica", 3.0));
-                cuarto2001.getMaterias().add(new MateriaImpl(cuarto2001, codigoMateria++, "Educacion Fisica IV", 2.0));
+                for (int ii = 0; ii < cuarto2001.getMaterias().size(); ii++) {
+                        cuarto2001.getMaterias().get(ii).setCodigo(Integer.valueOf(""
+                                        + cuarto2001.getPlan().getAnio().toString()
+                                        + cuarto2001.getNumero().toString()
+                                        + cuarto2001.getMaterias().get(ii).getCodigoVerificacion().toString()));
+                }
 
                 // MATERIAS DEL PLAN 2001 - QUINTO AÑO
 
-                codigoMateria = 0;
-
                 quinto2001.getMaterias()
-                                .add(new MateriaImpl(quinto2001, codigoMateria++, "Lengua y Literatura V", 4.0));
+                                .add(new MateriaImpl(quinto2001, codigoVerificacion++, codigoMateria,
+                                                "Lengua y Literatura V", 4.0));
                 quinto2001.getMaterias()
-                                .add(new MateriaImpl(quinto2001, codigoMateria++, "Lengua y Cultura Latinas V", 2.0));
+                                .add(new MateriaImpl(quinto2001, codigoVerificacion++, codigoMateria,
+                                                "Lengua y Cultura Latinas V", 2.0));
                 quinto2001.getMaterias()
-                                .add(new MateriaImpl(quinto2001, codigoMateria++, "Lengua y Cultura Griegas I", 4.0));
-                quinto2001.getMaterias().add(new MateriaImpl(quinto2001, codigoMateria++, "Ingles V", 3.0));
-                quinto2001.getMaterias().add(new MateriaImpl(quinto2001, codigoMateria++, "Frances I", 3.0));
-                quinto2001.getMaterias().add(new MateriaImpl(quinto2001, codigoMateria++, "Geografía V", 3.0));
-                quinto2001.getMaterias().add(new MateriaImpl(quinto2001, codigoMateria++, "Historia V", 4.0));
-                quinto2001.getMaterias().add(new MateriaImpl(quinto2001, codigoMateria++, "Quimica I", 2.0));
-                quinto2001.getMaterias().add(new MateriaImpl(quinto2001, codigoMateria++, "Biologia II", 2.0));
+                                .add(new MateriaImpl(quinto2001, codigoVerificacion++, codigoMateria,
+                                                "Lengua y Cultura Griegas I", 4.0));
                 quinto2001.getMaterias()
-                                .add(new MateriaImpl(quinto2001, codigoMateria++, "Matemática V - Algebra ", 3.0));
+                                .add(new MateriaImpl(quinto2001, codigoVerificacion++, codigoMateria, "Ingles V", 3.0));
+                quinto2001.getMaterias().add(
+                                new MateriaImpl(quinto2001, codigoVerificacion++, codigoMateria, "Frances I", 3.0));
+                quinto2001.getMaterias().add(
+                                new MateriaImpl(quinto2001, codigoVerificacion++, codigoMateria, "Geografía V", 3.0));
+                quinto2001.getMaterias().add(
+                                new MateriaImpl(quinto2001, codigoVerificacion++, codigoMateria, "Historia V", 4.0));
+                quinto2001.getMaterias().add(
+                                new MateriaImpl(quinto2001, codigoVerificacion++, codigoMateria, "Quimica I", 2.0));
+                quinto2001.getMaterias().add(
+                                new MateriaImpl(quinto2001, codigoVerificacion++, codigoMateria, "Biologia II", 2.0));
                 quinto2001.getMaterias()
-                                .add(new MateriaImpl(quinto2001, codigoMateria++, "Estadistica y Probabilidades", 3.0));
-                quinto2001.getMaterias().add(new MateriaImpl(quinto2001, codigoMateria++, "Educacion Fisica V", 2.0));
-                quinto2001.getMaterias().add(new MateriaImpl(quinto2001, codigoMateria++, "Informatica II", 2.0));
+                                .add(new MateriaImpl(quinto2001, codigoVerificacion++, codigoMateria,
+                                                "Matemática V - Algebra ", 3.0));
                 quinto2001.getMaterias()
-                                .add(new MateriaImpl(quinto2001, codigoMateria++, "Metodologia De La Investigacion",
+                                .add(new MateriaImpl(quinto2001, codigoVerificacion++, codigoMateria,
+                                                "Estadistica y Probabilidades", 3.0));
+                quinto2001.getMaterias().add(new MateriaImpl(quinto2001, codigoVerificacion++, codigoMateria,
+                                "Educacion Fisica V", 2.0));
+                quinto2001.getMaterias().add(new MateriaImpl(quinto2001, codigoVerificacion++, codigoMateria,
+                                "Informatica II", 2.0));
+                quinto2001.getMaterias()
+                                .add(new MateriaImpl(quinto2001, codigoVerificacion++, codigoMateria,
+                                                "Metodologia De La Investigacion",
                                                 2.0));
-                quinto2001.getMaterias().add(new MateriaImpl(quinto2001, codigoMateria++, "Filosofia I", 2.0));
+                quinto2001.getMaterias().add(
+                                new MateriaImpl(quinto2001, codigoVerificacion++, codigoMateria, "Filosofia I", 2.0));
+
+                for (int ii = 0; ii < quinto2001.getMaterias().size(); ii++) {
+                        quinto2001.getMaterias().get(ii).setCodigo(Integer.valueOf(""
+                                        + quinto2001.getPlan().getAnio().toString()
+                                        + quinto2001.getNumero().toString()
+                                        + quinto2001.getMaterias().get(ii).getCodigoVerificacion().toString()));
+                }
 
                 // MATERIAS DEL PLAN 2001 - SEXTO AÑO
 
-                codigoMateria = 0;
-
-                sexto2001.getMaterias().add(new MateriaImpl(sexto2001, codigoMateria++, "Lengua y Literatura VI", 3.0));
+                sexto2001.getMaterias().add(new MateriaImpl(sexto2001, codigoVerificacion++, codigoMateria,
+                                "Lengua y Literatura VI", 3.0));
                 sexto2001.getMaterias()
-                                .add(new MateriaImpl(sexto2001, codigoMateria++, "Lengua y Cultura Griegas II", 2.0));
-                sexto2001.getMaterias().add(new MateriaImpl(sexto2001, codigoMateria++, "Ingles VI", 2.0));
-                sexto2001.getMaterias().add(new MateriaImpl(sexto2001, codigoMateria++, "Frances II", 4.0));
-                sexto2001.getMaterias().add(new MateriaImpl(sexto2001, codigoMateria++, "Historia VI", 3.0));
+                                .add(new MateriaImpl(sexto2001, codigoVerificacion++, codigoMateria,
+                                                "Lengua y Cultura Griegas II", 2.0));
                 sexto2001.getMaterias()
-                                .add(new MateriaImpl(sexto2001, codigoMateria++, "Historia De La Cultura I", 2.0));
-                sexto2001.getMaterias().add(new MateriaImpl(sexto2001, codigoMateria++, "Geografía VI", 2.0));
-                sexto2001.getMaterias().add(new MateriaImpl(sexto2001, codigoMateria++, "Folosofia II", 4.0));
+                                .add(new MateriaImpl(sexto2001, codigoVerificacion++, codigoMateria, "Ingles VI", 2.0));
                 sexto2001.getMaterias().add(
-                                new MateriaImpl(sexto2001, codigoMateria++, "Matemática VI - Trigonometria ", 2.0));
-                sexto2001.getMaterias().add(new MateriaImpl(sexto2001, codigoMateria++, "Geometria", 2.0));
-                sexto2001.getMaterias().add(new MateriaImpl(sexto2001, codigoMateria++, "Biologia III", 3.0));
-                sexto2001.getMaterias().add(new MateriaImpl(sexto2001, codigoMateria++, "Quimica II", 3.0));
-                sexto2001.getMaterias().add(new MateriaImpl(sexto2001, codigoMateria++, "Fisica I", 4.0));
-                sexto2001.getMaterias().add(new MateriaImpl(sexto2001, codigoMateria++, "Informatica III", 2.0));
-                sexto2001.getMaterias().add(new MateriaImpl(sexto2001, codigoMateria++, "Educacion Fisica VI", 2.0));
+                                new MateriaImpl(sexto2001, codigoVerificacion++, codigoMateria, "Frances II", 4.0));
+                sexto2001.getMaterias().add(
+                                new MateriaImpl(sexto2001, codigoVerificacion++, codigoMateria, "Historia VI", 3.0));
+                sexto2001.getMaterias()
+                                .add(new MateriaImpl(sexto2001, codigoVerificacion++, codigoMateria,
+                                                "Historia De La Cultura I", 2.0));
+                sexto2001.getMaterias().add(
+                                new MateriaImpl(sexto2001, codigoVerificacion++, codigoMateria, "Geografía VI", 2.0));
+                sexto2001.getMaterias().add(
+                                new MateriaImpl(sexto2001, codigoVerificacion++, codigoMateria, "Folosofia II", 4.0));
+                sexto2001.getMaterias().add(
+                                new MateriaImpl(sexto2001, codigoVerificacion++, codigoMateria,
+                                                "Matemática VI - Trigonometria ", 2.0));
+                sexto2001.getMaterias()
+                                .add(new MateriaImpl(sexto2001, codigoVerificacion++, codigoMateria, "Geometria", 2.0));
+                sexto2001.getMaterias().add(
+                                new MateriaImpl(sexto2001, codigoVerificacion++, codigoMateria, "Biologia III", 3.0));
+                sexto2001.getMaterias().add(
+                                new MateriaImpl(sexto2001, codigoVerificacion++, codigoMateria, "Quimica II", 3.0));
+                sexto2001.getMaterias()
+                                .add(new MateriaImpl(sexto2001, codigoVerificacion++, codigoMateria, "Fisica I", 4.0));
+                sexto2001.getMaterias().add(new MateriaImpl(sexto2001, codigoVerificacion++, codigoMateria,
+                                "Informatica III", 2.0));
+                sexto2001.getMaterias().add(new MateriaImpl(sexto2001, codigoVerificacion++, codigoMateria,
+                                "Educacion Fisica VI", 2.0));
+
+                for (int ii = 0; ii < sexto2001.getMaterias().size(); ii++) {
+                        sexto2001.getMaterias().get(ii).setCodigo(Integer.valueOf(""
+                                        + sexto2001.getPlan().getAnio().toString()
+                                        + sexto2001.getNumero().toString()
+                                        + sexto2001.getMaterias().get(ii).getCodigoVerificacion().toString()));
+                }
 
                 // MATERIAS DEL PLAN 2001 - SEPTIMO AÑO
 
-                codigoMateria = 0;
-
                 septimo2001.getMaterias()
-                                .add(new MateriaImpl(septimo2001, codigoMateria++, "Lengua y Literatura VII", 3.0));
+                                .add(new MateriaImpl(septimo2001, codigoVerificacion++, codigoMateria,
+                                                "Lengua y Literatura VII", 3.0));
                 septimo2001.getMaterias()
-                                .add(new MateriaImpl(septimo2001, codigoMateria++, "Lengua y Cultura Griegas III",
+                                .add(new MateriaImpl(septimo2001, codigoVerificacion++, codigoMateria,
+                                                "Lengua y Cultura Griegas III",
                                                 3.0));
-                septimo2001.getMaterias().add(new MateriaImpl(septimo2001, codigoMateria++, "Frances III", 3.0));
-                septimo2001.getMaterias().add(new MateriaImpl(septimo2001, codigoMateria++, "Historia VII", 3.0));
-                septimo2001.getMaterias().add(new MateriaImpl(septimo2001, codigoMateria++, "Filosofia III", 4.0));
-                septimo2001.getMaterias().add(new MateriaImpl(septimo2001, codigoMateria++, "Psicologia", 2.0));
+                septimo2001.getMaterias().add(
+                                new MateriaImpl(septimo2001, codigoVerificacion++, codigoMateria, "Frances III", 3.0));
+                septimo2001.getMaterias().add(
+                                new MateriaImpl(septimo2001, codigoVerificacion++, codigoMateria, "Historia VII", 3.0));
+                septimo2001.getMaterias().add(new MateriaImpl(septimo2001, codigoVerificacion++, codigoMateria,
+                                "Filosofia III", 4.0));
+                septimo2001.getMaterias().add(
+                                new MateriaImpl(septimo2001, codigoVerificacion++, codigoMateria, "Psicologia", 2.0));
                 septimo2001.getMaterias()
-                                .add(new MateriaImpl(septimo2001, codigoMateria++,
+                                .add(new MateriaImpl(septimo2001, codigoVerificacion++, codigoMateria,
                                                 "Analisis Matematico y Geometria Analitica", 4.0));
-                septimo2001.getMaterias().add(new MateriaImpl(septimo2001, codigoMateria++, "Biologia IV", 2.0));
-                septimo2001.getMaterias().add(new MateriaImpl(septimo2001, codigoMateria++, "Sociologia", 3.0));
-                septimo2001.getMaterias().add(new MateriaImpl(septimo2001, codigoMateria++, "Economia Politica", 3.0));
+                septimo2001.getMaterias().add(
+                                new MateriaImpl(septimo2001, codigoVerificacion++, codigoMateria, "Biologia IV", 2.0));
+                septimo2001.getMaterias().add(
+                                new MateriaImpl(septimo2001, codigoVerificacion++, codigoMateria, "Sociologia", 3.0));
+                septimo2001.getMaterias().add(new MateriaImpl(septimo2001, codigoVerificacion++, codigoMateria,
+                                "Economia Politica", 3.0));
                 septimo2001.getMaterias()
-                                .add(new MateriaImpl(septimo2001, codigoMateria++, "Historia De La Cultura II", 2.0));
-                septimo2001.getMaterias().add(new MateriaImpl(septimo2001, codigoMateria++,
+                                .add(new MateriaImpl(septimo2001, codigoVerificacion++, codigoMateria,
+                                                "Historia De La Cultura II", 2.0));
+                septimo2001.getMaterias().add(new MateriaImpl(septimo2001, codigoVerificacion++, codigoMateria,
                                 "Elementos De Derecho Y Derecho Constitucional Argentino", 3.0));
-                septimo2001.getMaterias().add(new MateriaImpl(septimo2001, codigoMateria++, "Informatica IV", 2.0));
+                septimo2001.getMaterias().add(new MateriaImpl(septimo2001, codigoVerificacion++, codigoMateria,
+                                "Informatica IV", 2.0));
                 septimo2001.getMaterias()
-                                .add(new MateriaImpl(septimo2001, codigoMateria++, "Educacion Fisica VII", 2.0));
-                septimo2001.getMaterias().add(new MateriaImpl(septimo2001, codigoMateria++, "Fisica II", 3.0));
+                                .add(new MateriaImpl(septimo2001, codigoVerificacion++, codigoMateria,
+                                                "Educacion Fisica VII", 2.0));
+                septimo2001.getMaterias().add(
+                                new MateriaImpl(septimo2001, codigoVerificacion++, codigoMateria, "Fisica II", 3.0));
+
+                for (int ii = 0; ii < septimo2001.getMaterias().size(); ii++) {
+                        septimo2001.getMaterias().get(ii).setCodigo(Integer.valueOf(""
+                                        + septimo2001.getPlan().getAnio().toString()
+                                        + septimo2001.getNumero().toString()
+                                        + septimo2001.getMaterias().get(ii).getCodigoVerificacion().toString()));
+                }
 
                 // ==========================================================================
 

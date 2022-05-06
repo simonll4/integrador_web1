@@ -6,11 +6,15 @@ public abstract class Materia extends Objeto {
 
     abstract public AnioPlan getAnio();
 
-    abstract void setAnio(AnioPlan anio);
+    abstract public void setAnio(AnioPlan anio);
 
     abstract public Integer getCodigo();
 
     abstract public void setCodigo(Integer codigo);
+
+    abstract public void setCodigoVerificacion(Integer codigo);
+
+    abstract public Integer getCodigoVerificacion();
 
     abstract public String getNombre();
 

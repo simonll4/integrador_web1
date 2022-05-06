@@ -16,6 +16,8 @@ import ar.edu.iua.util.metodos_aleatorios.ObtenerPlan;
 public class UtilRandom {
 
     public Plan construirPlan(List<Plan> listaPlanes) {
+        int auxVerificacion = 1;
+
         Plan planAleatorio = new PlanImpl();
 
         ObtenerAnioPlan anioObtenido = new ObtenerAnioPlan();
@@ -23,7 +25,7 @@ public class UtilRandom {
         ObtenerPlan planObtenido = new ObtenerPlan();
 
         List<AnioPlan> aniosPlan = new ArrayList<AnioPlan>();
-        
+
         planAleatorio.setAnio((int) (Math.random() + 2018));
 
         for (int jj = 0; jj < listaPlanes.size(); jj++) {
@@ -32,7 +34,6 @@ public class UtilRandom {
                 jj--;
             }
         }
-
 
         for (int ii = 0; ii < 5; ii++) {
             System.out.println(ii);
@@ -44,12 +45,11 @@ public class UtilRandom {
                 if (jj == 0) {
                     materia = materiaObtenida.getMateria(anioAleatorio);
                     materiasPlan.add(materia);
-                }
-                else{
+                } else {
                     materia = materiaObtenida.getMateria(anioAleatorio);
                     for (int kk = 0; kk < materiasPlan.size(); kk++) {
                         Boolean bandera = false;
-                        if (materiasPlan.get(kk).getCodigo().equals(materia.getCodigo())) {
+                        if (materiasPlan.get(kk).getCodigoVerificacion().equals(materia.getCodigoVerificacion())) {
                             bandera = false;
                             jj--;
                             break;
@@ -65,6 +65,14 @@ public class UtilRandom {
             }
             anioAleatorio.setPlan(planAleatorio);
             anioAleatorio.setMaterias(materiasPlan);
+            for (int jj = 0; jj < materiasPlan.size(); jj++) {
+                anioAleatorio.getMaterias().get(jj).setCodigoVerificacion(auxVerificacion);
+                anioAleatorio.getMaterias().get(jj).setCodigo(Integer.valueOf(""
+                        + anioAleatorio.getPlan().getAnio().toString()
+                        + anioAleatorio.getNumero().toString()
+                        + anioAleatorio.getMaterias().get(jj).getCodigoVerificacion().toString()));
+                auxVerificacion++;
+            }
             aniosPlan.add(anioAleatorio);
         }
 

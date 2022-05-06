@@ -19,6 +19,8 @@ public interface BuscarEImprimirPlanes {
         //      |  Plan de estudios 2013 (BORRADOR) |         
         //      -------------------------------------
 
+
+        
     void buscar(String terminos);
     
 }
