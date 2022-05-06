@@ -20,7 +20,6 @@ public interface BuscarEImprimirPlanes {
         //      -------------------------------------
 
 
-        
     void buscar(String terminos);
     
 }
