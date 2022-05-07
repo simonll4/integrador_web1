@@ -3,6 +3,7 @@ package ar.edu.iua.util;
 import java.util.ArrayList;
 import java.util.List;
 
+import ar.edu.iua.modelo.Objeto;
 import ar.edu.iua.modelo.academico.plan.AnioPlan;
 import ar.edu.iua.modelo.academico.plan.AnioPlanImpl;
 import ar.edu.iua.modelo.academico.plan.Materia;
@@ -36,20 +37,38 @@ public class UtilRandom {
         }
 
         for (int ii = 0; ii < 5; ii++) {
-            System.out.println(ii);
             List<Materia> materiasPlan = new ArrayList<Materia>();
             AnioPlan anioAleatorio = new AnioPlanImpl();
             for (int jj = 0; jj < 12; jj++) {
-                Materia materia = new MateriaImpl();
-                anioAleatorio = planObtenido.getPlan(listaPlanes).getAnios().get(ii);
+                AnioPlan anioHerramienta=null;
+                try {
+                    anioHerramienta = (AnioPlanImpl) planObtenido.getPlan(listaPlanes).getAnios().get(ii).clone();
+                    anioAleatorio.setNombre(anioHerramienta.getNombre());
+                    anioAleatorio.setNumero(anioHerramienta.getNumero());
+                } catch (CloneNotSupportedException e) {
+                    
+                    e.printStackTrace();
+                }
                 if (jj == 0) {
-                    materia = materiaObtenida.getMateria(anioAleatorio);
-                    materiasPlan.add(materia);
+                    Materia materia=null;
+                    try {
+                        materia = (Materia)materiaObtenida.getMateria((AnioPlanImpl)anioHerramienta).clone();
+                    } catch (CloneNotSupportedException e) {
+                        
+                        e.printStackTrace();
+                    }
+                    materiasPlan.add((Materia)materia);
                 } else {
-                    materia = materiaObtenida.getMateria(anioAleatorio);
+                    Materia materia=null;
+                    try {
+                        materia = (Materia)materiaObtenida.getMateria((AnioPlanImpl)anioHerramienta).clone();
+                    } catch (CloneNotSupportedException e) {
+                        
+                        e.printStackTrace();
+                    }
                     for (int kk = 0; kk < materiasPlan.size(); kk++) {
                         Boolean bandera = false;
-                        if (materiasPlan.get(kk).getCodigoVerificacion().equals(materia.getCodigoVerificacion())) {
+                        if (materiasPlan.get(kk).getCodigoVerificacion().equals(((Materia) materia).getCodigoVerificacion())) {
                             bandera = false;
                             jj--;
                             break;
@@ -57,7 +76,7 @@ public class UtilRandom {
                             bandera = true;
                         }
                         if (bandera) {
-                            materiasPlan.add(materia);
+                            materiasPlan.add((Materia) materia);
                             break;
                         }
                     }

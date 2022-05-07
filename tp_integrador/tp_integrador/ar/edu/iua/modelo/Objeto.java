@@ -8,8 +8,15 @@ public abstract class Objeto implements Cloneable {
 
     abstract public String toString();
 
+    @Override
     public Object clone() throws CloneNotSupportedException {
-        return super.clone();
+        Object obj=null;
+        try{
+            obj=super.clone();
+        }catch(CloneNotSupportedException ex){
+            System.out.println(" no se puede duplicar");
+        }
+        return obj;
     }
 
 }
