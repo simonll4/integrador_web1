@@ -8,5 +8,5 @@ import ar.edu.iua.modelo.academico.plan.Plan;
 public class BaseDeDatos {
 
     public static List<Plan> planes = new ArrayList<Plan>();
-    
+
 }

@@ -1,6 +1,7 @@
 package ar.edu.iua.negocio.academico.plan;
 
 import ar.edu.iua.modelo.academico.plan.Plan;
+import ar.edu.iua.persistencia.BaseDeDatos;
 
 public class CrearPlanImpl implements CrearPlan {
 
@@ -18,7 +19,9 @@ public class CrearPlanImpl implements CrearPlan {
             if(plan.getAnios().get(ii).getNumero().intValue() < 1)return false;//anio comienza en 1
             if(plan.getAnios().get(ii).getNumero().intValue() != ii+1)return false;//anios orden secuencial
             for(int jj = 0; jj < plan.getAnios().size();jj++){
-                if(plan.getAnios().get(ii).getNumero().equals(plan.getAnios().get(jj).getNumero()))return false;//No se permiten anios con el mismo numero
+                if(ii != jj){
+                    if(plan.getAnios().get(ii).getNumero().equals(plan.getAnios().get(jj).getNumero()))return false;//No se permiten anios con el mismo numero
+                } 
             }
             if(plan.getAnios().get(ii).getNombre().equals(null) && !plan.isEstadoBorrador())return false;//No se permite un anio sin nombre excepto que sea borrador
             if((plan.getAnios().get(ii).getMaterias()==null || plan.getAnios().get(ii).getMaterias().size()==0) && !plan.isEstadoBorrador())return false;//No se permite un listado de materias null o vacio excepto que sea borrador
@@ -27,16 +30,21 @@ public class CrearPlanImpl implements CrearPlan {
                 if(plan.getAnios().get(ii).getMaterias().get(kk).getCodigo().intValue()<=0)return false;//No se permite materia con el codigo menor igual a 0
                 if(plan.getAnios().get(ii).getMaterias().get(kk).getCodigo().equals(null) && !plan.isEstadoBorrador())return false;//No se permite una materia de codigo null, excepto que sea borrador
                 if(plan.getAnios().get(ii).getMaterias().get(kk).getCodigo().intValue() < 1)return false;//Codigo materia comienza en 1
-                if(plan.getAnios().get(ii).getMaterias().get(kk).getCodigo().intValue() != kk+1)return false;//Orden de las materias secuencial
+                if(kk!=0){
+                    if(plan.getAnios().get(ii).getMaterias().get(kk).getCodigoVerificacion().intValue() != plan.getAnios().get(ii).getMaterias().get(kk-1).getCodigoVerificacion().intValue()+1)return false;//Orden de las materias secuencial
+                }
                 for(int hh = 0; hh < plan.getAnios().get(ii).getMaterias().size(); hh++){
-                    if(plan.getAnios().get(ii).getMaterias().get(hh).getCodigo().equals(plan.getAnios().get(ii).getMaterias().get(kk).getCodigo()))return false;//No se permiten materias con el mismo codigo
+                    if(kk!=hh){
+                        if(plan.getAnios().get(ii).getMaterias().get(hh).getCodigo().equals(plan.getAnios().get(ii).getMaterias().get(kk).getCodigo()))return false;//No se permiten materias con el mismo codigo
+                    }
                 }
                 if(plan.getAnios().get(ii).getMaterias().get(kk).getNombre().equals(null) && !plan.isEstadoBorrador())return false;//No se permiten materias con nombre null, excepto que sea borrador
                 if(plan.getAnios().get(ii).getMaterias().get(kk).getCargaHoraria().doubleValue() <= 0.0)return false;//No se permiten materias con carga horaria <=0
-                if(plan.getAnios().get(ii).getMaterias().get(kk).getCargaHoraria().equals(null) && !plan.isEstadoBorrador())return false;//No se pèrmiten materias con carga horaria null, excepto que sea borrador   
+                if(plan.getAnios().get(ii).getMaterias().get(kk).getCargaHoraria().equals(null) && !plan.isEstadoBorrador())return false;//No se permiten materias con carga horaria null, excepto que sea borrador   
             }
         }
-        return false;
-    }
 
+        BaseDeDatos.planes.add(plan);
+        return true;  
+    }
 }

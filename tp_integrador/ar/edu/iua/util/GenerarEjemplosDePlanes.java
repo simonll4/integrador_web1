@@ -64,7 +64,7 @@ public class GenerarEjemplosDePlanes {
                                 "Estrategias de Aprendizaje y Entornos Virtuales",
                                 4.0);
                 Materia m12 = new MateriaImpl(primero, codigoVerificacion++, codigoMateria,
-                                "Educación Física y Deportes I", 0.0);
+                                "Educación Física y Deportes I", 1.0);
 
                 primero.getMaterias().add(m1);
                 primero.getMaterias().add(m2);

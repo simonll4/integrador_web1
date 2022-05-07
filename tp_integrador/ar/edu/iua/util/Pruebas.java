@@ -5,28 +5,31 @@ import java.util.List;
 import ar.edu.iua.interfazusuario.BuscarEImprimirPlanes;
 import ar.edu.iua.modelo.academico.plan.Plan;
 import ar.edu.iua.negocio.academico.plan.CrearPlanes;
+import ar.edu.iua.negocio.academico.plan.CrearPlanesImpl;
 import ar.edu.iua.negocio.academico.plan.ModificarPlan;
+import ar.edu.iua.persistencia.BaseDeDatos;
 import ar.edu.iua.negocio.academico.plan.CrearPlanImpl;
 
 public class Pruebas {
 
     public void probar() {
 
-        List<Plan> planes = GenerarEjemplosDePlanes.generar(10, true);
+        List<Plan> planes = GenerarEjemplosDePlanes.generar(2, true);
 
         System.out.println("\n\nSe crearon " + planes.size() + " planes.");
 
+        CrearPlanes crearPlanes = new CrearPlanesImpl();
+
+        boolean ok = crearPlanes.crear(planes);
+
+        System.out.println("Se guardaron " + BaseDeDatos.planes.size() + " planes en la BD");
+
+        if (ok == false) {
+            System.out.println("se rompio");
+            return;
+        }
+
         /*
-         * CrearPlanes crearPlanes = new CrearPlanesImpl();
-         * 
-         * 
-         * boolean ok = crearPlanes.crear(planes);
-         * 
-         * if (ok == false) {
-         * return;
-         * }
-         * 
-         * 
          * ModificarPlan modificarPlan = new ModificarPlanImpl();
          * 
          * planes.get(0).setAnio(2050);
