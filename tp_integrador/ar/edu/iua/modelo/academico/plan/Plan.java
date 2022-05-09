@@ -16,6 +16,8 @@ public abstract class Plan extends Objeto {
 
     abstract public void setEstadoNoActivo();
 
+    abstract public void setEstadoNulo();
+
     abstract public boolean isEstadoBorrador();
 
     abstract public boolean isEstadoActivo();

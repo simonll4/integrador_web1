@@ -4,7 +4,7 @@ import java.util.List;
 
 import ar.edu.iua.modelo.academico.plan.Plan;
 
-public interface CrearPlanes extends CrearPlan {
+public interface CrearPlanes  {
 
     /*
         Este metodo requiere que se guarde en la base de datos un listado de planes

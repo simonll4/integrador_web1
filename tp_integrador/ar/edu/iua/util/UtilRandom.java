@@ -2,15 +2,11 @@ package ar.edu.iua.util;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import ar.edu.iua.modelo.Objeto;
 import ar.edu.iua.modelo.academico.plan.AnioPlan;
 import ar.edu.iua.modelo.academico.plan.AnioPlanImpl;
 import ar.edu.iua.modelo.academico.plan.Materia;
-import ar.edu.iua.modelo.academico.plan.MateriaImpl;
 import ar.edu.iua.modelo.academico.plan.Plan;
 import ar.edu.iua.modelo.academico.plan.PlanImpl;
-import ar.edu.iua.util.metodos_aleatorios.ObtenerAnioPlan;
 import ar.edu.iua.util.metodos_aleatorios.ObtenerMateria;
 import ar.edu.iua.util.metodos_aleatorios.ObtenerPlan;
 
@@ -20,11 +16,8 @@ public class UtilRandom {
         
 
         Plan planAleatorio = new PlanImpl();
-
-        ObtenerAnioPlan anioObtenido = new ObtenerAnioPlan();
         ObtenerMateria materiaObtenida = new ObtenerMateria();
         ObtenerPlan planObtenido = new ObtenerPlan();
-
         List<AnioPlan> aniosPlan = new ArrayList<AnioPlan>();
 
         planAleatorio.setAnio((int)(Math.random() * 40) + 1995);

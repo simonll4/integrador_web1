@@ -35,6 +35,10 @@ public class PlanImpl extends Plan {
         estado = Estado.NO_ACTIVO;
     }
 
+    public void setEstadoNulo() {
+        estado = null;
+    }
+
     public boolean isEstadoBorrador() {
         return estado == Estado.BORRADOR;
     }

@@ -6,18 +6,12 @@ import ar.edu.iua.modelo.academico.plan.Plan;
 
 public class CrearPlanesImpl implements CrearPlanes{
 
-
-    public boolean crear(Plan plan) {
-        CrearPlanImpl verificador = new CrearPlanImpl();
-        return verificador.crear(plan);
-    }
-
-
     public boolean crear(List<Plan> planes) {
         boolean bandera=false;
         if(planes != null){
             for(int ii = 0; ii < planes.size(); ii++){
-                bandera = crear(planes.get(ii));
+                CrearPlanImpl verificador = new CrearPlanImpl();
+                bandera = verificador.crear(planes.get(ii),true);
                 if(!bandera){
                     return bandera;
                 }
@@ -25,5 +19,4 @@ public class CrearPlanesImpl implements CrearPlanes{
         }
         return bandera;
     }
-    
 }
