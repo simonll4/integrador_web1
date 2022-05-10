@@ -17,6 +17,8 @@ public class CrearPlanImpl implements CrearPlan {
         Plan aux = new PlanImpl();
         List<AnioPlan> aniosPlan = new ArrayList<AnioPlan>();
 
+        //Clonado del plan
+
         if(plan != null){
             aux.setAnio(plan.getAnio());
             if(plan.isEstadoActivo()){
@@ -32,19 +34,35 @@ public class CrearPlanImpl implements CrearPlan {
                 aux.setEstadoNulo();
             }
         }
-        
+    
+        for(int ii = 0; ii < plan.getAnios().size(); ii++){ //Recorre el listado de aniosPlan
+            AnioPlan auxAnio = new AnioPlanImpl();
+            List<Materia> materiasPlan = new ArrayList<Materia>();
+            auxAnio.setNombre(plan.getAnios().get(ii).getNombre());
+            auxAnio.setNumero(plan.getAnios().get(ii).getNumero());
+            auxAnio.setPlan(aux);
+            for(int kk = 0;kk < plan.getAnios().get(ii).getMaterias().size();kk++){
+                Materia auxMateria = null;
+                try {
+                    auxMateria = (Materia)plan.getAnios().get(ii).getMaterias().get(kk).clone();
+                } catch (Exception e) {
+                    System.out.println("No pude clonar Materia");
+                }
+                materiasPlan.add(auxMateria);
+            }
+            auxAnio.setMaterias(materiasPlan);
+            aniosPlan.add(auxAnio);
+        }
+        aux.setAnios(aniosPlan);
+
+        //Verificacion del Plan
 
         if(plan == null) return false;//Plan no puede ser null
         if(plan.isEstadoNulo())return false;//No se permiten planes sin estado
         if(plan.getAnio() == null && !plan.isEstadoBorrador())return false;//No se permite plan con anio nulo, excepto que sea un borrador
         if(plan.getAnio().intValue() < 1990 || plan.getAnio().intValue()>2040)return false;//No se permite plan con anio 1990 < anio < 2040
         if((plan.getAnios()==null || plan.getAnios().size()==0) && !plan.isEstadoBorrador())return false;//No se permite listado de anios null o vacio, excepto que sea un borrador
-        for(int ii = 0; ii < plan.getAnios().size(); ii++){
-            AnioPlan auxAnio = new AnioPlanImpl();
-            List<Materia> materiasPlan = new ArrayList<Materia>();
-            auxAnio.setNombre(plan.getAnios().get(ii).getNombre());
-            auxAnio.setNumero(plan.getAnios().get(ii).getNumero());
-            auxAnio.setPlan(aux);
+        for(int ii = 0; ii < plan.getAnios().size(); ii++){ //Recorre el listado de aniosPlan
             if(!plan.getAnios().get(ii).getPlan().equals(plan))return false;//No se permite un anio con plan distinto al que pertenece
             if(plan.getAnios().get(ii).getNumero() == null && !plan.isEstadoBorrador())return false;//No se permite que el numero de anio sea null, excepto que sea un borrador
             if(plan.getAnios().get(ii).getNumero() != null){
@@ -57,16 +75,9 @@ public class CrearPlanImpl implements CrearPlan {
                     } 
                 }
             }
-            
             if(plan.getAnios().get(ii).getNombre() == null && !plan.isEstadoBorrador())return false;//No se permite un anio sin nombre excepto que sea borrador
             if((plan.getAnios().get(ii).getMaterias() ==null || plan.getAnios().get(ii).getMaterias().size() == 0) && !plan.isEstadoBorrador())return false;//No se permite un listado de materias null o vacio excepto que sea borrador
             for(int kk = 0;kk < plan.getAnios().get(ii).getMaterias().size();kk++){
-                Materia auxMateria = null;
-                try {
-                    auxMateria = (Materia)plan.getAnios().get(ii).getMaterias().get(kk).clone();
-                } catch (Exception e) {
-                    System.out.println("No pude clonar Materia");
-                }
                 if(!plan.getAnios().get(ii).getMaterias().get(kk).getAnio().equals(plan.getAnios().get(ii)))return false;//No se permite que una materia tenga un anioPlan distinto al que pertenece
                 if((plan.getAnios().get(ii).getMaterias().get(kk).getCodigo() == null) && !plan.isEstadoBorrador())return false;//No se permite una materia de codigo null, excepto que sea borrador
                 if(plan.getAnios().get(ii).getMaterias().get(kk).getCodigo() != null){
@@ -83,14 +94,10 @@ public class CrearPlanImpl implements CrearPlan {
                 }
                 if((plan.getAnios().get(ii).getMaterias().get(kk).getNombre() == null) && !plan.isEstadoBorrador())return false;//No se permiten materias con nombre null, excepto que sea borrador
                 if(plan.getAnios().get(ii).getMaterias().get(kk).getCargaHoraria().doubleValue() <= 0.0)return false;//No se permiten materias con carga horaria <=0
-                if((plan.getAnios().get(ii).getMaterias().get(kk).getCargaHoraria() == null) && !plan.isEstadoBorrador())return false;//No se permiten materias con carga horaria null, excepto que sea borrador
-                materiasPlan.add(auxMateria);
+                if((plan.getAnios().get(ii).getMaterias().get(kk).getCargaHoraria() == null) && !plan.isEstadoBorrador())return false;//No se permiten materias con carga horaria null, excepto que sea borrador 
             }
-            auxAnio.setMaterias(materiasPlan);
-            aniosPlan.add(auxAnio);
         }
-        aux.setAnios(aniosPlan);
-        
+
         if(guardar){
             BaseDeDatos.planes.add(aux);
             return true;

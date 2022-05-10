@@ -32,11 +32,6 @@ public class Pruebas {
 
                 ModificarPlan modificarPlan = new ModificarPlanImpl();
 
-                // planes.get(0).setAnio(2050); NO se puede modificar el anio, es clave primaria
-                // planes.get(1).setAnio(2003);
-
-                // planes.get(0).setEstadoNoActivo();
-
                 int random = 2;// (int)(Math.random()*3);
                 System.out.println("condicion: " + random);
                 if (random == 0) {

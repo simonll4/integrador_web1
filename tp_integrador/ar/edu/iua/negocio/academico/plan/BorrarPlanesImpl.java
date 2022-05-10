@@ -6,7 +6,6 @@ import ar.edu.iua.modelo.academico.plan.Plan;
 
 public class BorrarPlanesImpl implements BorrarPlanes {
     
-
     @Override
     public boolean borrar(List<Plan> planes) {
         boolean bandera = false;
