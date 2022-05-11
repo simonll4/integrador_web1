@@ -81,4 +81,30 @@ public class AnioPlanImpl extends AnioPlan {
         return nombre != null ? nombre : (numero != null ? "Año " + numero : "Año sin identificación");
     }
 
+    public String fullToString() {
+
+        String z = (numero != null ? numero.toString() : "") + "\n" + (nombre != null ? nombre.toString() : "") + "\n";
+
+        for(Materia materia : materias){
+            String m = materia.fullToString().trim();
+            z += ( m.length() > 0 ) ? m + "\n" : "";
+        }
+
+        return z.trim();
+    }
+
+    public Object clone() throws CloneNotSupportedException {
+       AnioPlan anio = (AnioPlan)super.clone();
+       //anio.setPlan((Plan)this.getPlan().clone());
+       List<Materia> auxMaterias = new ArrayList<>();
+       for(Materia materia : this.materias){
+           if(materia != null){
+                materia.setAnio(this);
+                auxMaterias.add((Materia)materia.clone());
+           }
+       }
+       anio.setMaterias(auxMaterias);
+       return anio;
+    }
+
 }

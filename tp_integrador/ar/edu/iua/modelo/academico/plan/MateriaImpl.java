@@ -90,4 +90,12 @@ public class MateriaImpl extends Materia{
         return (nombre + " " + cargaHoraria).trim();
     }
 
+    public String fullToString() {
+
+        String s = (anio != null ? anio.toString() : "") + "\n" + (nombre != null ? nombre.toString() : "") + "\n" +
+        (codigo != null ? codigo.toString() : "") + "\n" + (cargaHoraria != null ? cargaHoraria.toString() : "") + "\n";
+
+        return s.trim();
+    }
+
 }

@@ -11,7 +11,7 @@ public class CrearPlanesImpl implements CrearPlanes{
         if(planes != null){
             for(int ii = 0; ii < planes.size(); ii++){
                 CrearPlanImpl verificador = new CrearPlanImpl();
-                bandera = verificador.crear(planes.get(ii),true);
+                bandera = verificador.crear(planes.get(ii));
                 if(!bandera){
                     return bandera;
                 }

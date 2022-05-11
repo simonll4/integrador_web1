@@ -8,6 +8,8 @@ public abstract class Objeto implements Cloneable {
 
     abstract public String toString();
 
+    abstract public String fullToString ();
+
     @Override
     public Object clone() throws CloneNotSupportedException {
         Object obj=null;

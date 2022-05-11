@@ -30,7 +30,7 @@ public class Pruebas {
                         return;
                 }
 
-                ModificarPlan modificarPlan = new ModificarPlanImpl();
+                /*ModificarPlan modificarPlan = new ModificarPlanImpl();
 
                 int random = 2;// (int)(Math.random()*3);
                 System.out.println("condicion: " + random);

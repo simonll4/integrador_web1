@@ -91,4 +91,29 @@ public class PlanImpl extends Plan {
         return "Plan de estudios " + (anio != null ? anio.toString() : " desconocido");
     }
 
+    public String fullToString(){
+
+        String s = (anio != null ? anio.toString() : "") + "\n" + (estado != null ? estado.toString() : "") + "\n";
+
+        for(AnioPlan anioList : anios){
+            String p = anioList.fullToString().trim();
+            s += (p.length() > 0) ? p + "\n" : "";
+        }
+
+        return s.trim();
+    }
+
+    public Object clone() throws CloneNotSupportedException {
+        Plan plan = (Plan)super.clone();
+        List<AnioPlan> auxAnios = new ArrayList<>();
+        for(AnioPlan anio : this.anios){
+            if(anio != null){
+                anio.setPlan(this);
+                auxAnios.add((AnioPlan)anio.clone());
+            }
+        }
+        plan.setAnios(auxAnios);
+        return plan;
+    }
+
 }

@@ -12,49 +12,8 @@ import ar.edu.iua.persistencia.BaseDeDatos;
 
 public class CrearPlanImpl implements CrearPlan {
 
-    public boolean crear(Plan plan, boolean guardar) {
-
-        Plan aux = new PlanImpl();
-        List<AnioPlan> aniosPlan = new ArrayList<AnioPlan>();
-
-        //Clonado del plan
-
-        if(plan != null){
-            aux.setAnio(plan.getAnio());
-            if(plan.isEstadoActivo()){
-                aux.setEstadoActivo();
-            }
-            if(plan.isEstadoNoActivo()){
-                aux.setEstadoNoActivo();
-            }
-            if(plan.isEstadoBorrador()){
-                aux.setEstadoBorrador();
-            }
-            if(plan.isEstadoNulo()){
-                aux.setEstadoNulo();
-            }
-        }
+    public boolean crear(Plan plan) {
     
-        for(int ii = 0; ii < plan.getAnios().size(); ii++){ //Recorre el listado de aniosPlan
-            AnioPlan auxAnio = new AnioPlanImpl();
-            List<Materia> materiasPlan = new ArrayList<Materia>();
-            auxAnio.setNombre(plan.getAnios().get(ii).getNombre());
-            auxAnio.setNumero(plan.getAnios().get(ii).getNumero());
-            auxAnio.setPlan(aux);
-            for(int kk = 0;kk < plan.getAnios().get(ii).getMaterias().size();kk++){
-                Materia auxMateria = null;
-                try {
-                    auxMateria = (Materia)plan.getAnios().get(ii).getMaterias().get(kk).clone();
-                } catch (Exception e) {
-                    System.out.println("No pude clonar Materia");
-                }
-                materiasPlan.add(auxMateria);
-            }
-            auxAnio.setMaterias(materiasPlan);
-            aniosPlan.add(auxAnio);
-        }
-        aux.setAnios(aniosPlan);
-
         //Verificacion del Plan
 
         if(plan == null) return false;//Plan no puede ser null
@@ -98,10 +57,14 @@ public class CrearPlanImpl implements CrearPlan {
             }
         }
 
-        if(guardar){
-            BaseDeDatos.planes.add(aux);
-            return true;
+        
+        try {
+            BaseDeDatos.planes.add((Plan)plan.clone());
+        } catch (CloneNotSupportedException e) {
+            e.printStackTrace();
         }
+            
+        
         return true;  
     }
 }
