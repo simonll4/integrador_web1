@@ -13,53 +13,49 @@ import ar.edu.iua.util.metodos_aleatorios.ObtenerPlan;
 public class UtilRandom {
 
     public Plan construirPlan(List<Plan> listaPlanes) {
-        
 
         Plan planAleatorio = new PlanImpl();
         ObtenerMateria materiaObtenida = new ObtenerMateria();
         ObtenerPlan planObtenido = new ObtenerPlan();
         List<AnioPlan> aniosPlan = new ArrayList<AnioPlan>();
 
-        planAleatorio.setAnio((int)(Math.random() * 40) + 1995);
+        planAleatorio.setAnio((int) (Math.random() * 40) + 1995);
 
         for (int jj = 0; jj < listaPlanes.size(); jj++) {
             if (planAleatorio.getAnio().equals(listaPlanes.get(jj).getAnio())) {
                 planAleatorio.setAnio((int) (Math.random() * 40) + 1995);
-                jj=-1;
+                jj = -1;
             }
         }
 
-        for (int ii = 0; ii < 5; ii++) { //Recorrer todos los aniosPlan de la lista
+        for (int ii = 0; ii < 5; ii++) { // Recorrer todos los aniosPlan de la lista
             List<Materia> materiasPlan = new ArrayList<Materia>();
-            AnioPlan anioAleatorio = new AnioPlanImpl();
+            AnioPlan anioAleatorio = null;
+            try {
+                anioAleatorio = (AnioPlanImpl) planObtenido.getPlan(listaPlanes).getAnios().get(ii).clone();
+            } catch (CloneNotSupportedException e) {
+                e.printStackTrace();
+            }
             int auxVerificacion = 1;
-            for (int jj = 0; jj < 12; jj++) {//For encargado de rellenar con materias cada anioPlan
-                AnioPlan anioHerramienta=null;
+            for (int jj = 0; jj < 12; jj++) {// For encargado de rellenar con materias cada anioPlan
+                AnioPlan anioHerramienta = null;
                 try {
                     anioHerramienta = (AnioPlanImpl) planObtenido.getPlan(listaPlanes).getAnios().get(ii).clone();
-                    anioAleatorio.setNombre(anioHerramienta.getNombre());
-                    anioAleatorio.setNumero(anioHerramienta.getNumero());
                 } catch (CloneNotSupportedException e) {
-                    System.out.println(" no se puede duplicar");
+                    e.printStackTrace();
+                }
+                Materia materiaAleatoria = null;
+                try {
+                    materiaAleatoria = (Materia) materiaObtenida.getMateria(anioHerramienta).clone();
+                } catch (CloneNotSupportedException e) {
+                    e.printStackTrace();
                 }
                 if (jj == 0) {
-                    Materia materia=null;
-                    try {
-                        materia = (Materia)materiaObtenida.getMateria((AnioPlanImpl)anioHerramienta).clone();
-                    } catch (CloneNotSupportedException e) {
-                        System.out.println(" no se puede duplicar");
-                    }
-                    materiasPlan.add((Materia)materia);
+                    materiasPlan.add(materiaAleatoria);
                 } else {
-                    Materia materia=null;
-                    try {
-                        materia = (Materia)materiaObtenida.getMateria((AnioPlanImpl)anioHerramienta).clone();
-                    } catch (CloneNotSupportedException e) {
-                        System.out.println(" no se puede duplicar");
-                    }
                     for (int kk = 0; kk < materiasPlan.size(); kk++) {
                         Boolean bandera = false;
-                        if (materiasPlan.get(kk).getCodigoVerificacion().equals(((Materia) materia).getCodigoVerificacion())) {
+                        if (materiasPlan.get(kk).getCodigoVerificacion().equals(materiaAleatoria.getCodigoVerificacion())) {
                             bandera = false;
                             jj--;
                             break;
@@ -67,7 +63,7 @@ public class UtilRandom {
                             bandera = true;
                         }
                         if (bandera) {
-                            materiasPlan.add((Materia) materia);
+                            materiasPlan.add(materiaAleatoria);
                             break;
                         }
                     }
@@ -78,14 +74,14 @@ public class UtilRandom {
             for (int jj = 0; jj < materiasPlan.size(); jj++) {
                 anioAleatorio.getMaterias().get(jj).setCodigoVerificacion(auxVerificacion);
                 anioAleatorio.getMaterias().get(jj).setCodigo(Integer.valueOf(""
-                        + anioAleatorio.getPlan().getAnio().toString()
-                        + anioAleatorio.getNumero().toString()
-                        + anioAleatorio.getMaterias().get(jj).getCodigoVerificacion().toString()));
+                + anioAleatorio.getPlan().getAnio().toString()
+                + anioAleatorio.getNumero().toString()
+                + anioAleatorio.getMaterias().get(jj).getCodigoVerificacion().toString()));
                 auxVerificacion++;
             }
             aniosPlan.add(anioAleatorio);
         }
-
+            
         planAleatorio.setAnios(aniosPlan);
         int random = (int)Math.random()*2;
         if(random == 0){

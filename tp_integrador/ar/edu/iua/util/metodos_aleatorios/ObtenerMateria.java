@@ -7,16 +7,10 @@ import ar.edu.iua.modelo.academico.plan.MateriaImpl;
 public class ObtenerMateria {
     public Materia getMateria(AnioPlan anioplan) {
         Materia materia = new MateriaImpl();
-        Materia materiaRandom = new MateriaImpl();
-        
-        
+
         materia = anioplan.getMaterias().get((int) (Math.random() * anioplan.getMaterias().size()));
         
-        materiaRandom.setNombre(materia.getNombre());
-        materiaRandom.setCargaHoraria(materia.getCargaHoraria().doubleValue());
-        materiaRandom.setAnio(materia.getAnio());
-        materiaRandom.setCodigoVerificacion(materia.getCodigoVerificacion().intValue());
-        return materiaRandom;
+        return materia;
     }
 
 }

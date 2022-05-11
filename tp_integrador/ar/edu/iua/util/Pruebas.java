@@ -5,6 +5,8 @@ import java.util.List;
 import ar.edu.iua.modelo.academico.plan.AnioPlan;
 import ar.edu.iua.modelo.academico.plan.Materia;
 import ar.edu.iua.modelo.academico.plan.Plan;
+import ar.edu.iua.negocio.academico.plan.BuscarPlan;
+import ar.edu.iua.negocio.academico.plan.BuscarPlanImpl;
 import ar.edu.iua.negocio.academico.plan.CrearPlanes;
 import ar.edu.iua.negocio.academico.plan.CrearPlanesImpl;
 import ar.edu.iua.negocio.academico.plan.ModificarPlan;
@@ -30,9 +32,10 @@ public class Pruebas {
                         return;
                 }
 
-                /*ModificarPlan modificarPlan = new ModificarPlanImpl();
+                ModificarPlan modificarPlan = new ModificarPlanImpl();
 
-                int random = 2;// (int)(Math.random()*3);
+                // pruebas de integridad
+                int random = (int) (Math.random() * 3);
                 System.out.println("condicion: " + random);
                 if (random == 0) {
                         planes.get(0).getAnios().get(0).getMaterias().get(0).setNombre("INGE WEB");
@@ -44,6 +47,8 @@ public class Pruebas {
                         planes.get(0).setEstadoBorrador();
                         planes.get(0).getAnios().get(0).setNombre(null);
                         planes.get(0).getAnios().get(0).setNumero(null);
+                        planes.get(0).getAnios().get(0).getMaterias().get(0).setNombre(null);
+                        planes.get(0).getAnios().get(0).getMaterias().get(0).setCargaHoraria(null);
                         ok = modificarPlan.modificar(planes.get(0));
                         System.out.println("Se modifico el plan " + planes.get(0) + " ? = " + (ok ? "SI" : "NO"));
                 }
@@ -70,6 +75,25 @@ public class Pruebas {
                                 System.out.println("\tA este plan no se le cargaron años!!");
                         }
 
+                }
+                System.out.println("\n\n");
+                BuscarPlan buscador = new BuscarPlanImpl();
+                Plan buscado = buscador.buscar(2001);
+                System.out.println("HOLA BUENAS TARDES, SOY EL BUSCADO");
+
+                System.out.println("\n" + buscado);
+                for (AnioPlan anio : buscado.getAnios()) {
+                        System.out.println("\t" + anio);
+                        for (Materia materia : anio.getMaterias()) {
+                                System.out.println("\t\t" + String.format("%1$" + 2 + "s", materia.getCodigo())
+                                                + " - " + materia);
+                        }
+                        if (anio.getMaterias().size() == 0) {
+                                System.out.println("\t\tA este año no se le cargaron materias!!");
+                        }
+                }
+                if (buscado.getAnios().size() == 0) {
+                        System.out.println("\tA este plan no se le cargaron años!!");
                 }
 
                 /*
