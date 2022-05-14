@@ -38,11 +38,10 @@ public class Pruebas {
                 ModificarPlan modificarPlan = new ModificarPlanImpl();
 
                 // pruebas de integridad
-                int random = 0; // (int) (Math.random() * 3);
+                int random = (int) (Math.random() * 3);
                 System.out.println("condicion: " + random);
                 if (random == 0) {
                         planes.get(0).getAnios().get(0).getMaterias().get(0).setNombre("INGE WEB");
-                        // planes.get(0).getAnios().get(0).getMaterias().get(1).setNombre(null);
                         ok = modificarPlan.modificar(planes.get(0));
                         System.out.println("Se modifico el plan " + planes.get(0) + " ? = " + (ok ? "SI" : "NO"));
                 }
@@ -61,26 +60,15 @@ public class Pruebas {
                         System.out.println("Se modifico el plan " + planes.get(2) + " ? = " + (ok ? "SI" : "NO"));
                 }
 
-                // System.out.println("HOLA BUENAS TARDES, SOY LA BD");
-                // UtilPrint.PrintPlan(BaseDeDatos.planes);
 
                 BuscarPlan buscador = new BuscarPlanImpl();
                 Plan buscado = buscador.buscar(2018);
                 List<Plan> buscadoList = new ArrayList<>();
                 buscadoList.add(buscado);
 
-                // System.out.println("HOLA BUENAS TARDES, SOY EL BUSCADO");
-                // UtilPrint.PrintPlan(buscadoList);
-
                 BuscarEImprimirPlanes buscarEImprimirPlanes = new BuscarEImprimirPlanesImpl();
 
-                // debe buscar todos los planes que contengan en sus datos (incluido años y
-                // materias)
-                // devolver todos los planes q contengan un valor 18, o mate o hist o 5
                 buscarEImprimirPlanes.buscar("í'ñGé 15 mat 18");
-
-                // por favor complete con mas codigo de pruebas, trate de probar todas las
-                // clases de negocio, borrar, modificar, buscar
 
         }
 
