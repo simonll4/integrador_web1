@@ -1,12 +1,15 @@
 package ar.edu.iua.util;
 
+import java.util.ArrayList;
 import java.util.List;
 
-import ar.edu.iua.modelo.academico.plan.AnioPlan;
-import ar.edu.iua.modelo.academico.plan.Materia;
+import ar.edu.iua.interfazusuario.BuscarEImprimirPlanes;
+import ar.edu.iua.interfazusuario.BuscarEImprimirPlanesImpl;
+
 import ar.edu.iua.modelo.academico.plan.Plan;
 import ar.edu.iua.negocio.academico.plan.BuscarPlan;
 import ar.edu.iua.negocio.academico.plan.BuscarPlanImpl;
+
 import ar.edu.iua.negocio.academico.plan.CrearPlanes;
 import ar.edu.iua.negocio.academico.plan.CrearPlanesImpl;
 import ar.edu.iua.negocio.academico.plan.ModificarPlan;
@@ -17,7 +20,7 @@ public class Pruebas {
 
         public void probar() {
 
-                List<Plan> planes = GenerarEjemplosDePlanes.generar(2, true);
+                List<Plan> planes = GenerarEjemplosDePlanes.generar(2, false);
 
                 System.out.println("\n\nSe crearon " + planes.size() + " planes.");
 
@@ -35,11 +38,11 @@ public class Pruebas {
                 ModificarPlan modificarPlan = new ModificarPlanImpl();
 
                 // pruebas de integridad
-                int random = (int) (Math.random() * 3);
+                int random = 0; // (int) (Math.random() * 3);
                 System.out.println("condicion: " + random);
                 if (random == 0) {
                         planes.get(0).getAnios().get(0).getMaterias().get(0).setNombre("INGE WEB");
-                        planes.get(0).getAnios().get(0).getMaterias().get(1).setNombre(null);
+                        // planes.get(0).getAnios().get(0).getMaterias().get(1).setNombre(null);
                         ok = modificarPlan.modificar(planes.get(0));
                         System.out.println("Se modifico el plan " + planes.get(0) + " ? = " + (ok ? "SI" : "NO"));
                 }
@@ -58,54 +61,23 @@ public class Pruebas {
                         System.out.println("Se modifico el plan " + planes.get(2) + " ? = " + (ok ? "SI" : "NO"));
                 }
 
-                System.out.println("HOLA BUENAS TARDES, SOY LA BD");
-                for (Plan plan1 : BaseDeDatos.planes) {
-                        System.out.println("\n" + plan1);
-                        for (AnioPlan anio : plan1.getAnios()) {
-                                System.out.println("\t" + anio);
-                                for (Materia materia : anio.getMaterias()) {
-                                        System.out.println("\t\t" + String.format("%1$" + 2 + "s", materia.getCodigo())
-                                                        + " - " + materia);
-                                }
-                                if (anio.getMaterias().size() == 0) {
-                                        System.out.println("\t\tA este año no se le cargaron materias!!");
-                                }
-                        }
-                        if (plan1.getAnios().size() == 0) {
-                                System.out.println("\tA este plan no se le cargaron años!!");
-                        }
+                // System.out.println("HOLA BUENAS TARDES, SOY LA BD");
+                // UtilPrint.PrintPlan(BaseDeDatos.planes);
 
-                }
-                System.out.println("\n\n");
                 BuscarPlan buscador = new BuscarPlanImpl();
-                Plan buscado = buscador.buscar(2001);
-                System.out.println("HOLA BUENAS TARDES, SOY EL BUSCADO");
+                Plan buscado = buscador.buscar(2018);
+                List<Plan> buscadoList = new ArrayList<>();
+                buscadoList.add(buscado);
 
-                System.out.println("\n" + buscado);
-                for (AnioPlan anio : buscado.getAnios()) {
-                        System.out.println("\t" + anio);
-                        for (Materia materia : anio.getMaterias()) {
-                                System.out.println("\t\t" + String.format("%1$" + 2 + "s", materia.getCodigo())
-                                                + " - " + materia);
-                        }
-                        if (anio.getMaterias().size() == 0) {
-                                System.out.println("\t\tA este año no se le cargaron materias!!");
-                        }
-                }
-                if (buscado.getAnios().size() == 0) {
-                        System.out.println("\tA este plan no se le cargaron años!!");
-                }
+                // System.out.println("HOLA BUENAS TARDES, SOY EL BUSCADO");
+                // UtilPrint.PrintPlan(buscadoList);
 
-                /*
-                 * BuscarEImprimirPlanes buscarEImprimirPlanes = new
-                 * BuscarEImprimirPlanesImpl();
-                 * 
-                 * // debe buscar todos los planes que contengan en sus datos (incluido años y
-                 * materias)
-                 * // devolver todos los planes q contengan un valor 18, o mate o hist o 5
-                 * buscarEImprimirPlanes.buscar(" 18 mate hist 5");
-                 * 
-                 */
+                BuscarEImprimirPlanes buscarEImprimirPlanes = new BuscarEImprimirPlanesImpl();
+
+                // debe buscar todos los planes que contengan en sus datos (incluido años y
+                // materias)
+                // devolver todos los planes q contengan un valor 18, o mate o hist o 5
+                buscarEImprimirPlanes.buscar("í'ñGé 15 mat 18");
 
                 // por favor complete con mas codigo de pruebas, trate de probar todas las
                 // clases de negocio, borrar, modificar, buscar

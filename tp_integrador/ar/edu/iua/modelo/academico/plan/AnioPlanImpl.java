@@ -95,7 +95,6 @@ public class AnioPlanImpl extends AnioPlan {
 
     public Object clone() throws CloneNotSupportedException {
         AnioPlan anio = (AnioPlan) super.clone();
-        // anio.setPlan((Plan)this.getPlan().clone());
         List<Materia> auxMaterias = new ArrayList<>();
         for (Materia materia : this.materias) {
             if (materia != null) {

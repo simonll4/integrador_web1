@@ -83,7 +83,7 @@ public class UtilRandom {
         }
             
         planAleatorio.setAnios(aniosPlan);
-        int random = (int)Math.random()*2;
+        int random = (int)(Math.random()*2);
         if(random == 0){
             planAleatorio.setEstadoNoActivo();
         }
