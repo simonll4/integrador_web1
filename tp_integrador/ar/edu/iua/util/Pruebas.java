@@ -130,7 +130,7 @@ public class Pruebas {
 
                 BuscarEImprimirPlanes buscarEImprimirPlanes = new BuscarEImprimirPlanesImpl();
 
-                buscarEImprimirPlanes.buscar("íngE web");
+                buscarEImprimirPlanes.buscar("ÍnGe WÉb");
 
         }
 
