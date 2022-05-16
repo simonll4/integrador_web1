@@ -11,6 +11,7 @@ public class BorrarPlanesImpl implements BorrarPlanes {
         boolean bandera = false;
         
         for(int ii = 0; ii < planes.size(); ii++){
+            if(planes.get(ii) == null) return bandera;
             if(!planes.get(ii).isEstadoBorrador()) return bandera;
         }
         

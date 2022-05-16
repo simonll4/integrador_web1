@@ -118,7 +118,7 @@ public class Pruebas {
                         ok = borradorPlanes.borrar(planesB);
 
                         System.out.println("Se borro el plan " + planes.get(0) + " ? = " + (ok ? "SI" : "NO"));
-                        System.out.println("Se borro el plan " + planes.get(5) + " ? = " + (ok ? "SI" : "NO"));
+                        System.out.println("Se borro el plan " + planes.get(1) + " ? = " + (ok ? "SI" : "NO"));
                 }
 
         
@@ -130,7 +130,7 @@ public class Pruebas {
 
                 BuscarEImprimirPlanes buscarEImprimirPlanes = new BuscarEImprimirPlanesImpl();
 
-                buscarEImprimirPlanes.buscar("í'ñGé 15 mat 18");
+                buscarEImprimirPlanes.buscar(null);
 
         }
 
