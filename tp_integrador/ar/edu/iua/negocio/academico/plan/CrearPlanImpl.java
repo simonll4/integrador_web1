@@ -8,7 +8,7 @@ public class CrearPlanImpl implements CrearPlan {
 
     public boolean crear(Plan plan) {
     
-        if(VerificarIntegridad.verficadorIntegridad(plan)){
+        if(VerificarIntegridad.verificadorIntegridad(plan)){
             try {
                 BaseDeDatos.planes.add((Plan)plan.clone());
             } catch (CloneNotSupportedException e) {

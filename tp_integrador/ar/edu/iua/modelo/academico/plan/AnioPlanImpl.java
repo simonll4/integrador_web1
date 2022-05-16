@@ -16,9 +16,6 @@ public class AnioPlanImpl extends AnioPlan {
         this.nombre = nombre;
     }
 
-    public AnioPlanImpl() {
-    }
-
     public Plan getPlan() {
         return plan;
     }

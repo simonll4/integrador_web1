@@ -8,7 +8,7 @@ public class ModificarPlanImpl implements ModificarPlan {
 
     public boolean modificar(Plan plan) {
         boolean bandera = false;
-        if(VerificarIntegridad.verficadorIntegridad(plan)){
+        if(VerificarIntegridad.verificadorIntegridad(plan)){
             for(int ii = 0; ii < BaseDeDatos.planes.size(); ii++){
                 if(BaseDeDatos.planes.get(ii).getAnio().equals(plan.getAnio())){
                     try {

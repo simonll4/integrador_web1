@@ -16,9 +16,6 @@ public class MateriaImpl extends Materia{
         this.cargaHoraria = cargaHoraria;
     }
 
-    public MateriaImpl() {
-    }
-
     public AnioPlan getAnio() {
         return anio;
     }

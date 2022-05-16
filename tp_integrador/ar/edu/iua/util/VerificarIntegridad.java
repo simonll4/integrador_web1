@@ -5,7 +5,7 @@ import ar.edu.iua.modelo.academico.plan.Plan;
 public class VerificarIntegridad {
     
 
-    static public boolean verficadorIntegridad(Plan plan){
+    static public boolean verificadorIntegridad(Plan plan){
 
         //Verificacion del Plan
 
