@@ -2,7 +2,9 @@ package ar.edu.iua.util;
 
 public class UtilTranslate {
     
-    static public String TraducirCadena(String cadena){
+    static public String traducirCadena(String cadena){
+        
+        cadena.toLowerCase();
 
         cadena = cadena.replace('ñ', 'n');
         cadena = cadena.replace('á','a');
@@ -14,6 +16,7 @@ public class UtilTranslate {
         cadena = cadena.replaceAll("'", "");
 
         cadena.trim().toLowerCase();
+        
         return cadena;
     }
 }

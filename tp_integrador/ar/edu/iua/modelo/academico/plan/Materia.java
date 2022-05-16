@@ -12,9 +12,9 @@ public abstract class Materia extends Objeto {
 
     abstract public void setCodigo(Integer codigo);
 
-    abstract public void setCodigoVerificacion(Integer codigo);
+    abstract public void setCodigoVerificacion(Integer codigo);//no se enoje
 
-    abstract public Integer getCodigoVerificacion();
+    abstract public Integer getCodigoVerificacion(); //porfis
 
     abstract public String getNombre();
 
@@ -23,7 +23,5 @@ public abstract class Materia extends Objeto {
     abstract public Double getCargaHoraria();
 
     abstract public void setCargaHoraria(Double cargaHoraria);
-
-    
 
 }

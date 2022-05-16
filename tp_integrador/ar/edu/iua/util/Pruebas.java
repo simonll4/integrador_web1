@@ -48,7 +48,7 @@ public class Pruebas {
                 BorrarPlanes borradorPlanes = new BorrarPlanesImpl();
 
                 // pruebas de integridad
-                int random = (int) (Math.random() * 7);
+                int random = 0;//(int) (Math.random() * 7);
 
                 System.out.println("condicion: " + random);
                 if (random == 0) {
@@ -130,7 +130,7 @@ public class Pruebas {
 
                 BuscarEImprimirPlanes buscarEImprimirPlanes = new BuscarEImprimirPlanesImpl();
 
-                buscarEImprimirPlanes.buscar(null);
+                buscarEImprimirPlanes.buscar("íngE web");
 
         }
 
