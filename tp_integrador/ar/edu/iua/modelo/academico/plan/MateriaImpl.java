@@ -4,13 +4,11 @@ public class MateriaImpl extends Materia{
 
     private AnioPlan anio;
     private Integer codigo;
-    private int codigoVerificacion;
     private String nombre;
     private Double cargaHoraria;
 
-    public MateriaImpl(AnioPlan anio,int codigoVerificacaion, Integer codigo, String nombre, Double cargaHoraria) {
+    public MateriaImpl(AnioPlan anio, Integer codigo, String nombre, Double cargaHoraria) {
         this.anio = anio;
-        this.codigoVerificacion = codigoVerificacaion;
         this.codigo = codigo;
         this.nombre = nombre;
         this.cargaHoraria = cargaHoraria;
@@ -22,14 +20,6 @@ public class MateriaImpl extends Materia{
 
     public void setAnio(AnioPlan anio) {
         this.anio = anio;
-    }
-
-    public Integer getCodigoVerificacion() {
-        return codigoVerificacion;
-    }
-
-    public void setCodigoVerificacion(Integer codigoVerificacion) {
-        this.codigoVerificacion = codigoVerificacion;
     }
 
     public Integer getCodigo() {

@@ -1,5 +1,7 @@
 package ar.edu.iua.interfazusuario;
 
+import ar.edu.iua.Excepciones.modeloEx.BuscarPlanEx;
+
 public interface BuscarEImprimirPlanes {
 
     // este metodo debe imprimir por consola un listado de planes segun los terminos de busqueda
@@ -20,6 +22,6 @@ public interface BuscarEImprimirPlanes {
         //      -------------------------------------
 
 
-    void buscar(String terminos);
+    void buscar(String terminos) throws BuscarPlanEx;
     
 }

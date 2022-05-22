@@ -39,7 +39,7 @@ public class UtilPrint {
             anio = consola.nextInt();
             if (anio != 0) {
                 if (anio == 1) {
-                    PrintPlan(BaseDeDatos.planes);
+                    PrintPlan(BaseDeDatos.getList());
                 } else {
                     PrintPlanDetalle(anio, buscados);
                 }

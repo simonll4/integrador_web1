@@ -1,15 +1,18 @@
 package ar.edu.iua.util;
 
+import ar.edu.iua.Excepciones.modeloEx.VerificadorEx;
 import ar.edu.iua.modelo.academico.plan.Plan;
 
 public class VerificarIntegridad {
     
 
-    static public boolean verificadorIntegridad(Plan plan){
+    static public boolean verificadorIntegridad(Plan plan) throws VerificadorEx{
 
         //Verificacion del Plan
 
-        if(plan == null) return false;//Plan no puede ser null
+        if(plan == null){
+            throw new VerificadorEx("El plan es nulo. VerificarIntegridad.java");//Plan no puede ser null
+        }
         if(plan.isEstadoNulo())return false;//No se permiten planes sin estado
         if(plan.getAnio() == null && !plan.isEstadoBorrador())return false;//No se permite plan con anio nulo, excepto que sea un borrador
         if(plan.getAnio().intValue() < 1990 || plan.getAnio().intValue()>2040)return false;//No se permite plan con anio 1990 < anio < 2040
@@ -37,7 +40,9 @@ public class VerificarIntegridad {
                     if(plan.getAnios().get(ii).getMaterias().get(kk).getCodigo().intValue() < 1)return false;//Codigo materia comienza en 1
                 }
                 if(kk!=0){
-                    if(plan.getAnios().get(ii).getMaterias().get(kk).getCodigoVerificacion().intValue() != plan.getAnios().get(ii).getMaterias().get(kk-1).getCodigoVerificacion().intValue()+1)return false;//Orden de las materias secuencial
+                    String actual = plan.getAnios().get(ii).getMaterias().get(kk).getCodigo().toString().substring(plan.getAnios().get(ii).getMaterias().get(kk).getCodigo().toString().length()-2);
+                    String anterior = plan.getAnios().get(ii).getMaterias().get(kk-1).getCodigo().toString().substring(plan.getAnios().get(ii).getMaterias().get(kk).getCodigo().toString().length()-2);
+                    if(actual.equals(anterior)) return false; //Orden de las materias secuencial
                 }
                 for(int hh = 0; hh < plan.getAnios().get(ii).getMaterias().size(); hh++){
                     if(kk!=hh){

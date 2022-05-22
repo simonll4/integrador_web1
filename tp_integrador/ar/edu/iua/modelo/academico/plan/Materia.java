@@ -12,10 +12,6 @@ public abstract class Materia extends Objeto {
 
     abstract public void setCodigo(Integer codigo);
 
-    abstract public void setCodigoVerificacion(Integer codigo);//no se enoje
-
-    abstract public Integer getCodigoVerificacion(); //porfis
-
     abstract public String getNombre();
 
     abstract public void setNombre(String nombre);

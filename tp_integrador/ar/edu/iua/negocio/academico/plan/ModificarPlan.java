@@ -1,5 +1,6 @@
 package ar.edu.iua.negocio.academico.plan;
 
+import ar.edu.iua.Excepciones.modeloEx.ModificarPlanEx;
 import ar.edu.iua.modelo.academico.plan.Plan;
 
 public interface ModificarPlan {
@@ -11,6 +12,6 @@ public interface ModificarPlan {
     */
     
 
-    boolean modificar(Plan plan);    
+    boolean modificar(Plan plan) throws ModificarPlanEx;    
     
 }

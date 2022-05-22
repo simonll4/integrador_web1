@@ -36,7 +36,7 @@ public class UtilRandom {
             } catch (CloneNotSupportedException e) {
                 e.printStackTrace();
             }
-            int auxVerificacion = 1;
+
             for (int jj = 0; jj < 12; jj++) {// For encargado de rellenar con materias cada anioPlan
                 AnioPlan anioHerramienta = null;
                 try {
@@ -55,7 +55,10 @@ public class UtilRandom {
                 } else {
                     for (int kk = 0; kk < materiasPlan.size(); kk++) {
                         Boolean bandera = false;
-                        if (materiasPlan.get(kk).getCodigoVerificacion().equals(materiaAleatoria.getCodigoVerificacion())) {
+                        String matActual = UtilTranslate.traducirCadena(materiasPlan.get(kk).getNombre());
+                        String matAleatoria = UtilTranslate.traducirCadena(materiaAleatoria.getNombre());
+
+                        if (matActual.equals(matAleatoria)) {
                             bandera = false;
                             jj--;
                             break;
@@ -71,13 +74,20 @@ public class UtilRandom {
             }
             anioAleatorio.setPlan(planAleatorio);
             anioAleatorio.setMaterias(materiasPlan);
+            
             for (int jj = 0; jj < materiasPlan.size(); jj++) {
-                anioAleatorio.getMaterias().get(jj).setCodigoVerificacion(auxVerificacion);
-                anioAleatorio.getMaterias().get(jj).setCodigo(Integer.valueOf(""
-                + anioAleatorio.getPlan().getAnio().toString()
-                + anioAleatorio.getNumero().toString()
-                + anioAleatorio.getMaterias().get(jj).getCodigoVerificacion().toString()));
-                auxVerificacion++;
+                if(jj<9){
+                    anioAleatorio.getMaterias().get(jj).setCodigo(Integer.valueOf(""
+                                + anioAleatorio.getPlan().getAnio().toString()
+                                + anioAleatorio.getNumero().toString()
+                                + "0" + (jj+1)));   
+                }
+                else{
+                    anioAleatorio.getMaterias().get(jj).setCodigo(Integer.valueOf(""
+                                + anioAleatorio.getPlan().getAnio().toString()
+                                + anioAleatorio.getNumero().toString()
+                                + (jj+1)));
+                }
             }
             aniosPlan.add(anioAleatorio);
         }
