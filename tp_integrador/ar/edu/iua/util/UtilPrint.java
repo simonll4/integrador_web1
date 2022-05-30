@@ -39,7 +39,11 @@ public class UtilPrint {
             anio = consola.nextInt();
             if (anio != 0) {
                 if (anio == 1) {
-                    PrintPlan(BaseDeDatos.getList());
+                    try {
+                        PrintPlan(BaseDeDatos.getList());
+                    } catch (CloneNotSupportedException e) {
+                        e.printStackTrace();
+                    }
                 } else {
                     PrintPlanDetalle(anio, buscados);
                 }

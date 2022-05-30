@@ -18,7 +18,11 @@ public class CrearPlanImpl implements CrearPlan {
         }
 
         if(v){
-            return BaseDeDatos.addPlan(plan);
+            try {
+                return BaseDeDatos.addPlan(plan);
+            } catch (CloneNotSupportedException e) {
+                throw new CrearPlanEx(e.getMessage());
+            }
         }
         else{
             return false;

@@ -15,32 +15,24 @@ public class BaseDeDatos {
 
     public static Plan getPlan (int index) throws CloneNotSupportedException{
         
-        try {
             return (Plan)planes.get(index).clone();
-        } catch (CloneNotSupportedException e) {
-            throw new CloneNotSupportedException(e.getMessage());
-        }  
     }
 
-    public static boolean setPlan (int index, Plan plan){
+    public static boolean setPlan (int index, Plan plan) throws CloneNotSupportedException{
         boolean bandera = false;
-        try {
-            planes.set(index, (Plan)plan.clone());
-            bandera = true;
-        } catch (CloneNotSupportedException e) {
-            e.printStackTrace();
-        }
+    
+        planes.set(index, (Plan)plan.clone());
+        bandera = true;
+        
         return bandera;
     }
     
-    public static boolean addPlan (Plan plan){
+    public static boolean addPlan (Plan plan) throws CloneNotSupportedException{
         boolean bandera = false;
-        try {
-            planes.add((Plan) plan.clone());
-            bandera = true;
-        } catch (CloneNotSupportedException e) {
-            e.printStackTrace();
-        }
+        
+        planes.add((Plan) plan.clone());
+        bandera = true;
+       
         return bandera;
     }
 
@@ -48,14 +40,10 @@ public class BaseDeDatos {
         planes.remove(index);
     }
 
-    public static List<Plan> getList (){
+    public static List<Plan> getList () throws CloneNotSupportedException{
         List<Plan> clonePlanes = new ArrayList<>();
         for(Plan plan:planes){
-            try {
-                clonePlanes.add((Plan)plan.clone());
-            } catch (CloneNotSupportedException e) {
-                e.printStackTrace();
-            }
+            clonePlanes.add((Plan)plan.clone());
         }
         return clonePlanes;
     }

@@ -4,10 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import ar.edu.iua.Excepciones.ObjetoEx;
-import ar.edu.iua.Excepciones.modeloEx.BorrarPlanEx;
-import ar.edu.iua.Excepciones.modeloEx.BuscarPlanEx;
-import ar.edu.iua.Excepciones.modeloEx.CrearPlanEx;
-import ar.edu.iua.Excepciones.modeloEx.ModificarPlanEx;
+
 import ar.edu.iua.interfazusuario.BuscarEImprimirPlanes;
 import ar.edu.iua.interfazusuario.BuscarEImprimirPlanesImpl;
 
@@ -38,11 +35,9 @@ public class Pruebas {
                 CrearPlanes crearPlanes = new CrearPlanesImpl();
 
                 boolean ok = false;
-                try {
-                        ok = crearPlanes.crear(planes);
-                } catch (CrearPlanEx e) {
-                        throw new CrearPlanEx(e.getMessage());
-                }
+         
+                ok = crearPlanes.crear(planes);
+
 
                 System.out.println("Se guardaron " + BaseDeDatos.planesSize()+ " planes en la BD");
 
@@ -58,16 +53,13 @@ public class Pruebas {
                 BorrarPlanes borradorPlanes = new BorrarPlanesImpl();
 
                 // pruebas de integridad
-                int random = 0;//(int) (Math.random() * 7);
+                int random = (int) (Math.random() * 7);
 
                 System.out.println("condicion: " + random);
                 if (random == 0) {
                         planes.get(0).getAnios().get(0).getMaterias().get(0).setNombre("INGE WEB");
-                        try {
-                                ok = modificarPlan.modificar(planes.get(0));   
-                        } catch (ModificarPlanEx e) {
-                                throw new ModificarPlanEx(e.getMessage());
-                        }
+                        
+                        ok = modificarPlan.modificar(planes.get(0));   
 
                         System.out.println("Se modifico el plan " + planes.get(0) + " ? = " + (ok ? "SI" : "NO"));
                 }
@@ -77,20 +69,16 @@ public class Pruebas {
                         planes.get(0).getAnios().get(0).setNumero(null);
                         planes.get(0).getAnios().get(0).getMaterias().get(0).setNombre(null);
                         planes.get(0).getAnios().get(0).getMaterias().get(0).setCargaHoraria(null);
-                        try {
-                                ok = modificarPlan.modificar(planes.get(0));   
-                        } catch (ModificarPlanEx e) {
-                                throw new ModificarPlanEx(e.getMessage());
-                        }
+        
+                        ok = modificarPlan.modificar(planes.get(0));   
+ 
                         System.out.println("Se modifico el plan " + planes.get(0) + " ? = " + (ok ? "SI" : "NO"));
                 }
                 if (random == 2) {
                         planes.get(2).getAnios().get(4).getMaterias().get(0).setCargaHoraria(0.0);
-                        try {
-                                ok = modificarPlan.modificar(planes.get(2));   
-                        } catch (ModificarPlanEx e) {
-                                throw new ModificarPlanEx(e.getMessage());
-                        }
+                        
+                        ok = modificarPlan.modificar(planes.get(2));   
+                        
                         System.out.println("Se modifico el plan " + planes.get(2) + " ? = " + (ok ? "SI" : "NO"));
                 }
 
@@ -99,11 +87,8 @@ public class Pruebas {
                         planes.get(1).getAnios().get(0).setNombre("Hola Mundo");
                         planes.get(2).getAnios().get(1).getMaterias().get(1).setCargaHoraria(200.0);
                         
-                        try {
-                                ok = modificarPlanes.modificar(planes);  
-                        } catch (ModificarPlanEx e) {
-                                throw new ModificarPlanEx(e.getMessage());
-                        }
+                        
+                        ok = modificarPlanes.modificar(planes);  
                         
                         System.out.println("Se modifico el plan " + planes.get(0) + " ? = " + (ok ? "SI" : "NO"));
                         System.out.println("Se modifico el plan " + planes.get(1) + " ? = " + (ok ? "SI" : "NO"));
@@ -115,11 +100,7 @@ public class Pruebas {
                         planes.get(1).getAnios().get(0).setNombre("Hola Mundo");
                         planes.get(2).getAnios().get(1).getMaterias().get(1).setCargaHoraria(0.0);
                         
-                        try {
-                                ok = modificarPlanes.modificar(planes);  
-                        } catch (ModificarPlanEx e) {
-                                throw new ModificarPlanEx(e.getMessage());
-                        }
+                        ok = modificarPlanes.modificar(planes);  
                         
                         System.out.println("Se modifico el plan " + planes.get(0) + " ? = " + (ok ? "SI" : "NO"));
                         System.out.println("Se modifico el plan " + planes.get(1) + " ? = " + (ok ? "SI" : "NO"));
@@ -129,18 +110,8 @@ public class Pruebas {
                 if (random == 5){
                         planes.get(0).setEstadoBorrador();
 
-                        try {
-                                ok = modificarPlan.modificar(planes.get(0));   
-                        } catch (ModificarPlanEx e) {
-                                throw new ModificarPlanEx(e.getMessage());
-                        }
-
-                        try {
-                                ok = borradorPlan.borrar(planes.get(0));  
-                        } catch (BorrarPlanEx e) {
-                                throw new BorrarPlanEx(e.getMessage());
-                        }
-
+                        ok = modificarPlan.modificar(planes.get(0));   
+                        ok = borradorPlan.borrar(planes.get(0));  
 
                         System.out.println("Se borro el plan " + planes.get(0) + " ? = " + (ok ? "SI" : "NO"));
                 }
@@ -148,22 +119,14 @@ public class Pruebas {
                 if (random == 6){
                         planes.get(0).setEstadoBorrador();
 
-                        try {
-                                ok = modificarPlan.modificar(planes.get(0));   
-                        } catch (ModificarPlanEx e) {
-                                throw new ModificarPlanEx(e.getMessage());
-                        }
-                        
+                        ok = modificarPlan.modificar(planes.get(0));   
+
                         List<Plan> planesB = new ArrayList<>();
 
                         planesB.add(planes.get(0));
                         planesB.add(planes.get(5));
 
-                        try {
-                                ok = borradorPlanes.borrar(planesB);
-                        } catch (BorrarPlanEx e) {
-                                throw new BorrarPlanEx(e.getMessage());
-                        }
+                        ok = borradorPlanes.borrar(planesB);
 
                         System.out.println("Se borro el plan " + planes.get(0) + " ? = " + (ok ? "SI" : "NO"));
                         System.out.println("Se borro el plan " + planes.get(1) + " ? = " + (ok ? "SI" : "NO"));
@@ -178,11 +141,8 @@ public class Pruebas {
 
                 BuscarEImprimirPlanes buscarEImprimirPlanes = new BuscarEImprimirPlanesImpl();
 
-                try {
-                        buscarEImprimirPlanes.buscar("matématicA");
-                } catch (BuscarPlanEx e) {
-                        throw new BuscarPlanEx(e.getMessage());
-                }
+                buscarEImprimirPlanes.buscar("matématicA");
+
 
         }
 

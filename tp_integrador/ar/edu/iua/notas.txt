@@ -11,3 +11,6 @@ y todas heredan de ObjetoEx (clase padre) hereda Excepcion
 verificar las interfaces
 
 if(plan == null) throw new CrearPlanExcepcion("wtf amigo");
+
+-- Webservices
+
