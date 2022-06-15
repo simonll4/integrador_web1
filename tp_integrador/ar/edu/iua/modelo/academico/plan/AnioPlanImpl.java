@@ -90,6 +90,27 @@ public class AnioPlanImpl extends AnioPlan {
         return z.trim();
     }
 
+    public String fullToJson() {
+
+        String z = (numero != null ? "{\n \"anio\" : " + numero.toString() + " ," : "") + "\n" + 
+                    (nombre != null ? " \"nombre\" : \"" + nombre.toString() + "\" ," : "") + "\n" + "\"materias\" : [";
+
+
+        for (int ii = 0; ii < materias.size(); ii++) {
+            String m = materias.get(ii).fullToJson();
+            if(ii == materias.size()-1){
+                z += (m.length() > 0) ? m + "\n" : "";
+            }
+            else{
+                z += (m.length() > 0) ? m + "," : "";
+            }
+        }
+
+        z += " ]\n }";
+
+        return z.trim();
+    }
+
     public Object clone() throws CloneNotSupportedException {
         AnioPlan anio = (AnioPlan) super.clone();
         List<Materia> auxMaterias = new ArrayList<>();

@@ -10,6 +10,9 @@ public abstract class Objeto implements Cloneable {
 
     abstract public String fullToString ();
 
+    abstract public String fullToJson();
+
+
     @Override
     public Object clone() throws CloneNotSupportedException {
         Object obj=null;
