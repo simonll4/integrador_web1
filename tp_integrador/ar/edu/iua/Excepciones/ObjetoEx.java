@@ -1,4 +1,4 @@
-package ar.edu.iua.Excepciones;
+package ar.edu.iua.excepciones;
 
 public class ObjetoEx extends Exception{
     

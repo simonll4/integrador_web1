@@ -1,6 +1,6 @@
-package ar.edu.iua.Excepciones.modeloEx;
+package ar.edu.iua.excepciones.modelo_ex;
 
-import ar.edu.iua.Excepciones.ObjetoEx;
+import ar.edu.iua.excepciones.ObjetoEx;
 
 public class BuscarPlanEx extends ObjetoEx{
 

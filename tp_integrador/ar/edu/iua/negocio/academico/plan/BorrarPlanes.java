@@ -2,7 +2,7 @@ package ar.edu.iua.negocio.academico.plan;
 
 import java.util.List;
 
-import ar.edu.iua.Excepciones.modeloEx.BorrarPlanEx;
+import ar.edu.iua.excepciones.modelo_ex.BorrarPlanEx;
 import ar.edu.iua.modelo.academico.plan.Plan;
 
 public interface BorrarPlanes {

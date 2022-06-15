@@ -3,8 +3,7 @@ package ar.edu.iua.util;
 import java.util.ArrayList;
 import java.util.List;
 
-import ar.edu.iua.Excepciones.ObjetoEx;
-
+import ar.edu.iua.excepciones.ObjetoEx;
 import ar.edu.iua.interfazusuario.BuscarEImprimirPlanes;
 import ar.edu.iua.interfazusuario.BuscarEImprimirPlanesImpl;
 
@@ -35,7 +34,7 @@ public class Pruebas {
                 CrearPlanes crearPlanes = new CrearPlanesImpl();
 
                 boolean ok = false;
-         
+
                 ok = crearPlanes.crear(planes);
 
 
@@ -53,7 +52,7 @@ public class Pruebas {
                 BorrarPlanes borradorPlanes = new BorrarPlanesImpl();
 
                 // pruebas de integridad
-                int random = (int) (Math.random() * 7);
+                int random = 0/*(int) (Math.random() * 7)*/;
 
                 System.out.println("condicion: " + random);
                 if (random == 0) {

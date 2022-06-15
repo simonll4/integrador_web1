@@ -1,7 +1,8 @@
 package ar.edu.iua;
 
-import ar.edu.iua.Excepciones.ObjetoEx;
+import ar.edu.iua.excepciones.ObjetoEx;
 import ar.edu.iua.util.Pruebas;
+import ar.edu.iua.web_services.*;
 
 public class Main {
 
@@ -11,6 +12,7 @@ public class Main {
         Pruebas pruebas = new Pruebas();
         try {
             pruebas.probar();
+            Server.startServer();
         } catch (ObjetoEx e) {
             System.out.println(e.getMessage());
         }

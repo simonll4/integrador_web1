@@ -18,6 +18,7 @@ public class UtilTranslate {
         cadena = cadena.replace('ü','u');
         cadena = cadena.replace('Ü','U');
         cadena = cadena.replaceAll("'", "");
+        cadena = cadena.replaceAll("%20", " ");
 
         cadena.trim().toLowerCase();
         

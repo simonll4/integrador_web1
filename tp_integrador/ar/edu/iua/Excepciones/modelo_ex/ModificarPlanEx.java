@@ -1,4 +1,4 @@
-package ar.edu.iua.Excepciones.modeloEx;
+package ar.edu.iua.excepciones.modelo_ex;
 
 public class ModificarPlanEx extends VerificadorEx{
 

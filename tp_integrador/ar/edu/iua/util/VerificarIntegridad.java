@@ -1,6 +1,6 @@
 package ar.edu.iua.util;
 
-import ar.edu.iua.Excepciones.modeloEx.VerificadorEx;
+import ar.edu.iua.excepciones.modelo_ex.VerificadorEx;
 import ar.edu.iua.modelo.academico.plan.Plan;
 
 public class VerificarIntegridad {

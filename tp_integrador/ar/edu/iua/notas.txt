@@ -1,16 +1,6 @@
-ejecutar todo lo de pruebas en un try catch, si capturamos una excepcion la devolvemos con 
-system.error
-
-crearPlan devuelve un booleano con excepcion si alguna regla no se cumple
-
-crearPlan(plan p) throws CrearPlanEx; //hay que crearla para todas 'nombre''funcion'Ex; hay que heredarlas
-excepcion debe ser una interfaz
-
-y todas heredan de ObjetoEx (clase padre) hereda Excepcion
-
-verificar las interfaces
-
-if(plan == null) throw new CrearPlanExcepcion("wtf amigo");
-
 -- Webservices
 
+Preguntar si hacemos un solo handler para TODAS las operaciones o es un handler por operacion?
+
+buscarPlanHandler: Error 204. Como podemos mostrar eso por pantalla si la excepcion de buscarPlan nos corta la ejecucion y vuelve al try-catch
+Lo mismo para buscarPlanesHandler

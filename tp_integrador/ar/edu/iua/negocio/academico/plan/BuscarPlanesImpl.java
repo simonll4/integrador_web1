@@ -3,7 +3,7 @@ package ar.edu.iua.negocio.academico.plan;
 import java.util.ArrayList;
 import java.util.List;
 
-import ar.edu.iua.Excepciones.modeloEx.BuscarPlanEx;
+import ar.edu.iua.excepciones.modelo_ex.BuscarPlanEx;
 import ar.edu.iua.modelo.academico.plan.Plan;
 import ar.edu.iua.persistencia.BaseDeDatos;
 import ar.edu.iua.util.UtilTranslate;

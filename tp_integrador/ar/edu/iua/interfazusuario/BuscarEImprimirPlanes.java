@@ -1,6 +1,6 @@
 package ar.edu.iua.interfazusuario;
 
-import ar.edu.iua.Excepciones.modeloEx.BuscarPlanEx;
+import ar.edu.iua.excepciones.modelo_ex.BuscarPlanEx;
 
 public interface BuscarEImprimirPlanes {
 

@@ -1,7 +1,7 @@
 package ar.edu.iua.negocio.academico.plan;
 
-import ar.edu.iua.Excepciones.ObjetoEx;
-import ar.edu.iua.Excepciones.modeloEx.CrearPlanEx;
+import ar.edu.iua.excepciones.ObjetoEx;
+import ar.edu.iua.excepciones.modelo_ex.CrearPlanEx;
 import ar.edu.iua.modelo.academico.plan.Plan;
 import ar.edu.iua.persistencia.BaseDeDatos;
 import ar.edu.iua.util.VerificarIntegridad;
