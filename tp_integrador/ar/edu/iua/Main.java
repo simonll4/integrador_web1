@@ -5,6 +5,7 @@ import java.security.GeneralSecurityException;
 import java.util.List;
 
 import ar.edu.iua.excepciones.ObjetoEx;
+import ar.edu.iua.util.Launcher;
 import ar.edu.iua.util.Pruebas;
 import ar.edu.iua.util.generadores.GenerarEjemplosDeMesas;
 import ar.edu.iua.web_services.*;
@@ -16,8 +17,15 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("Comienzo de main\n\n");
 
+        try {
+			Launcher.launch();
+		} catch (ObjetoEx e) {
+			System.out.println(e.getMessage());
+		}
+
+
+        /*
         Pruebas pruebas = new Pruebas();
-        
         try {
             pruebas.probar();
             List<MesaExamen> mesas = GenerarEjemplosDeMesas.generarMesasAleatorias(10);

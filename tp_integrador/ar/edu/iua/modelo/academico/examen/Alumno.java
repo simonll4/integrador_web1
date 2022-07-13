@@ -44,13 +44,13 @@ public class Alumno extends Objeto{
 
 
     // getters
-    public int getId(){
+    public Integer getId(){
         return id;
     }
     public String getNombre(){
         return nombre;
     }
-    public int getEdad(){
+    public Integer getEdad(){
         return edad;
     }
 
@@ -100,7 +100,6 @@ public class Alumno extends Objeto{
         return null;
     }
 
-    @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;

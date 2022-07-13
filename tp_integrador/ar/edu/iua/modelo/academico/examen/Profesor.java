@@ -42,7 +42,7 @@ public class Profesor extends Objeto{
     }
 
     // getters
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
@@ -50,7 +50,7 @@ public class Profesor extends Objeto{
         return nombre;
     }
 
-    public int getEdad() {
+    public Integer getEdad() {
         return edad;
     }
 

@@ -5,15 +5,18 @@ import java.util.List;
 import ar.edu.iua.excepciones.ObjetoEx;
 import ar.edu.iua.excepciones.modelo_ex.CrearMesaEx;
 import ar.edu.iua.excepciones.modelo_ex.CrearPlanEx;
+import ar.edu.iua.interfazusuario.BuscarEImprimirPlanes;
+import ar.edu.iua.interfazusuario.BuscarEImprimirPlanesImpl;
 import ar.edu.iua.modelo.academico.examen.MesaExamen;
 import ar.edu.iua.modelo.academico.plan.Plan;
+import ar.edu.iua.negocio.academico.examen.CrearMesasExamen;
 import ar.edu.iua.negocio.academico.plan.CrearPlanes;
 import ar.edu.iua.negocio.academico.plan.CrearPlanesImpl;
 import ar.edu.iua.persistencia.BaseDeDatos;
 import ar.edu.iua.util.generadores.GenerarEjemplosDeMesas;
 import ar.edu.iua.util.generadores.GenerarEjemplosDePlanes;
 
-public class launcher {
+public class Launcher {
 
     public static void launch() throws ObjetoEx {
 
@@ -26,19 +29,31 @@ public class launcher {
         boolean ok = false;
         ok = crearPlanes.crear(planes);
 
-        System.out.println("Se guardaron " + BaseDeDatos.planesSize() + " planes en la BD");
         if (ok == false) {
             System.out.println("se rompio");
             return;
         }
+        System.out.println("Se guardaron " + BaseDeDatos.planesSize() + " planes en la BD");
 
         // generar mesas de examen
+
+        ok = false;
         try {
             List<MesaExamen> mesasExamen = GenerarEjemplosDeMesas.generarMesasAleatorias(10);
+            CrearMesasExamen crearMesas = new CrearMesasExamen();
+            ok = crearMesas.crear(mesasExamen);
 
-
+            if (ok == false) {
+            System.out.println("se rompio");
+            return;
+            }
+            System.out.println("Se guardaron " + BaseDeDatos.planesSize() + " planes en la BD");
+            
         } catch (CloneNotSupportedException e) {
             e.printStackTrace();
         }
+
+        UtilPrint.PrintBusqueda(planes);
+
     }
 }

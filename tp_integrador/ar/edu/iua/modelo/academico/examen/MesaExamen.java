@@ -130,4 +130,16 @@ public class MesaExamen extends Objeto {
         return result;
     }
 
+    public Object clone() throws CloneNotSupportedException {
+        MesaExamen mesa = (MesaExamen) super.clone();
+        List<Alumno> auxAlumnos = new ArrayList<>();
+        for (Alumno alumno : this.alumnos) {
+            if (alumno != null) {
+                auxAlumnos.add((Alumno) alumno.clone());
+            }
+        }
+        mesa.setAlumnos(auxAlumnos);
+        return mesa;
+    }
+
 }

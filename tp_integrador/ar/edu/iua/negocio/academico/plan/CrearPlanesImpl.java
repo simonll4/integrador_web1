@@ -13,11 +13,7 @@ public class CrearPlanesImpl implements CrearPlanes{
         if(planes != null){
             for(int ii = 0; ii < planes.size(); ii++){
                 CrearPlanImpl creador = new CrearPlanImpl();
-                try {
-                    bandera = creador.crear(planes.get(ii));
-                } catch (CrearPlanEx e) {
-                    throw new CrearPlanEx(e.getMessage());
-                }
+                bandera = creador.crear(planes.get(ii));
                 if(!bandera){
                     return bandera;
                 }

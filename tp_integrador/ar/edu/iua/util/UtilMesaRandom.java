@@ -19,7 +19,7 @@ public class UtilMesaRandom {
     private static String[] apellidos = { "González", "Rodríguez", "Gomez", "Fernandez", "Lopez", "Díaz", "Martínez",
             "Perez",
             "García", "Sanchez", "Romero", "Sosa", "Torres", "Álvarez", "Ruiz", "Ramirez", "Flores", "Benitez",
-            "Acosta", "Herrera", "Suárez", "Aguirre", "Giménez", "Gutiérrez", "ipollitti", "Martinez" };
+            "Acosta", "Herrera", "Suárez", "Aguirre", "Giménez", "Gutiérrez", "Ipollitti", "Martinez" };
     private static String[] nombres = { "Hugo", "Mateo", "Martín", "Lucas", "Leo", "Daniel", "Alejandro", "Manuel",
             "Dilan",
             "Dipa", "Doménico", "Drago", "Edivaldo", "Elvis", "Elyan", "Gautam", "Lionel", "Simón", "Fabián", "Lucián",
@@ -36,7 +36,7 @@ public class UtilMesaRandom {
         // obtener materia
         Materia materia = null;
         ObtenerMateria materiaObtenida = new ObtenerMateria();
-        int randomPlan = (int) (Math.random() * BaseDeDatos.getList().size());
+        int randomPlan = (int) (Math.random() * BaseDeDatos.planesSize());
         int randomAnio = (int) (Math.random() * 4);
         materia = materiaObtenida.getMateria(BaseDeDatos.getPlan(randomPlan).getAnios().get(randomAnio));
 
@@ -77,7 +77,7 @@ public class UtilMesaRandom {
         // generar alumnos
         List<Alumno> alumnos = new ArrayList<>();
 
-        for (int ii = 0; ii < (int) (Math.random() * 25); ii++) {
+        for (int ii = 0; ii < (int) ((Math.random() * 25) + 1); ii++) {
             Alumno alumno = new Alumno();
             idAlumno++;
             alumno.setId(idAlumno);

@@ -3,6 +3,8 @@ package ar.edu.iua.util;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+
+import ar.edu.iua.modelo.academico.examen.MesaExamen;
 import ar.edu.iua.modelo.academico.plan.AnioPlan;
 import ar.edu.iua.modelo.academico.plan.Materia;
 import ar.edu.iua.modelo.academico.plan.Plan;
@@ -30,12 +32,12 @@ public class UtilPrint {
 
         do {
             System.out.println(
-                    "----------------------------------------------------------------------------------------");
+                    "---------------------------------------------------------------------------------------------------------------------------------");
             System.out.println(
-                    "| " + "Ingrese el anio para ver las materia. Ingrese 1 para ver la BD. Ingrese 0 para salir"
+                    "| " + "Ingrese el anio para ver las materia. Ingrese 1 para ver la BD. Ingrese 2 para ver las mesas de examen. Ingrese 0 para salir"
                             + " |");
             System.out.println(
-                    "----------------------------------------------------------------------------------------");
+                    "---------------------------------------------------------------------------------------------------------------------------------");
             anio = consola.nextInt();
             if (anio != 0) {
                 if (anio == 1) {
@@ -44,11 +46,20 @@ public class UtilPrint {
                     } catch (CloneNotSupportedException e) {
                         e.printStackTrace();
                     }
-                } else {
+                }
+                else if(anio == 2){
+                    try {
+                        PrintMesaExamen(BaseDeDatos.getListMesas());
+                    } catch (CloneNotSupportedException e) {
+                        e.printStackTrace();
+                    }
+                }
+                else {
                     PrintPlanDetalle(anio, buscados);
                 }
-            }
-        } while (anio != 0);
+
+                }
+            }while (anio != 0);
 
         System.out.println("------------------------------------------------------------------");
         System.out.println("|            " + "Gracias por utilizar Monserrat Buscador" + "             |");
@@ -90,6 +101,14 @@ public class UtilPrint {
             }
         }
     }
+
+    static public void PrintMesaExamen (List<MesaExamen> mesas){
+        for (MesaExamen mesa : mesas) {
+            System.out.println(mesa.fullToString());
+            System.out.println("\n");
+        }
+    }
+    
 
     static private int ContarMaterias(Plan plan) {
         int cantidad = 0;

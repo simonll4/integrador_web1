@@ -59,9 +59,22 @@ public class VerificarIntegridad {
         return true;
     } 
 
-    static public boolean verificarIntegridadMesa (MesaExamen mesa){
-        
-
-        return false;
+    static public boolean verificarIntegridadMesa (MesaExamen mesa) throws VerificadorEx{
+        if(mesa == null) throw new VerificadorEx("Error. La mesa es nula. VerificarIntegridad.java"); //La mesa no puede ser nula
+        if(mesa.getId().equals(null))throw new VerificadorEx("Error. La mesa no tiene ID. VerificarIntegridad.java"); //Una mesa no puede tener id nulo
+        if(mesa.getId().intValue() == 0)throw new VerificadorEx("Error. La mesa tiene ID igual a 0. VerificarIntegridad.java"); //Una mesa no debe tener id 0
+        if(mesa.getFecha().equals(null))throw new VerificadorEx("Error. La mesa debe tener una fecha asignada. VerificarIntegridad.java"); //Una mesa debe tener fecha asignada
+        if(mesa.getPresidente().equals(null))throw new VerificadorEx("Error. La mesa debe tener un presidente. VerificarIntegridad.java"); //Una mesa debe tener un presidente
+        if(mesa.getAlumnos().equals(null))throw new VerificadorEx("Error. La mesa tiene un listado de alumnos nulo. VerificarIntegridad.java"); //El listado de alumnos no puede ser nulo
+        if(mesa.getAlumnos().size()==0)throw new VerificadorEx("Error. Debe haber al menos un alumno anotado para la mesa"); //Una mesa debe tener al menos un alumno anotado
+        for (int ii = 0; ii < mesa.getAlumnos().size(); ii++) {
+            for (int jj = 0; jj < mesa.getAlumnos().size(); jj++) {
+                if(ii!=jj){
+                    if(mesa.getAlumnos().get(ii).getId().equals(mesa.getAlumnos().get(jj).getId()))throw new VerificadorEx("Error. No deben haber un alumno inscripto dos veces para la misma mesa. VerificarIntegridad.java"); //El mismo alumno no debe estar inscripto dos veces
+                }
+            }
+        }
+    
+        return true;
     }
 }
