@@ -4,3 +4,10 @@ Preguntar si hacemos un solo handler para TODAS las operaciones o es un handler 
 
 buscarPlanHandler: Error 204. Como podemos mostrar eso por pantalla si la excepcion de buscarPlan nos corta la ejecucion y vuelve al try-catch
 Lo mismo para buscarPlanesHandler
+
+NUEVAS DUDAS 11/07
+
+Preguntar codigo error cuando no encontramos resultado de busqueda/borrado/etc (que deberia hacer el server? Mostramos algo por pantalla? como?)
+GSON no funciona, preguntar
+Preguntar HashCode de alumno, profesor, mesaexamen
+Preguntar Tojson (lo dejamos o lo reeplazamos por GSON)

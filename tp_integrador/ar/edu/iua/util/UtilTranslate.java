@@ -17,6 +17,7 @@ public class UtilTranslate {
         cadena = cadena.replace('Ú','U');
         cadena = cadena.replace('ü','u');
         cadena = cadena.replace('Ü','U');
+        cadena = cadena.replace("-","");
         cadena = cadena.replaceAll("'", "");
         cadena = cadena.replaceAll("%20", " ");
 

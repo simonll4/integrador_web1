@@ -1,19 +1,26 @@
 package ar.edu.iua.web_services.controladores;
 
 import java.io.IOException;
-import java.io.OutputStream;
-import java.net.URI;
-import java.util.Map;
 
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
+import java.io.OutputStream;
+import java.net.URI;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
+import ar.edu.iua.excepciones.modelo_ex.BorrarPlanEx;
 import ar.edu.iua.excepciones.modelo_ex.BuscarPlanEx;
+import ar.edu.iua.modelo.academico.plan.Plan;
 import ar.edu.iua.modelo.academico.plan.PlanImpl;
+import ar.edu.iua.negocio.academico.plan.BorrarPlanImpl;
+import ar.edu.iua.negocio.academico.plan.BorrarPlanes;
+import ar.edu.iua.negocio.academico.plan.BorrarPlanesImpl;
 import ar.edu.iua.negocio.academico.plan.BuscarPlanImpl;
 import ar.edu.iua.web_services.util.utilWebServices;
 
-public class buscarPlanHandler implements HttpHandler{
+public class BorrarPlanesHandler implements HttpHandler {
 
     @Override
     public void handle(HttpExchange exchange) throws IOException {
@@ -26,35 +33,30 @@ public class buscarPlanHandler implements HttpHandler{
 
         try {
             ejecutarRespuesta(exchange, params, body);
-        } catch (BuscarPlanEx e) {
+        } catch (BorrarPlanEx | IOException e) {
             System.out.println(e.getMessage());
-
-           //String msg = "204 NO CONTENT: no hay resultados para la busqueda";
-            //exchange.sendResponseHeaders(204,0);
-            //OutputStream os = exchange.getResponseBody();
-            //os.write(msg.getBytes());
-            //os.close();
         }
-        
-            
-        
+
     }
 
-    private void ejecutarRespuesta(HttpExchange exchange,Map<String, String> params,String body) throws BuscarPlanEx, IOException{
+    private void ejecutarRespuesta(HttpExchange exchange,Map<String, String> params,String body) throws BorrarPlanEx, IOException{
+        List<Plan> borrados = new ArrayList<>();
         
-        BuscarPlanImpl buscador = new BuscarPlanImpl();
-        int anio = Integer.parseInt(params.get("anio"));
-        PlanImpl buscado = null; 
-        
-        buscado = (PlanImpl)buscador.buscar(anio);
-        
-        String msg = buscado.fullToJson();
+        for (Map.Entry<String, String> entry : params.entrySet()) {
+            Plan plan = new PlanImpl();
+            plan.setAnio(Integer.parseInt(entry.getValue()));
+            borrados.add(plan);
+        }
 
+        BorrarPlanes borrador = new BorrarPlanesImpl();
+        borrador.borrar(borrados);
+
+        String msg = "200: Se borraron los planes";
         exchange.sendResponseHeaders(200, msg.length());
         OutputStream os = exchange.getResponseBody();
         os.write(msg.getBytes());
         os.close();
-        
     }
     
+
 }

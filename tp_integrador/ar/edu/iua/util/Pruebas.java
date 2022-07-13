@@ -22,6 +22,7 @@ import ar.edu.iua.negocio.academico.plan.ModificarPlanImpl;
 import ar.edu.iua.negocio.academico.plan.ModificarPlanes;
 import ar.edu.iua.negocio.academico.plan.ModificarPlanesImpl;
 import ar.edu.iua.persistencia.BaseDeDatos;
+import ar.edu.iua.util.generadores.GenerarEjemplosDePlanes;
 
 public class Pruebas {
 
@@ -52,7 +53,7 @@ public class Pruebas {
                 BorrarPlanes borradorPlanes = new BorrarPlanesImpl();
 
                 // pruebas de integridad
-                int random = 0/*(int) (Math.random() * 7)*/;
+                int random = 454561/*(int) (Math.random() * 7)*/;
 
                 System.out.println("condicion: " + random);
                 if (random == 0) {
@@ -83,6 +84,7 @@ public class Pruebas {
 
                 if (random == 3){
                         planes.get(0).setEstadoBorrador();
+                        planes.get(1).setEstadoBorrador();
                         planes.get(1).getAnios().get(0).setNombre("Hola Mundo");
                         planes.get(2).getAnios().get(1).getMaterias().get(1).setCargaHoraria(200.0);
                         

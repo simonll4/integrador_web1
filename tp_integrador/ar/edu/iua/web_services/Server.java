@@ -5,7 +5,7 @@ import java.net.InetSocketAddress;
 
 import com.sun.net.httpserver.HttpServer;
 
-import ar.edu.iua.excepciones.web_services_ex.serverEx;
+import ar.edu.iua.excepciones.web_services_ex.*;
 import ar.edu.iua.web_services.controladores.*;
 
 
@@ -20,7 +20,8 @@ public class Server {
 
             server.createContext("/buscarPlan", new buscarPlanHandler()); //http://localhost:8080/buscarPlan
             server.createContext("/buscarPlanes", new buscarPlanesHandler() ); //http://localhost:8080/buscarPlanes
-            server.createContext("/borrarPlan", new borrarPlanHandler());//http://localhost:8080/borrarPlan
+            server.createContext("/borrarPlan", new borrarPlanHandler()); //http://localhost:8080/borrarPlan
+            server.createContext("/borrarPlanes", new BorrarPlanesHandler()); //http://localhost:8080/borrarPlanes
 
             server.setExecutor(null); // creates a default executor
             server.start();            

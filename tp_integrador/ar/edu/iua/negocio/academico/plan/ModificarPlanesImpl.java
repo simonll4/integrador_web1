@@ -5,7 +5,7 @@ import java.util.List;
 import ar.edu.iua.excepciones.modelo_ex.ModificarPlanEx;
 import ar.edu.iua.excepciones.modelo_ex.VerificadorEx;
 import ar.edu.iua.modelo.academico.plan.Plan;
-import ar.edu.iua.util.VerificarIntegridad;
+import ar.edu.iua.util.verificadores.VerificarIntegridad;
 
 public class ModificarPlanesImpl implements ModificarPlanes {
 
@@ -18,7 +18,7 @@ public class ModificarPlanesImpl implements ModificarPlanes {
             if(planes != null){
                 //bandera = modificador.modificar(planes.get(ii));
                 try {
-                    bandera = VerificarIntegridad.verificadorIntegridad(planes.get(ii));
+                    bandera = VerificarIntegridad.verificadorIntegridadPlan(planes.get(ii));
                 } catch (VerificadorEx e) {
                     throw new ModificarPlanEx(e.getMessage());
                 }

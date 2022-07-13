@@ -4,7 +4,7 @@ import ar.edu.iua.excepciones.modelo_ex.ModificarPlanEx;
 import ar.edu.iua.excepciones.modelo_ex.VerificadorEx;
 import ar.edu.iua.modelo.academico.plan.Plan;
 import ar.edu.iua.persistencia.BaseDeDatos;
-import ar.edu.iua.util.VerificarIntegridad;
+import ar.edu.iua.util.verificadores.VerificarIntegridad;
 
 public class ModificarPlanImpl implements ModificarPlan {
 
@@ -13,7 +13,7 @@ public class ModificarPlanImpl implements ModificarPlan {
 
         boolean v;
         try {
-            v = VerificarIntegridad.verificadorIntegridad(plan);
+            v = VerificarIntegridad.verificadorIntegridadPlan(plan);
         } catch (VerificadorEx e1) {
             throw new ModificarPlanEx(e1.getMessage());
         }

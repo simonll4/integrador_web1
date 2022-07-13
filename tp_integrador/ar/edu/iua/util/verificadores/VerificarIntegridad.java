@@ -1,12 +1,13 @@
-package ar.edu.iua.util;
+package ar.edu.iua.util.verificadores;
 
 import ar.edu.iua.excepciones.modelo_ex.VerificadorEx;
+import ar.edu.iua.modelo.academico.examen.MesaExamen;
 import ar.edu.iua.modelo.academico.plan.Plan;
 
 public class VerificarIntegridad {
     
 
-    static public boolean verificadorIntegridad(Plan plan) throws VerificadorEx{
+    static public boolean verificadorIntegridadPlan(Plan plan) throws VerificadorEx{
 
         //Verificacion del Plan
 
@@ -57,4 +58,10 @@ public class VerificarIntegridad {
 
         return true;
     } 
+
+    static public boolean verificarIntegridadMesa (MesaExamen mesa){
+        
+
+        return false;
+    }
 }
