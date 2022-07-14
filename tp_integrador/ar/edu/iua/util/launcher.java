@@ -5,8 +5,6 @@ import java.util.List;
 import ar.edu.iua.excepciones.ObjetoEx;
 import ar.edu.iua.excepciones.modelo_ex.CrearMesaEx;
 import ar.edu.iua.excepciones.modelo_ex.CrearPlanEx;
-import ar.edu.iua.interfazusuario.BuscarEImprimirPlanes;
-import ar.edu.iua.interfazusuario.BuscarEImprimirPlanesImpl;
 import ar.edu.iua.modelo.academico.examen.MesaExamen;
 import ar.edu.iua.modelo.academico.plan.Plan;
 import ar.edu.iua.negocio.academico.examen.CrearMesasExamen;
@@ -19,7 +17,6 @@ import ar.edu.iua.util.generadores.GenerarEjemplosDePlanes;
 public class Launcher {
 
     public static void launch() throws ObjetoEx {
-
         // generar planes
         List<Plan> planes = GenerarEjemplosDePlanes.generar(3, false);
 
@@ -44,16 +41,16 @@ public class Launcher {
             ok = crearMesas.crear(mesasExamen);
 
             if (ok == false) {
-            System.out.println("se rompio");
-            return;
+                System.out.println("se rompio");
+                return;
             }
-            System.out.println("Se guardaron " + BaseDeDatos.planesSize() + " planes en la BD");
-            
+            System.out.println("Se guardaron " + BaseDeDatos.mesasSize() + " mesas de examen en la BD");
+
         } catch (CloneNotSupportedException e) {
             e.printStackTrace();
         }
 
         UtilPrint.PrintBusqueda(planes);
-
     }
+
 }
