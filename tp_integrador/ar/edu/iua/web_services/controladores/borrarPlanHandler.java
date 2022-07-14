@@ -9,11 +9,9 @@ import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 
 import ar.edu.iua.excepciones.modelo_ex.BorrarPlanEx;
-import ar.edu.iua.excepciones.modelo_ex.BuscarPlanEx;
 import ar.edu.iua.modelo.academico.plan.Plan;
 import ar.edu.iua.modelo.academico.plan.PlanImpl;
 import ar.edu.iua.negocio.academico.plan.BorrarPlanImpl;
-import ar.edu.iua.negocio.academico.plan.BuscarPlanImpl;
 import ar.edu.iua.web_services.util.utilWebServices;
 
 public class borrarPlanHandler implements HttpHandler {

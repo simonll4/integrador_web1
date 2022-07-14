@@ -3,7 +3,6 @@ package ar.edu.iua.negocio.academico.examen;
 import java.util.List;
 
 import ar.edu.iua.excepciones.modelo_ex.CrearMesaEx;
-import ar.edu.iua.excepciones.modelo_ex.CrearPlanEx;
 import ar.edu.iua.modelo.academico.examen.MesaExamen;
 
 

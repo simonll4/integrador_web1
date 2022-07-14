@@ -4,17 +4,22 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import ar.edu.iua.excepciones.ObjetoEx;
 import ar.edu.iua.modelo.academico.examen.MesaExamen;
 import ar.edu.iua.modelo.academico.plan.AnioPlan;
 import ar.edu.iua.modelo.academico.plan.Materia;
 import ar.edu.iua.modelo.academico.plan.Plan;
+import ar.edu.iua.negocio.academico.examen.BuscarMesasExamen;
+import ar.edu.iua.negocio.academico.plan.BuscarPlanesImpl;
 import ar.edu.iua.persistencia.BaseDeDatos;
 
 public class UtilPrint {
-    static public void PrintBusqueda(List<Plan> buscados) {
+    static public void PrintBusqueda(List<Plan> buscados) throws ObjetoEx {
 
         int anio = 0;
         Scanner consola = new Scanner(System.in);
+        Scanner consola1 = new Scanner(System.in);
+        Scanner consola2 = new Scanner(System.in);
 
         System.out.println("------------------------------------------------------------------");
         System.out.println("|\t" + "PLAN\t      ANIOS\t     MATERIAS\t\tESTADO" + "   |");
@@ -32,13 +37,13 @@ public class UtilPrint {
 
         do {
             System.out.println(
-                    "---------------------------------------------------------------------------------------------------------------------------------");
+                    "--------------------------------------------");
             System.out.println(
-                    "| " + "Ingrese el anio para ver las materias. Ingrese 1 para ver la BD. Ingrese 2 para ver las mesas de examen. Ingrese 0 para salir"
-                            + " |");
+                    "OPCIONES: \n 0) Salir. \n 1) Ver base de datos de planes. \n 2) Ver base de datos de mesas de examen. \n 3) Buscar plan por termino. \n 4) Buscar plan por año \n 5) Buscar mesa por termino.");
             System.out.println(
-                    "---------------------------------------------------------------------------------------------------------------------------------");
+                    "--------------------------------------------");
             anio = consola.nextInt();
+            consola.reset();
             if (anio != 0) {
                 if (anio == 1) {
                     try {
@@ -46,25 +51,41 @@ public class UtilPrint {
                     } catch (CloneNotSupportedException e) {
                         e.printStackTrace();
                     }
-                }
-                else if(anio == 2){
+                } else if (anio == 2) {
                     try {
                         PrintMesaExamen(BaseDeDatos.getListMesas());
                     } catch (CloneNotSupportedException e) {
                         e.printStackTrace();
                     }
-                }
-                else {
+                } else if (anio == 3) {
+                    System.out.println("Ingrese los terminos de busqueda");
+                    String terminos = consola1.nextLine();
+                    BuscarPlanesImpl buscador = new BuscarPlanesImpl();
+                    List<Plan> planesEncontrados = buscador.buscar(terminos);
+                    PrintPlan(planesEncontrados);
+
+                } else if (anio == 4) {
+                    System.out.println("Ingrese el año a buscar");
+                    anio = consola.nextInt();
                     PrintPlanDetalle(anio, buscados);
+
+                } else if(anio == 5) {
+                    System.out.println("Ingrese los terminos de busqueda");
+                    String terminos = consola2.nextLine();
+                    BuscarMesasExamen buscador = new BuscarMesasExamen();
+                    List<MesaExamen> mesasEncontradas = buscador.buscar(terminos);
+                    PrintMesaExamen(mesasEncontradas); 
                 }
 
-                }
-            }while (anio != 0);
+            }
+        } while (anio != 0);
 
         System.out.println("------------------------------------------------------------------");
         System.out.println("|            " + "Gracias por utilizar Monserrat Buscador" + "             |");
         System.out.println("------------------------------------------------------------------");
         consola.close();
+        consola1.close();
+        consola2.close();
     }
 
     static void PrintPlanDetalle(int anio, List<Plan> buscados) {
@@ -102,13 +123,12 @@ public class UtilPrint {
         }
     }
 
-    static public void PrintMesaExamen (List<MesaExamen> mesas){
+    static public void PrintMesaExamen(List<MesaExamen> mesas) {
         for (MesaExamen mesa : mesas) {
             System.out.println(mesa.fullToString());
             System.out.println("\n");
         }
     }
-    
 
     static private int ContarMaterias(Plan plan) {
         int cantidad = 0;

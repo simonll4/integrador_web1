@@ -1,16 +1,8 @@
 package ar.edu.iua;
 
-import java.net.URISyntaxException;
-import java.security.GeneralSecurityException;
-import java.util.List;
-
 import ar.edu.iua.excepciones.ObjetoEx;
 import ar.edu.iua.util.Launcher;
-import ar.edu.iua.util.Pruebas;
-import ar.edu.iua.util.generadores.GenerarEjemplosDeMesas;
-import ar.edu.iua.web_services.*;
-import ar.edu.iua.modelo.*;
-import ar.edu.iua.modelo.academico.examen.MesaExamen;
+
 
 public class Main {
 

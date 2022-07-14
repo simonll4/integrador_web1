@@ -3,8 +3,6 @@ package ar.edu.iua.util;
 import java.util.List;
 
 import ar.edu.iua.excepciones.ObjetoEx;
-import ar.edu.iua.excepciones.modelo_ex.CrearMesaEx;
-import ar.edu.iua.excepciones.modelo_ex.CrearPlanEx;
 import ar.edu.iua.modelo.academico.examen.MesaExamen;
 import ar.edu.iua.modelo.academico.plan.Plan;
 import ar.edu.iua.negocio.academico.examen.CrearMesasExamen;
@@ -37,6 +35,9 @@ public class Launcher {
         ok = false;
         try {
             List<MesaExamen> mesasExamen = GenerarEjemplosDeMesas.generarMesasAleatorias(10);
+
+            System.out.println("\n\nSe crearon " + mesasExamen.size() + " mesas de examen.");
+
             CrearMesasExamen crearMesas = new CrearMesasExamen();
             ok = crearMesas.crear(mesasExamen);
 

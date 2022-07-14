@@ -11,13 +11,10 @@ import java.util.List;
 import java.util.Map;
 
 import ar.edu.iua.excepciones.modelo_ex.BorrarPlanEx;
-import ar.edu.iua.excepciones.modelo_ex.BuscarPlanEx;
 import ar.edu.iua.modelo.academico.plan.Plan;
 import ar.edu.iua.modelo.academico.plan.PlanImpl;
-import ar.edu.iua.negocio.academico.plan.BorrarPlanImpl;
 import ar.edu.iua.negocio.academico.plan.BorrarPlanes;
 import ar.edu.iua.negocio.academico.plan.BorrarPlanesImpl;
-import ar.edu.iua.negocio.academico.plan.BuscarPlanImpl;
 import ar.edu.iua.web_services.util.utilWebServices;
 
 public class BorrarPlanesHandler implements HttpHandler {
