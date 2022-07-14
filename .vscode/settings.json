@@ -3,6 +3,7 @@
     "java.help.shareDiagnostics": true,
     "java.project.referencedLibraries": [
         "lib/**/*.jar",
-        "c:\\Users\\Usuario\\Downloads\\gson-2.8.2.jar"
+        "c:\\Users\\Usuario\\Downloads\\gson-2.8.2.jar",
+        "c:\\Users\\usuario\\Desktop\\gson-2.8.2.jar"
     ]
 }

@@ -9,5 +9,5 @@ NUEVAS DUDAS 11/07
 
 Preguntar codigo error cuando no encontramos resultado de busqueda/borrado/etc (que deberia hacer el server? Mostramos algo por pantalla? como?)
 GSON no funciona, preguntar
-Preguntar HashCode de alumno, profesor, mesaexamen
-Preguntar Tojson (lo dejamos o lo reeplazamos por GSON)
+Preguntar HashCode de alumno, profesor, mesaexamen (investigar el HashCode)
+Preguntar Tojson (lo dejamos o lo reeplazamos por GSON) (no hace falta)

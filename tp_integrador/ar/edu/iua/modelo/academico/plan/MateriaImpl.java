@@ -19,7 +19,7 @@ public class MateriaImpl extends Materia{
     }
 
     public void setAnio(AnioPlan anio) {
-        this.anio = anio;
+       // this.anio = anio;
     }
 
     public Integer getCodigo() {

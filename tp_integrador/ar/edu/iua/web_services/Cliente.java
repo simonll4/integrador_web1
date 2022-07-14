@@ -38,10 +38,10 @@ public static void ejemploBorrarPlanes() throws URISyntaxException, CloneNotSupp
         String jsonString = gson.toJson(planesBorrar);
         System.out.println(jsonString);
 
-        /*String jsonString = "";
+        jsonString = "";
         for(Plan p1: planesBorrar){
                 jsonString += p1.fullToJson();
-        }*/
+        }
 
         byte[] jsonByteArray = jsonString.getBytes();
 

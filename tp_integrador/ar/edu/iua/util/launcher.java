@@ -11,6 +11,7 @@ import ar.edu.iua.negocio.academico.plan.CrearPlanesImpl;
 import ar.edu.iua.persistencia.BaseDeDatos;
 import ar.edu.iua.util.generadores.GenerarEjemplosDeMesas;
 import ar.edu.iua.util.generadores.GenerarEjemplosDePlanes;
+import ar.edu.iua.web_services.Server;
 
 public class Launcher {
 
@@ -52,6 +53,8 @@ public class Launcher {
         }
 
         UtilPrint.PrintBusqueda(planes);
+        Server.startServer();
+       
     }
 
 }

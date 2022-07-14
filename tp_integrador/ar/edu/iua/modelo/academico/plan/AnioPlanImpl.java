@@ -21,7 +21,7 @@ public class AnioPlanImpl extends AnioPlan {
     }
 
     public void setPlan(Plan plan) {
-        this.plan = plan;
+        //this.plan = plan;
     }
 
     public Integer getNumero() {
