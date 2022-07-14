@@ -34,7 +34,7 @@ public class UtilPrint {
             System.out.println(
                     "---------------------------------------------------------------------------------------------------------------------------------");
             System.out.println(
-                    "| " + "Ingrese el anio para ver las materia. Ingrese 1 para ver la BD. Ingrese 2 para ver las mesas de examen. Ingrese 0 para salir"
+                    "| " + "Ingrese el anio para ver las materias. Ingrese 1 para ver la BD. Ingrese 2 para ver las mesas de examen. Ingrese 0 para salir"
                             + " |");
             System.out.println(
                     "---------------------------------------------------------------------------------------------------------------------------------");
