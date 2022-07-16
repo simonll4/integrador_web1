@@ -1,7 +1,13 @@
 package ar.edu.iua;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import com.google.gson.Gson;
+
 import ar.edu.iua.excepciones.ObjetoEx;
 import ar.edu.iua.util.Launcher;
+
 
 public class Main {
 
@@ -10,6 +16,13 @@ public class Main {
 
         try {
             Launcher.launch();
+        } catch (ObjetoEx e) {
+            e.printStackTrace();
+        }
+        
+        
+        /*try {
+            
 		} catch (ObjetoEx  e) {
 			System.out.println(e.getMessage());
 		}

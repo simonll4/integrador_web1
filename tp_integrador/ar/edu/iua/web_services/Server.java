@@ -18,9 +18,9 @@ public class Server {
         try{
             HttpServer server = HttpServer.create(new InetSocketAddress(8080), 0);
 
-            server.createContext("/buscarPlan", new buscarPlanHandler()); //http://localhost:8080/buscarPlan
-            server.createContext("/buscarPlanes", new buscarPlanesHandler() ); //http://localhost:8080/buscarPlanes
-            server.createContext("/borrarPlan", new borrarPlanHandler()); //http://localhost:8080/borrarPlan
+            server.createContext("/buscarPlan", new BuscarPlanHandler()); //http://localhost:8080/buscarPlan
+            server.createContext("/buscarPlanes", new BuscarPlanesHandler() ); //http://localhost:8080/buscarPlanes
+            server.createContext("/borrarPlan", new BorrarPlanHandler()); //http://localhost:8080/borrarPlan
             server.createContext("/borrarPlanes", new BorrarPlanesHandler()); //http://localhost:8080/borrarPlanes
 
             server.setExecutor(null); // creates a default executor

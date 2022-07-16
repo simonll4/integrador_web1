@@ -5,10 +5,13 @@ import java.util.List;
 
 import ar.edu.iua.modelo.academico.examen.MesaExamen;
 import ar.edu.iua.modelo.academico.plan.Plan;
+import ar.edu.iua.modelo_webservices.academico.plan.Plan_ws;
 
 public class BaseDeDatos {
 
     private static List<Plan> planes = new ArrayList<Plan>();
+
+    private static List<Plan_ws> planes_ws = new ArrayList<>();
 
     private static List<MesaExamen> mesasExamen = new ArrayList<>();
 
@@ -79,5 +82,48 @@ public class BaseDeDatos {
             cloneMesas.add((MesaExamen)mesa.clone());
         }
         return cloneMesas;
+    }
+
+//////////////////////////////////////////////////////////////////////////////////
+//////////////////////// Modelo Web Services /////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////
+
+    public static int planesSize_ws (){
+        return planes_ws.size();
+    }
+
+    public static Plan_ws getPlan_ws (int index) throws CloneNotSupportedException{
+        
+        return (Plan_ws)planes_ws.get(index).clone();
+    }
+
+    public static boolean setPlan_ws (int index, Plan_ws plan) throws CloneNotSupportedException{
+        boolean bandera = false;
+    
+        planes_ws.set(index, (Plan_ws)plan.clone());
+        bandera = true;
+        
+        return bandera;
+    }
+    
+    public static boolean addPlan_ws (Plan_ws plan) throws CloneNotSupportedException{
+        boolean bandera = false;
+        
+        planes_ws.add((Plan_ws) plan.clone());
+        bandera = true;
+
+        return bandera;
+    }
+
+    public static void removePlan_ws (int index){
+        planes_ws.remove(index);
+    }
+
+    public static List<Plan_ws> getList_ws () throws CloneNotSupportedException{
+        List<Plan_ws> clonePlanes = new ArrayList<>();
+        for(Plan_ws plan:planes_ws){
+            clonePlanes.add((Plan_ws)plan.clone());
+        }
+        return clonePlanes;
     }
 }

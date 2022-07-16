@@ -4,6 +4,7 @@ public class UtilTranslate {
     
     static public String traducirCadena(String cadena){
         
+        cadena = cadena.replaceAll("ño", "nio");
         cadena = cadena.replace('ñ', 'n');
         cadena = cadena.replace('á','a');
         cadena = cadena.replace('Á','A');

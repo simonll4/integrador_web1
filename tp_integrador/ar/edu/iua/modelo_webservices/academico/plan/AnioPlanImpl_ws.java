@@ -1,27 +1,17 @@
-package ar.edu.iua.modelo.academico.plan;
+package ar.edu.iua.modelo_webservices.academico.plan;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class AnioPlanImpl extends AnioPlan {
+public class AnioPlanImpl_ws extends AnioPlan_ws {
 
-    private Plan plan;
     private Integer numero;
     private String nombre;
-    private List<Materia> materias = new ArrayList<Materia>();
+    private List<Materia_ws> materias = new ArrayList<Materia_ws>();
 
-    public AnioPlanImpl(Plan plan, Integer numero, String nombre) {
-        this.plan = plan;
+    public AnioPlanImpl_ws(Integer numero, String nombre) {
         this.numero = numero;
         this.nombre = nombre;
-    }
-
-    public Plan getPlan() {
-        return plan;
-    }
-
-    public void setPlan(Plan plan) {
-        this.plan = plan;
     }
 
     public Integer getNumero() {
@@ -41,11 +31,11 @@ public class AnioPlanImpl extends AnioPlan {
         this.nombre = nombre;
     }
 
-    public List<Materia> getMaterias() {
+    public List<Materia_ws> getMaterias() {
         return materias;
     }
 
-    public void setMaterias(List<Materia> materias) {
+    public void setMaterias(List<Materia_ws> materias) {
         this.materias = materias;
     }
 
@@ -65,7 +55,7 @@ public class AnioPlanImpl extends AnioPlan {
             return false;
         if (getClass() != obj.getClass())
             return false;
-        AnioPlanImpl other = (AnioPlanImpl) obj;
+        AnioPlanImpl_ws other = (AnioPlanImpl_ws) obj;
         if (numero == null) {
             if (other.numero != null)
                 return false;
@@ -82,7 +72,7 @@ public class AnioPlanImpl extends AnioPlan {
 
         String z = (numero != null ? numero.toString() : "") + "\n" + (nombre != null ? nombre.toString() : "") + "\n";
 
-        for (Materia materia : materias) {
+        for (Materia_ws materia : materias) {
             String m = materia.fullToString().trim();
             z += (m.length() > 0) ? m + "\n" : "";
         }
@@ -112,12 +102,11 @@ public class AnioPlanImpl extends AnioPlan {
     }
 
     public Object clone() throws CloneNotSupportedException {
-        AnioPlan anio = (AnioPlan) super.clone();
-        List<Materia> auxMaterias = new ArrayList<>();
-        for (Materia materia : this.materias) {
+        AnioPlan_ws anio = (AnioPlan_ws) super.clone();
+        List<Materia_ws> auxMaterias = new ArrayList<>();
+        for (Materia_ws materia : this.materias) {
             if (materia != null) {
-                materia.setAnio(this);
-                auxMaterias.add((Materia) materia.clone());
+                auxMaterias.add((Materia_ws) materia.clone());
             }
         }
         anio.setMaterias(auxMaterias);

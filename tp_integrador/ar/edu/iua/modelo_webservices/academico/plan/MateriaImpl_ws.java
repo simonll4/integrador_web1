@@ -1,25 +1,15 @@
-package ar.edu.iua.modelo.academico.plan;
+package ar.edu.iua.modelo_webservices.academico.plan;
 
-public class MateriaImpl extends Materia{
+public class MateriaImpl_ws extends Materia_ws{
 
-    private AnioPlan anio;
     private Integer codigo;
     private String nombre;
     private Double cargaHoraria;
 
-    public MateriaImpl(AnioPlan anio, Integer codigo, String nombre, Double cargaHoraria) {
-        this.anio = anio;
+    public MateriaImpl_ws(Integer codigo, String nombre, Double cargaHoraria) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.cargaHoraria = cargaHoraria;
-    }
-
-    public AnioPlan getAnio() {
-        return anio;
-    }
-
-    public void setAnio(AnioPlan anio) {
-        this.anio = anio;
     }
 
     public Integer getCodigo() {
@@ -61,7 +51,7 @@ public class MateriaImpl extends Materia{
             return false;
         if (getClass() != obj.getClass())
             return false;
-        MateriaImpl other = (MateriaImpl) obj;
+        MateriaImpl_ws other = (MateriaImpl_ws) obj;
         if (codigo == null) {
             if (other.codigo != null)
                 return false;
@@ -79,7 +69,7 @@ public class MateriaImpl extends Materia{
 
     public String fullToString() {
 
-        String s = (anio != null ? anio.toString() : "") + "\n" + (nombre != null ? nombre.toString() : "") + "\n" +
+        String s = (nombre != null ? nombre.toString() : "") + "\n" +
         (codigo != null ? codigo.toString() : "") + "\n" + (cargaHoraria != null ? cargaHoraria.toString() : "") + "\n";
 
         return s.trim();
@@ -87,7 +77,7 @@ public class MateriaImpl extends Materia{
 
     public String fullToJson() {
 
-        String s = (anio != null ? "{\n \"anio\" : \"" + anio.toString() + "\" ," : "") + "\n" + (nombre != null ? " \"nombre\" : \"" + nombre.toString() + "\" ," : "") + "\n" +
+        String s = (nombre != null ? " \"nombre\" : \"" + nombre.toString() + "\" ," : "") + "\n" +
         (codigo != null ? " \"codigo\" : " + codigo.toString() + " ," : "") + "\n" + (cargaHoraria != null ? " \"Carga Horaria\" : " + cargaHoraria.toString() + " \n}" : "") + "\n";
 
         return s.trim();

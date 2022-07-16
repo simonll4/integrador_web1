@@ -53,7 +53,7 @@ public class Pruebas {
                 BorrarPlanes borradorPlanes = new BorrarPlanesImpl();
 
                 // pruebas de integridad
-                int random = 454561/*(int) (Math.random() * 7)*/;
+                int random =(int) (Math.random() * 7);
 
                 System.out.println("condicion: " + random);
                 if (random == 0) {

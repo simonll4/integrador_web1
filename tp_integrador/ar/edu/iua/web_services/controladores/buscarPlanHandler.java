@@ -5,15 +5,17 @@ import java.io.OutputStream;
 import java.net.URI;
 import java.util.Map;
 
+import com.google.gson.Gson;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 
 import ar.edu.iua.excepciones.modelo_ex.BuscarPlanEx;
-import ar.edu.iua.modelo.academico.plan.PlanImpl;
-import ar.edu.iua.negocio.academico.plan.BuscarPlanImpl;
+import ar.edu.iua.modelo_webservices.academico.plan.PlanImpl_ws;
+import ar.edu.iua.negocio_webservices.academico.plan.BuscarPlanImpl_ws;
+import ar.edu.iua.util.UtilTranslate;
 import ar.edu.iua.web_services.util.utilWebServices;
 
-public class buscarPlanHandler implements HttpHandler{
+public class BuscarPlanHandler implements HttpHandler{
 
     @Override
     public void handle(HttpExchange exchange) throws IOException {
@@ -40,12 +42,12 @@ public class buscarPlanHandler implements HttpHandler{
     private void ejecutarRespuesta(HttpExchange exchange,Map<String, String> params,String body) throws IOException{
         
         
-        BuscarPlanImpl buscador = new BuscarPlanImpl();
+        BuscarPlanImpl_ws buscador = new BuscarPlanImpl_ws();
         int anio = Integer.parseInt(params.get("anio"));
-        PlanImpl buscado = null; 
+        PlanImpl_ws buscado = null; 
         
        try {
-            buscado = (PlanImpl)buscador.buscar(anio);
+            buscado = (PlanImpl_ws)buscador.buscar(anio);
         } catch (BuscarPlanEx e) {
             System.out.println(e.getMessage());
             String msg = "204 NO CONTENT: no hay resultados para la busqueda";
@@ -55,7 +57,10 @@ public class buscarPlanHandler implements HttpHandler{
             os.close();
         } 
 
-        String msg = buscado.fullToJson();
+        Gson gson = new Gson();
+        String msg = gson.toJson(buscado);
+
+        msg = UtilTranslate.traducirCadena(msg);
 
         exchange.sendResponseHeaders(200, msg.length());
         OutputStream os = exchange.getResponseBody();
