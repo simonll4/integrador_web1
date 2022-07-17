@@ -1,4 +1,4 @@
-package ar.edu.iua.web_services.controladores;
+package ar.edu.iua.web_services.controladores.examen;
 
 import java.io.IOException;
 import java.io.OutputStream;
@@ -14,7 +14,7 @@ import ar.edu.iua.negocio_webservices.academico.plan.BuscarPlanesImpl_ws;
 import ar.edu.iua.util.UtilTranslate;
 import ar.edu.iua.web_services.util.utilWebServices;
 
-public class BuscarPlanesHandler implements HttpHandler {
+public class BuscarMesasExamenHandler implements HttpHandler {
 
     @Override
     public void handle(HttpExchange exchange) throws IOException {

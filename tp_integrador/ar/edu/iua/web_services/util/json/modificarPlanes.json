@@ -1,0 +1,876 @@
+[
+    {
+        "anio": 2040,
+        "estado": "ACTIVO",
+        "anios": [
+            {
+                "numero": 1,
+                "nombre": "Primer anio",
+                "materias": [
+                    {
+                        "codigo": 2040101,
+                        "nombre": "Lengua y Literatura I",
+                        "cargaHoraria": 5.0
+                    },
+                    {
+                        "codigo": 2040102,
+                        "nombre": "Lengua y Culturas Latinas I",
+                        "cargaHoraria": 4.0
+                    },
+                    {
+                        "codigo": 2040103,
+                        "nombre": "Ingles I",
+                        "cargaHoraria": 3.0
+                    },
+                    {
+                        "codigo": 2040104,
+                        "nombre": "Geografia I",
+                        "cargaHoraria": 3.0
+                    },
+                    {
+                        "codigo": 2040105,
+                        "nombre": "Historia I",
+                        "cargaHoraria": 3.0
+                    },
+                    {
+                        "codigo": 2040106,
+                        "nombre": "Matematica I",
+                        "cargaHoraria": 4.0
+                    },
+                    {
+                        "codigo": 2040107,
+                        "nombre": "Plastica I",
+                        "cargaHoraria": 3.0
+                    },
+                    {
+                        "codigo": 2040108,
+                        "nombre": "Musica I",
+                        "cargaHoraria": 3.0
+                    },
+                    {
+                        "codigo": 2040109,
+                        "nombre": "Ciencias Naturales I",
+                        "cargaHoraria": 3.0
+                    },
+                    {
+                        "codigo": 2040110,
+                        "nombre": "Formacion Etica y Ciudadana I",
+                        "cargaHoraria": 3.0
+                    },
+                    {
+                        "codigo": 2040111,
+                        "nombre": "Informatica I",
+                        "cargaHoraria": 4.0
+                    },
+                    {
+                        "codigo": 2040112,
+                        "nombre": "Educacion Fisica I",
+                        "cargaHoraria": 1.0
+                    }
+                ]
+            },
+            {
+                "numero": 2,
+                "nombre": "Segundo anio",
+                "materias": [
+                    {
+                        "codigo": 2040201,
+                        "nombre": "Lengua y Literatura II",
+                        "cargaHoraria": 5.0
+                    },
+                    {
+                        "codigo": 2040202,
+                        "nombre": "Lengua y Cultura Latinas II",
+                        "cargaHoraria": 4.0
+                    },
+                    {
+                        "codigo": 2040203,
+                        "nombre": "Ingles II",
+                        "cargaHoraria": 3.0
+                    },
+                    {
+                        "codigo": 2040204,
+                        "nombre": "Formacion Etica y Ciudadana II",
+                        "cargaHoraria": 3.0
+                    },
+                    {
+                        "codigo": 2040205,
+                        "nombre": "Geografia II",
+                        "cargaHoraria": 3.0
+                    },
+                    {
+                        "codigo": 2040206,
+                        "nombre": "Historia II",
+                        "cargaHoraria": 3.0
+                    },
+                    {
+                        "codigo": 2040207,
+                        "nombre": "Matematica II",
+                        "cargaHoraria": 4.0
+                    },
+                    {
+                        "codigo": 2040208,
+                        "nombre": "Plastica II",
+                        "cargaHoraria": 3.0
+                    },
+                    {
+                        "codigo": 2040209,
+                        "nombre": "Musica II",
+                        "cargaHoraria": 3.0
+                    },
+                    {
+                        "codigo": 2040210,
+                        "nombre": "Ciencias Naturales II",
+                        "cargaHoraria": 4.0
+                    },
+                    {
+                        "codigo": 2040211,
+                        "nombre": "Materia Optativa",
+                        "cargaHoraria": 3.0
+                    },
+                    {
+                        "codigo": 2040212,
+                        "nombre": "Educacion Fisica II",
+                        "cargaHoraria": 3.0
+                    },
+                    {
+                        "codigo": 2040213,
+                        "nombre": "Materia Optativa",
+                        "cargaHoraria": 3.0
+                    }
+                ]
+            },
+            {
+                "numero": 3,
+                "nombre": "Tercero anio",
+                "materias": [
+                    {
+                        "codigo": 2040301,
+                        "nombre": "Lengua y Literatura III",
+                        "cargaHoraria": 5.0
+                    },
+                    {
+                        "codigo": 2040302,
+                        "nombre": "Lengua y Cultura Latinas III",
+                        "cargaHoraria": 4.0
+                    },
+                    {
+                        "codigo": 2040303,
+                        "nombre": "Ingles III",
+                        "cargaHoraria": 3.0
+                    },
+                    {
+                        "codigo": 2040304,
+                        "nombre": "Formacion Etica y Ciudadana III",
+                        "cargaHoraria": 3.0
+                    },
+                    {
+                        "codigo": 2040305,
+                        "nombre": "Geografia III",
+                        "cargaHoraria": 3.0
+                    },
+                    {
+                        "codigo": 2040306,
+                        "nombre": "Historia III",
+                        "cargaHoraria": 4.0
+                    },
+                    {
+                        "codigo": 2040307,
+                        "nombre": "Materia Optativa",
+                        "cargaHoraria": 3.0
+                    },
+                    {
+                        "codigo": 2040308,
+                        "nombre": "Plastica III",
+                        "cargaHoraria": 3.0
+                    },
+                    {
+                        "codigo": 2040309,
+                        "nombre": "Materia Optativa",
+                        "cargaHoraria": 3.0
+                    },
+                    {
+                        "codigo": 2040310,
+                        "nombre": "Ciencias Naturales III",
+                        "cargaHoraria": 3.0
+                    },
+                    {
+                        "codigo": 2040311,
+                        "nombre": "Matematica III",
+                        "cargaHoraria": 4.0
+                    },
+                    {
+                        "codigo": 2040312,
+                        "nombre": "Educacion Fisica III",
+                        "cargaHoraria": 3.0
+                    },
+                    {
+                        "codigo": 2040313,
+                        "nombre": "Educacion Tecnologica",
+                        "cargaHoraria": 3.0
+                    },
+                    {
+                        "codigo": 2040314,
+                        "nombre": "Materia Optativa",
+                        "cargaHoraria": 3.0
+                    }
+                ]
+            },
+            {
+                "numero": 4,
+                "nombre": "Cuarto anio",
+                "materias": [
+                    {
+                        "codigo": 2040401,
+                        "nombre": "Lengua y Literatura IV",
+                        "cargaHoraria": 4.0
+                    },
+                    {
+                        "codigo": 2040402,
+                        "nombre": "Lengua y Cultura Latinas IV",
+                        "cargaHoraria": 4.0
+                    },
+                    {
+                        "codigo": 2040403,
+                        "nombre": "Ingles IV",
+                        "cargaHoraria": 3.0
+                    },
+                    {
+                        "codigo": 2040404,
+                        "nombre": "Geografia IV",
+                        "cargaHoraria": 3.0
+                    },
+                    {
+                        "codigo": 2040405,
+                        "nombre": "Historia IV",
+                        "cargaHoraria": 4.0
+                    },
+                    {
+                        "codigo": 2040406,
+                        "nombre": "Lengua y Cultura Francesas I",
+                        "cargaHoraria": 3.0
+                    },
+                    {
+                        "codigo": 2040407,
+                        "nombre": "Historia del Arte",
+                        "cargaHoraria": 3.0
+                    },
+                    {
+                        "codigo": 2040408,
+                        "nombre": "Materia Optativa",
+                        "cargaHoraria": 3.0
+                    },
+                    {
+                        "codigo": 2040409,
+                        "nombre": "Matematica IV",
+                        "cargaHoraria": 5.0
+                    },
+                    {
+                        "codigo": 2040410,
+                        "nombre": "Biologia I",
+                        "cargaHoraria": 3.0
+                    },
+                    {
+                        "codigo": 2040411,
+                        "nombre": "Fisicoquimica",
+                        "cargaHoraria": 3.0
+                    },
+                    {
+                        "codigo": 2040412,
+                        "nombre": "Educacion Fisica IV",
+                        "cargaHoraria": 3.0
+                    },
+                    {
+                        "codigo": 2040413,
+                        "nombre": "Materia Optativa",
+                        "cargaHoraria": 3.0
+                    },
+                    {
+                        "codigo": 2040414,
+                        "nombre": "Materia Optativa",
+                        "cargaHoraria": 3.0
+                    }
+                ]
+            },
+            {
+                "numero": 5,
+                "nombre": "Quinto anio",
+                "materias": [
+                    {
+                        "codigo": 2040501,
+                        "nombre": "Lengua y Literatura V",
+                        "cargaHoraria": 4.0
+                    },
+                    {
+                        "codigo": 2040502,
+                        "nombre": "Materia Optativa",
+                        "cargaHoraria": 3.0
+                    },
+                    {
+                        "codigo": 2040503,
+                        "nombre": "Lengua y Cultura Griegas I",
+                        "cargaHoraria": 3.0
+                    },
+                    {
+                        "codigo": 2040504,
+                        "nombre": "Ingles V",
+                        "cargaHoraria": 3.0
+                    },
+                    {
+                        "codigo": 2040505,
+                        "nombre": "Lengua y Cultura Francesas II",
+                        "cargaHoraria": 3.0
+                    },
+                    {
+                        "codigo": 2040506,
+                        "nombre": "Geografia V",
+                        "cargaHoraria": 3.0
+                    },
+                    {
+                        "codigo": 2040507,
+                        "nombre": "Historia V",
+                        "cargaHoraria": 4.0
+                    },
+                    {
+                        "codigo": 2040508,
+                        "nombre": "Quimica I",
+                        "cargaHoraria": 4.0
+                    },
+                    {
+                        "codigo": 2040509,
+                        "nombre": "Biologia II",
+                        "cargaHoraria": 3.0
+                    },
+                    {
+                        "codigo": 2040510,
+                        "nombre": "Matematica V  Algebra",
+                        "cargaHoraria": 5.0
+                    },
+                    {
+                        "codigo": 2040511,
+                        "nombre": "Logica",
+                        "cargaHoraria": 3.0
+                    },
+                    {
+                        "codigo": 2040512,
+                        "nombre": "Educacion Fisica V",
+                        "cargaHoraria": 3.0
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "anio": 2039,
+        "estado": "NO_ACTIVO",
+        "anios": [
+            {
+                "numero": 1,
+                "nombre": "Primer anio",
+                "materias": [
+                    {
+                        "codigo": 2039101,
+                        "nombre": "Lengua y Literatura I",
+                        "cargaHoraria": 5.0
+                    },
+                    {
+                        "codigo": 2039102,
+                        "nombre": "Lengua y Culturas Latinas I",
+                        "cargaHoraria": 5.0
+                    },
+                    {
+                        "codigo": 2039103,
+                        "nombre": "Ingles I",
+                        "cargaHoraria": 3.0
+                    },
+                    {
+                        "codigo": 2039104,
+                        "nombre": "Geografia I",
+                        "cargaHoraria": 3.0
+                    },
+                    {
+                        "codigo": 2039105,
+                        "nombre": "Historia I",
+                        "cargaHoraria": 2.0
+                    },
+                    {
+                        "codigo": 2039106,
+                        "nombre": "Matematica I",
+                        "cargaHoraria": 4.0
+                    },
+                    {
+                        "codigo": 2039107,
+                        "nombre": "Plastica I",
+                        "cargaHoraria": 2.0
+                    },
+                    {
+                        "codigo": 2039108,
+                        "nombre": "Musica I",
+                        "cargaHoraria": 2.0
+                    },
+                    {
+                        "codigo": 2039109,
+                        "nombre": "Ciencias Naturales I",
+                        "cargaHoraria": 3.0
+                    },
+                    {
+                        "codigo": 2039110,
+                        "nombre": "Formacion Etica y Ciudadana I",
+                        "cargaHoraria": 2.0
+                    },
+                    {
+                        "codigo": 2039111,
+                        "nombre": "Informatica I",
+                        "cargaHoraria": 2.0
+                    },
+                    {
+                        "codigo": 2039112,
+                        "nombre": "Educacion Fisica I",
+                        "cargaHoraria": 2.0
+                    }
+                ]
+            },
+            {
+                "numero": 2,
+                "nombre": "Segundo anio",
+                "materias": [
+                    {
+                        "codigo": 2039201,
+                        "nombre": "Lengua y Literatura II",
+                        "cargaHoraria": 5.0
+                    },
+                    {
+                        "codigo": 2039202,
+                        "nombre": "Lengua y Cultura Latinas II",
+                        "cargaHoraria": 5.0
+                    },
+                    {
+                        "codigo": 2039203,
+                        "nombre": "Ingles II",
+                        "cargaHoraria": 3.0
+                    },
+                    {
+                        "codigo": 2039204,
+                        "nombre": "Formacion Etica y Ciudadana II",
+                        "cargaHoraria": 2.0
+                    },
+                    {
+                        "codigo": 2039205,
+                        "nombre": "Geografia II",
+                        "cargaHoraria": 3.0
+                    },
+                    {
+                        "codigo": 2039206,
+                        "nombre": "Historia II",
+                        "cargaHoraria": 4.0
+                    },
+                    {
+                        "codigo": 2039207,
+                        "nombre": "Matematica II",
+                        "cargaHoraria": 4.0
+                    },
+                    {
+                        "codigo": 2039208,
+                        "nombre": "Plastica II",
+                        "cargaHoraria": 2.0
+                    },
+                    {
+                        "codigo": 2039209,
+                        "nombre": "Musica II",
+                        "cargaHoraria": 2.0
+                    },
+                    {
+                        "codigo": 2039210,
+                        "nombre": "Ciencias Naturales II",
+                        "cargaHoraria": 3.0
+                    },
+                    {
+                        "codigo": 2039211,
+                        "nombre": "Materia Optativa",
+                        "cargaHoraria": 2.0
+                    },
+                    {
+                        "codigo": 2039212,
+                        "nombre": "Educacion Fisica II",
+                        "cargaHoraria": 2.0
+                    }
+                ]
+            },
+            {
+                "numero": 3,
+                "nombre": "Tercero anio",
+                "materias": [
+                    {
+                        "codigo": 2039301,
+                        "nombre": "Lengua y Literatura III",
+                        "cargaHoraria": 5.0
+                    },
+                    {
+                        "codigo": 2039302,
+                        "nombre": "Lengua y Cultura Latinas III",
+                        "cargaHoraria": 4.0
+                    },
+                    {
+                        "codigo": 2039303,
+                        "nombre": "Ingles III",
+                        "cargaHoraria": 3.0
+                    },
+                    {
+                        "codigo": 2039304,
+                        "nombre": "Formacion Etica y Ciudadana III",
+                        "cargaHoraria": 2.0
+                    },
+                    {
+                        "codigo": 2039305,
+                        "nombre": "Geografia III",
+                        "cargaHoraria": 3.0
+                    },
+                    {
+                        "codigo": 2039306,
+                        "nombre": "Historia III",
+                        "cargaHoraria": 4.0
+                    },
+                    {
+                        "codigo": 2039307,
+                        "nombre": "Materia Optativa",
+                        "cargaHoraria": 2.0
+                    },
+                    {
+                        "codigo": 2039308,
+                        "nombre": "Plastica III",
+                        "cargaHoraria": 2.0
+                    },
+                    {
+                        "codigo": 2039309,
+                        "nombre": "Musica III",
+                        "cargaHoraria": 2.0
+                    },
+                    {
+                        "codigo": 2039310,
+                        "nombre": "Ciencias Naturales III",
+                        "cargaHoraria": 3.0
+                    },
+                    {
+                        "codigo": 2039311,
+                        "nombre": "Matematica III",
+                        "cargaHoraria": 5.0
+                    },
+                    {
+                        "codigo": 2039312,
+                        "nombre": "Educacion Fisica III",
+                        "cargaHoraria": 2.0
+                    }
+                ]
+            },
+            {
+                "numero": 4,
+                "nombre": "Cuarto anio",
+                "materias": [
+                    {
+                        "codigo": 2039401,
+                        "nombre": "Lengua y Literatura IV",
+                        "cargaHoraria": 4.0
+                    },
+                    {
+                        "codigo": 2039402,
+                        "nombre": "Lengua y Cultura Latinas IV",
+                        "cargaHoraria": 5.0
+                    },
+                    {
+                        "codigo": 2039403,
+                        "nombre": "Ingles IV",
+                        "cargaHoraria": 3.0
+                    },
+                    {
+                        "codigo": 2039404,
+                        "nombre": "Geografia IV",
+                        "cargaHoraria": 3.0
+                    },
+                    {
+                        "codigo": 2039405,
+                        "nombre": "Historia IV",
+                        "cargaHoraria": 4.0
+                    },
+                    {
+                        "codigo": 2039406,
+                        "nombre": "Formacion Etica y Civica IV",
+                        "cargaHoraria": 2.0
+                    },
+                    {
+                        "codigo": 2039407,
+                        "nombre": "Historia Del Arte II",
+                        "cargaHoraria": 2.0
+                    },
+                    {
+                        "codigo": 2039408,
+                        "nombre": "Plastica IV",
+                        "cargaHoraria": 2.0
+                    },
+                    {
+                        "codigo": 2039409,
+                        "nombre": "Matematica IV",
+                        "cargaHoraria": 5.0
+                    },
+                    {
+                        "codigo": 2039410,
+                        "nombre": "Biologia I",
+                        "cargaHoraria": 2.0
+                    },
+                    {
+                        "codigo": 2039411,
+                        "nombre": "Fisicoquimica",
+                        "cargaHoraria": 3.0
+                    },
+                    {
+                        "codigo": 2039412,
+                        "nombre": "Educacion Fisica IV",
+                        "cargaHoraria": 2.0
+                    }
+                ]
+            },
+            {
+                "numero": 5,
+                "nombre": "Quinto anio",
+                "materias": [
+                    {
+                        "codigo": 2039501,
+                        "nombre": "Lengua y Literatura V",
+                        "cargaHoraria": 4.0
+                    },
+                    {
+                        "codigo": 2039502,
+                        "nombre": "Lengua y Cultura Latinas V",
+                        "cargaHoraria": 2.0
+                    },
+                    {
+                        "codigo": 2039503,
+                        "nombre": "Lengua y Cultura Griegas I",
+                        "cargaHoraria": 4.0
+                    },
+                    {
+                        "codigo": 2039504,
+                        "nombre": "Ingles V",
+                        "cargaHoraria": 3.0
+                    },
+                    {
+                        "codigo": 2039505,
+                        "nombre": "Frances I",
+                        "cargaHoraria": 3.0
+                    },
+                    {
+                        "codigo": 2039506,
+                        "nombre": "Geografia V",
+                        "cargaHoraria": 3.0
+                    },
+                    {
+                        "codigo": 2039507,
+                        "nombre": "Historia V",
+                        "cargaHoraria": 4.0
+                    },
+                    {
+                        "codigo": 2039508,
+                        "nombre": "Quimica I",
+                        "cargaHoraria": 2.0
+                    },
+                    {
+                        "codigo": 2039509,
+                        "nombre": "Biologia II",
+                        "cargaHoraria": 2.0
+                    },
+                    {
+                        "codigo": 2039510,
+                        "nombre": "Matematica V  Algebra",
+                        "cargaHoraria": 3.0
+                    },
+                    {
+                        "codigo": 2039511,
+                        "nombre": "Estadistica y Probabilidades",
+                        "cargaHoraria": 3.0
+                    },
+                    {
+                        "codigo": 2039512,
+                        "nombre": "Educacion Fisica V",
+                        "cargaHoraria": 2.0
+                    },
+                    {
+                        "codigo": 2039513,
+                        "nombre": "Informatica II",
+                        "cargaHoraria": 2.0
+                    },
+                    {
+                        "codigo": 2039514,
+                        "nombre": "Metodologia De La Investigacion",
+                        "cargaHoraria": 2.0
+                    },
+                    {
+                        "codigo": 2039515,
+                        "nombre": "Filosofia I",
+                        "cargaHoraria": 2.0
+                    }
+                ]
+            },
+            {
+                "numero": 6,
+                "nombre": "Sexto anio",
+                "materias": [
+                    {
+                        "codigo": 2039601,
+                        "nombre": "Lengua y Literatura VI",
+                        "cargaHoraria": 3.0
+                    },
+                    {
+                        "codigo": 2039602,
+                        "nombre": "Lengua y Cultura Griegas II",
+                        "cargaHoraria": 2.0
+                    },
+                    {
+                        "codigo": 2039603,
+                        "nombre": "Ingles VI",
+                        "cargaHoraria": 2.0
+                    },
+                    {
+                        "codigo": 2039604,
+                        "nombre": "Frances II",
+                        "cargaHoraria": 4.0
+                    },
+                    {
+                        "codigo": 2039605,
+                        "nombre": "Historia VI",
+                        "cargaHoraria": 3.0
+                    },
+                    {
+                        "codigo": 2039606,
+                        "nombre": "Historia De La Cultura I",
+                        "cargaHoraria": 2.0
+                    },
+                    {
+                        "codigo": 2039607,
+                        "nombre": "Geografia VI",
+                        "cargaHoraria": 2.0
+                    },
+                    {
+                        "codigo": 2039608,
+                        "nombre": "Folosofia II",
+                        "cargaHoraria": 4.0
+                    },
+                    {
+                        "codigo": 2039609,
+                        "nombre": "Matematica VI  Trigonometria",
+                        "cargaHoraria": 2.0
+                    },
+                    {
+                        "codigo": 2039610,
+                        "nombre": "Geometria",
+                        "cargaHoraria": 2.0
+                    },
+                    {
+                        "codigo": 2039611,
+                        "nombre": "Biologia III",
+                        "cargaHoraria": 3.0
+                    },
+                    {
+                        "codigo": 2039612,
+                        "nombre": "Quimica II",
+                        "cargaHoraria": 3.0
+                    },
+                    {
+                        "codigo": 2039613,
+                        "nombre": "Fisica I",
+                        "cargaHoraria": 4.0
+                    },
+                    {
+                        "codigo": 2039614,
+                        "nombre": "Informatica III",
+                        "cargaHoraria": 2.0
+                    },
+                    {
+                        "codigo": 2039615,
+                        "nombre": "Educacion Fisica VI",
+                        "cargaHoraria": 2.0
+                    }
+                ]
+            },
+            {
+                "numero": 7,
+                "nombre": "Septimo anio",
+                "materias": [
+                    {
+                        "codigo": 2039701,
+                        "nombre": "Lengua y Literatura VII",
+                        "cargaHoraria": 3.0
+                    },
+                    {
+                        "codigo": 2039702,
+                        "nombre": "Lengua y Cultura Griegas III",
+                        "cargaHoraria": 3.0
+                    },
+                    {
+                        "codigo": 2039703,
+                        "nombre": "Frances III",
+                        "cargaHoraria": 3.0
+                    },
+                    {
+                        "codigo": 2039704,
+                        "nombre": "Historia VII",
+                        "cargaHoraria": 3.0
+                    },
+                    {
+                        "codigo": 2039705,
+                        "nombre": "Filosofia III",
+                        "cargaHoraria": 4.0
+                    },
+                    {
+                        "codigo": 2039706,
+                        "nombre": "Psicologia",
+                        "cargaHoraria": 2.0
+                    },
+                    {
+                        "codigo": 2039707,
+                        "nombre": "Analisis Matematico y Geometria Analitica",
+                        "cargaHoraria": 4.0
+                    },
+                    {
+                        "codigo": 2039708,
+                        "nombre": "Biologia IV",
+                        "cargaHoraria": 2.0
+                    },
+                    {
+                        "codigo": 2039709,
+                        "nombre": "Sociologia",
+                        "cargaHoraria": 3.0
+                    },
+                    {
+                        "codigo": 2039710,
+                        "nombre": "Economia Politica",
+                        "cargaHoraria": 3.0
+                    },
+                    {
+                        "codigo": 2039711,
+                        "nombre": "Historia De La Cultura II",
+                        "cargaHoraria": 2.0
+                    },
+                    {
+                        "codigo": 2039712,
+                        "nombre": "Elementos De Derecho Y Derecho Constitucional Argentino",
+                        "cargaHoraria": 3.0
+                    },
+                    {
+                        "codigo": 2039713,
+                        "nombre": "Informatica IV",
+                        "cargaHoraria": 2.0
+                    },
+                    {
+                        "codigo": 2039714,
+                        "nombre": "Educacion Fisica VII",
+                        "cargaHoraria": 2.0
+                    },
+                    {
+                        "codigo": 2039715,
+                        "nombre": "Fisica II",
+                        "cargaHoraria": 3.0
+                    }
+                ]
+            }
+        ]
+    }
+]

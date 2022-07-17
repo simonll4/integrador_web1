@@ -1,25 +1,27 @@
-package ar.edu.iua.web_services.controladores;
+package ar.edu.iua.web_services.controladores.plan;
 
 import java.io.IOException;
 import java.io.OutputStream;
 import java.net.URI;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 
 import com.google.gson.Gson;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 
-import ar.edu.iua.excepciones.modelo_ex.BuscarPlanEx;
+import ar.edu.iua.excepciones.modelo_ex.ModificarPlanEx;
 import ar.edu.iua.modelo_webservices.academico.plan.PlanImpl_ws;
-import ar.edu.iua.negocio_webservices.academico.plan.BuscarPlanImpl_ws;
-import ar.edu.iua.util.UtilTranslate;
+import ar.edu.iua.modelo_webservices.academico.plan.Plan_ws;
+import ar.edu.iua.negocio_webservices.academico.plan.ModificarPlanesImpl_ws;
 import ar.edu.iua.web_services.util.utilWebServices;
 
-public class BuscarPlanHandler implements HttpHandler{
+public class ModificarPlanesHandler implements HttpHandler {
 
-    @Override
-    public void handle(HttpExchange exchange) throws IOException {
-
+	@Override
+	public void handle(HttpExchange exchange) throws IOException {
+		
         String contextPath = exchange.getHttpContext().getPath();
         URI uri = exchange.getRequestURI();
         String path = uri.toString().replaceFirst(contextPath, "");
@@ -36,37 +38,31 @@ public class BuscarPlanHandler implements HttpHandler{
             os.write(msg.getBytes());
             os.close();
         }
-     
-    }
-
+		
+	}
     private void ejecutarRespuesta(HttpExchange exchange,Map<String, String> params,String body) throws IOException{
-        
-        
-        BuscarPlanImpl_ws buscador = new BuscarPlanImpl_ws();
-        int anio = Integer.parseInt(params.get("anio"));
-        PlanImpl_ws buscado = null; 
-        
+
+        PlanImpl_ws[] planArray = new Gson().fromJson(body, PlanImpl_ws[].class);
+        List<Plan_ws> modificados = Arrays.asList(planArray);
+
+        ModificarPlanesImpl_ws modificador = new ModificarPlanesImpl_ws();
+
         try {
-            buscado = (PlanImpl_ws)buscador.buscar(anio);
-        } catch (BuscarPlanEx e) {
-            System.out.println(e.getMessage());
-            String msg = "204 NO CONTENT: no hay resultados para la busqueda";
+			modificador.modificar(modificados);
+		} catch (ModificarPlanEx e) {
+			System.out.println(e.getMessage());
+            String msg = "409 ERROR DE CONFLICTO: no se pudieron modificar los planes";
             exchange.sendResponseHeaders(204,0);
             OutputStream os = exchange.getResponseBody();
             os.write(msg.getBytes());
             os.close();
-        } 
+		}
 
-        Gson gson = new Gson();
-        String msg = gson.toJson(buscado);
-
-        msg = UtilTranslate.traducirCadena(msg);
-
+        String msg = "200: Se modificaron los planes";
         exchange.sendResponseHeaders(200, msg.length());
         OutputStream os = exchange.getResponseBody();
         os.write(msg.getBytes());
         os.close();
-        
     }
     
 }
