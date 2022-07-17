@@ -16,6 +16,7 @@ import ar.edu.iua.web_services.controladores.plan.BuscarPlanesHandler;
 import ar.edu.iua.web_services.controladores.plan.CrearPlanHandler;
 import ar.edu.iua.web_services.controladores.plan.CrearPlanesHandler;
 import ar.edu.iua.web_services.controladores.plan.ModificarPlanHandler;
+import ar.edu.iua.web_services.controladores.plan.ModificarPlanesHandler;
 
 
 
@@ -35,6 +36,7 @@ public class Server {
             server.createContext("/crearPlan", new CrearPlanHandler()); //http://localhost:8080/crearPlan
             server.createContext("/crearPlanes", new CrearPlanesHandler()); //http://localhost:8080/crearPlanes
             server.createContext("/modificarPlan", new ModificarPlanHandler()); //http://localhost:8080/modificarPlan
+            server.createContext("/modificarPlanes", new ModificarPlanesHandler()); //http://localhost:8080/modificarPlanes
             //examen
             server.createContext("/buscarExamen", new BuscarMesasExamenHandler()); //http://localhost:8080/buscarExamenes
             server.createContext("/crearExamen", new CrearMesaExamenHandler()); //http://localhost:8080/crearExamen
