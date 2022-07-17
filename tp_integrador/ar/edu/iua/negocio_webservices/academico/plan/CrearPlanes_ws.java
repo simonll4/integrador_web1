@@ -3,7 +3,7 @@ package ar.edu.iua.negocio_webservices.academico.plan;
 import java.util.List;
 
 import ar.edu.iua.excepciones.modelo_ex.CrearPlanEx;
-import ar.edu.iua.modelo_webservices.academico.plan.Plan_ws;
+import ar.edu.iua.modelo_webservices.academico.plan.PlanImpl_ws;
 
 public interface CrearPlanes_ws  {
 
@@ -13,6 +13,6 @@ public interface CrearPlanes_ws  {
             - planes no puede ser null
             - Ver las mismas reglas de CrearPlan.crear(Plan plan)
     */
-    boolean crear(List<Plan_ws> planes) throws CrearPlanEx;    
+    boolean crear(List<PlanImpl_ws> planes) throws CrearPlanEx;    
     
 }

@@ -23,6 +23,8 @@ public class Server {
             server.createContext("/borrarPlan", new BorrarPlanHandler()); //http://localhost:8080/borrarPlan
             server.createContext("/borrarPlanes", new BorrarPlanesHandler()); //http://localhost:8080/borrarPlanes
             server.createContext("/crearPlan", new CrearPlanHandler()); //http://localhost:8080/crearPlan
+            server.createContext("/crearPlanes", new CrearPlanesHandler()); //http://localhost:8080/crearPlanes
+            server.createContext("/modificarPlan", new ModificarPlanHandler()); //http://localhost:8080/modificarPlan
 
             server.setExecutor(null); // creates a default executor
             server.start();            
