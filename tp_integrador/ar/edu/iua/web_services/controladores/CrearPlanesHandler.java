@@ -44,12 +44,6 @@ public class CrearPlanesHandler implements HttpHandler {
 
     private void ejecutarRespuesta(HttpExchange exchange,Map<String, String> params,String body) throws IOException{
         
-        
-        //creado = new Gson().fromJson(body, PlanImpl_ws.class);
-
-        //Type planList = new TypeToken<ArrayList<PlanImpl_ws>>(){}.getType();
-        //List<PlanImpl_ws> creados = new Gson().fromJson(body, planList);
-
         PlanImpl_ws[] planArray = new Gson().fromJson(body, PlanImpl_ws[].class);
         List<PlanImpl_ws> creados = Arrays.asList(planArray);
 
