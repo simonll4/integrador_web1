@@ -13,6 +13,7 @@ import ar.edu.iua.util.generadores.GenerarEjemplosDeMesas;
 import ar.edu.iua.util.generadores.GenerarEjemplosDePlanes;
 import ar.edu.iua.web_services.Server;
 
+
 public class Launcher {
 
     /**
@@ -34,13 +35,6 @@ public class Launcher {
         }
         System.out.println("Se guardaron " + BaseDeDatos.planesSize() + " planes en la BD");
 
-        // generar planes para web service
-        
-        try{
-            UtilTransformer.transformar();
-        }catch(CloneNotSupportedException e){
-            throw new ObjetoEx(e.getMessage());
-        }
 
         // generar mesas de examen
 
@@ -59,13 +53,18 @@ public class Launcher {
             }
             System.out.println("Se guardaron " + BaseDeDatos.mesasSize() + " mesas de examen en la BD");
 
+            // Generar base de datos para web services
+            
+            UtilTransformer.transformarPlan();
+            UtilTransformer.transformarMesa();
+
         } catch (CloneNotSupportedException e) {
             e.printStackTrace();
         }
 
         UtilPrint.PrintBusqueda(planes);
         Server.startServer();
-       
+
     }
 
 }

@@ -4,22 +4,22 @@ import java.util.ArrayList;
 import java.util.List;
 
 import ar.edu.iua.excepciones.modelo_ex.BuscarMesaEx;
-import ar.edu.iua.modelo.academico.examen.MesaExamen;
+import ar.edu.iua.modelo_webservices.academico.examen.MesaExamenWs;
 import ar.edu.iua.persistencia.BaseDeDatos;
 import ar.edu.iua.util.UtilTranslate;
 
-public class BuscarMesasExamen_ws {
+public class BuscarMesasExamenWs {
 
-    public List<MesaExamen> buscar(String terminos) throws BuscarMesaEx{
-        List<MesaExamen> buscados = new ArrayList<>();
+    public List<MesaExamenWs> buscar(String terminos) throws BuscarMesaEx{
+        List<MesaExamenWs> buscados = new ArrayList<>();
         
         if(terminos != null){
 			terminos = UtilTranslate.traducirCadena(terminos);
 			String[] terminosArray = terminos.trim().toLowerCase().split(" ");
-			for(int ii = 0; ii < BaseDeDatos.planesSize(); ii++){
-				MesaExamen mesa = null;
+			for(int ii = 0; ii < BaseDeDatos.mesasSizeWs(); ii++){
+				MesaExamenWs mesa = null;
 				try {
-					mesa = BaseDeDatos.getMesa(ii);
+					mesa = BaseDeDatos.getMesaWs(ii);
 				} catch (CloneNotSupportedException e) {
 					throw new BuscarMesaEx("No se pudo obtener la mesa examen " + ii + " de la base de datos BuscarMesas ln 21");
 				}

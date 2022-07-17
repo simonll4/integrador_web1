@@ -32,6 +32,9 @@ public class BuscarMesasExamen {
 					}
 				}
 			}
+			if(buscados.size() == 0){
+				throw new BuscarMesaEx("No se encontraron resultados para la busqueda");
+			}
 		}
 		else if(terminos == null || terminos.length()==0){
 			throw new BuscarMesaEx("No se ingresaron terminos. BuscarMesasImpl.java ln 15");

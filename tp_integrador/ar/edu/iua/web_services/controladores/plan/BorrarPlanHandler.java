@@ -9,9 +9,9 @@ import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 
 import ar.edu.iua.excepciones.modelo_ex.BorrarPlanEx;
-import ar.edu.iua.modelo_webservices.academico.plan.PlanImpl_ws;
-import ar.edu.iua.modelo_webservices.academico.plan.Plan_ws;
-import ar.edu.iua.negocio_webservices.academico.plan.BorrarPlanImpl_ws;
+import ar.edu.iua.modelo_webservices.academico.plan.PlanImplWs;
+import ar.edu.iua.modelo_webservices.academico.plan.PlanWs;
+import ar.edu.iua.negocio_webservices.academico.plan.BorrarPlanImplWs;
 import ar.edu.iua.web_services.util.utilWebServices;
 
 public class BorrarPlanHandler implements HttpHandler {
@@ -39,11 +39,11 @@ public class BorrarPlanHandler implements HttpHandler {
     }
 
     private void ejecutarRespuesta(HttpExchange exchange,Map<String, String> params,String body) throws IOException{
-        Plan_ws borrado = new PlanImpl_ws();
+        PlanWs borrado = new PlanImplWs();
         int anio = Integer.parseInt(params.get("anio"));
 
         borrado.setAnio(anio);
-        BorrarPlanImpl_ws borrador = new BorrarPlanImpl_ws();
+        BorrarPlanImplWs borrador = new BorrarPlanImplWs();
         try {
             borrador.borrar(borrado);
         } catch (BorrarPlanEx e) {

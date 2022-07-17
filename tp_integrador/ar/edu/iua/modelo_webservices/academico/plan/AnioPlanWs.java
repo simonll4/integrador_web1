@@ -4,7 +4,7 @@ import java.util.List;
 
 import ar.edu.iua.modelo.Objeto;
 
-public abstract class AnioPlan_ws extends Objeto {
+public abstract class AnioPlanWs extends Objeto {
 
     abstract public Integer getNumero();
 
@@ -14,8 +14,8 @@ public abstract class AnioPlan_ws extends Objeto {
 
     abstract public void setNombre(String nombre);
 
-    abstract public List<MateriaImpl_ws> getMaterias();
+    abstract public List<MateriaImplWs> getMaterias();
 
-    abstract public void setMaterias(List<MateriaImpl_ws> materias);
+    abstract public void setMaterias(List<MateriaImplWs> materias);
 
 }

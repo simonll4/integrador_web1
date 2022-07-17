@@ -10,8 +10,8 @@ import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 
 import ar.edu.iua.excepciones.modelo_ex.ModificarPlanEx;
-import ar.edu.iua.modelo_webservices.academico.plan.PlanImpl_ws;
-import ar.edu.iua.negocio_webservices.academico.plan.ModificarPlanImpl_ws;
+import ar.edu.iua.modelo_webservices.academico.plan.PlanImplWs;
+import ar.edu.iua.negocio_webservices.academico.plan.ModificarPlanImplWs;
 import ar.edu.iua.web_services.util.utilWebServices;
 
 public class ModificarPlanHandler implements HttpHandler {
@@ -39,11 +39,11 @@ public class ModificarPlanHandler implements HttpHandler {
 	}
     private void ejecutarRespuesta(HttpExchange exchange,Map<String, String> params,String body) throws IOException{
 
-        PlanImpl_ws modificado = new PlanImpl_ws();
+        PlanImplWs modificado = new PlanImplWs();
 
-        modificado = new Gson().fromJson(body, PlanImpl_ws.class);
+        modificado = new Gson().fromJson(body, PlanImplWs.class);
 
-        ModificarPlanImpl_ws modificador = new ModificarPlanImpl_ws();
+        ModificarPlanImplWs modificador = new ModificarPlanImplWs();
 
         try {
 			modificador.modificar(modificado);

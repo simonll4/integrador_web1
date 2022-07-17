@@ -1,0 +1,60 @@
+{
+  "id": 203810203082038,
+  "materia": {
+    "codigo": 2038102,
+    "nombre": "Ciencias Naturales I",
+    "cargaHoraria": 3.0
+  },
+  "fecha": "03082038",
+  "presidente": {
+    "id": 1,
+    "nombre": "Nicolas",
+    "apellido": "Martinez",
+    "edad": 70,
+    "nacionalidad": "Argentino"
+  },
+  "vocal": {
+    "id": 1,
+    "nombre": "Simon",
+    "apellido": "Diaz",
+    "edad": 84,
+    "nacionalidad": "Argentino"
+  },
+  "alumnos": [
+    {
+      "id": 1,
+      "nombre": "Eufemio",
+      "apellido": "Aguirre",
+      "edad": 12,
+      "nacionalidad": "Argentino"
+    },
+    {
+      "id": 2,
+      "nombre": "Simon",
+      "apellido": "Gimenez",
+      "edad": 12,
+      "nacionalidad": "Argentino"
+    },
+    {
+      "id": 3,
+      "nombre": "Dilan",
+      "apellido": "Torres",
+      "edad": 12,
+      "nacionalidad": "Argentino"
+    },
+    {
+      "id": 4,
+      "nombre": "Elvis",
+      "apellido": "Gutierrez",
+      "edad": 12,
+      "nacionalidad": "Argentino"
+    },
+    {
+      "id": 5,
+      "nombre": "Nicolas",
+      "apellido": "Sanchez",
+      "edad": 12,
+      "nacionalidad": "Argentino"
+    }
+  ]
+}

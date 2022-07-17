@@ -2,13 +2,13 @@ package ar.edu.iua.negocio_webservices.academico.plan;
 
 import ar.edu.iua.excepciones.modelo_ex.ModificarPlanEx;
 import ar.edu.iua.excepciones.modelo_ex.VerificadorEx;
-import ar.edu.iua.modelo_webservices.academico.plan.Plan_ws;
+import ar.edu.iua.modelo_webservices.academico.plan.PlanWs;
 import ar.edu.iua.persistencia.BaseDeDatos;
 import ar.edu.iua.util.verificadores.VerificarIntegridad;
 
-public class ModificarPlanImpl_ws implements ModificarPlan_ws {
+public class ModificarPlanImplWs implements ModificarPlanWs {
 
-    public boolean modificar(Plan_ws plan) throws ModificarPlanEx{
+    public boolean modificar(PlanWs plan) throws ModificarPlanEx{
         boolean bandera = false;
 
         boolean v;
@@ -19,10 +19,10 @@ public class ModificarPlanImpl_ws implements ModificarPlan_ws {
         }
 
         if(v){
-            for(int ii = 0; ii < BaseDeDatos.planesSize_ws();ii++){
+            for(int ii = 0; ii < BaseDeDatos.planesSizeWs();ii++){
                 try {
-                    if(BaseDeDatos.getPlan_ws(ii).getAnio().equals(plan.getAnio())){
-                        BaseDeDatos.setPlan_ws(ii, plan);
+                    if(BaseDeDatos.getPlanWs(ii).getAnio().equals(plan.getAnio())){
+                        BaseDeDatos.setPlanWs(ii, plan);
                         return !bandera;
                     }
                 } catch (CloneNotSupportedException e) {

@@ -1,10 +1,10 @@
 package ar.edu.iua.negocio_webservices.academico.plan;
 
 import ar.edu.iua.excepciones.modelo_ex.ModificarPlanEx;
-import ar.edu.iua.modelo_webservices.academico.plan.Plan_ws;
+import ar.edu.iua.modelo_webservices.academico.plan.PlanWs;
 
 
-public interface ModificarPlan_ws {
+public interface ModificarPlanWs {
 
     /*
         Este metodo requiere que se recupere un plan de la base, se modifique y luego se guarde nuevamente en la base de datos un plan
@@ -13,6 +13,6 @@ public interface ModificarPlan_ws {
     */
     
 
-    boolean modificar(Plan_ws plan) throws ModificarPlanEx;    
+    boolean modificar(PlanWs plan) throws ModificarPlanEx;    
     
 }

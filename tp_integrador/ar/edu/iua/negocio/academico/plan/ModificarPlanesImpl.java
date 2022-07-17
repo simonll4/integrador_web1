@@ -16,7 +16,6 @@ public class ModificarPlanesImpl implements ModificarPlanes {
 
         for(int ii = 0; ii < planes.size(); ii++){
             if(planes != null){
-                //bandera = modificador.modificar(planes.get(ii));
                 try {
                     bandera = VerificarIntegridad.verificadorIntegridadPlan(planes.get(ii));
                 } catch (VerificadorEx e) {

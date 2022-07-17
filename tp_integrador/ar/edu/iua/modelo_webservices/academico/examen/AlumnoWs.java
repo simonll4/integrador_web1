@@ -2,7 +2,7 @@ package ar.edu.iua.modelo_webservices.academico.examen;
 
 import ar.edu.iua.modelo.Objeto;
 
-public class Profesor_ws extends Objeto{
+public class AlumnoWs extends Objeto{
     // atributos
     private Integer id;
     private String nombre;
@@ -11,18 +11,19 @@ public class Profesor_ws extends Objeto{
     private String nacionalidad;
 
     // constructor
-    public Profesor_ws(Integer id, String nombre, Integer edad, String nacionalidad) {
+
+    public AlumnoWs(Integer id, String nombre, String apellido, Integer edad, String nacionalidad) {
         this.id = id;
         this.nombre = nombre;
         this.edad = edad;
         this.nacionalidad = nacionalidad;
     }
-
-    public Profesor_ws() {
+    public AlumnoWs(){
+        
     }
 
     // setters
-    public void setId(Integer id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -30,36 +31,37 @@ public class Profesor_ws extends Objeto{
         this.nombre = nombre;
     }
 
-    public void setEdad(Integer edad) {
+    public void setEdad(int edad) {
         this.edad = edad;
     }
 
-    public void setNacionalidad(String nacionalidad) {
+    public void setNacionalidad(String nacionalidad){
         this.nacionalidad = nacionalidad;
     }
     public void setApellido(String apellido) {
         this.apellido = apellido;
     }
 
+
     // getters
-    public Integer getId() {
+    public Integer getId(){
         return id;
     }
-
-    public String getNombre() {
+    public String getNombre(){
         return nombre;
     }
-
-    public Integer getEdad() {
+    public Integer getEdad(){
         return edad;
     }
 
-    public String getNacionalidad() {
+    public String getNacionalidad(){
         return nacionalidad;
     }
     public String getApellido() {
         return apellido;
     }
+
+
 
     public boolean equals(Object obj) {
         if (this == obj)
@@ -68,7 +70,7 @@ public class Profesor_ws extends Objeto{
             return false;
         if (getClass() != obj.getClass())
             return false;
-        Profesor_ws other = (Profesor_ws) obj;
+        AlumnoWs other = (AlumnoWs) obj;
         if (id == null) {
             if (other.id != null)
                 return false;
@@ -87,17 +89,17 @@ public class Profesor_ws extends Objeto{
     public String fullToString() {
 
         String s = (id != null ? this.id : "") + "\n" + (nombre != null ? nombre.toString() : "") + "\n" +
-                (edad != null ? this.edad : "") + "\n" + (nacionalidad != null ? nacionalidad.toString() : "") + "\n";
+        (edad != null ? this.edad : "") + "\n" + (nacionalidad != null ? nacionalidad.toString() : "") + "\n";
 
         return s.trim();
     }
 
+    
     public String fullToJson() {
         
         return null;
     }
 
-    
     public int hashCode() {
         final int prime = 31;
         int result = 1;

@@ -2,13 +2,13 @@ package ar.edu.iua.negocio_webservices.academico.plan;
 
 import ar.edu.iua.excepciones.ObjetoEx;
 import ar.edu.iua.excepciones.modelo_ex.CrearPlanEx;
-import ar.edu.iua.modelo_webservices.academico.plan.Plan_ws;
+import ar.edu.iua.modelo_webservices.academico.plan.PlanWs;
 import ar.edu.iua.persistencia.BaseDeDatos;
 import ar.edu.iua.util.verificadores.VerificarIntegridad;
 
-public class CrearPlanImpl_ws implements CrearPlan_ws {
+public class CrearPlanImplWs implements CrearPlanWs {
 
-    public boolean crear(Plan_ws plan) throws CrearPlanEx{
+    public boolean crear(PlanWs plan) throws CrearPlanEx{
     
         boolean v;
         try {
@@ -19,7 +19,7 @@ public class CrearPlanImpl_ws implements CrearPlan_ws {
 
         if(v){
             try {
-                return BaseDeDatos.addPlan_ws(plan);
+                return BaseDeDatos.addPlanWs(plan);
             } catch (CloneNotSupportedException e) {
                 throw new CrearPlanEx(e.getMessage());
             }

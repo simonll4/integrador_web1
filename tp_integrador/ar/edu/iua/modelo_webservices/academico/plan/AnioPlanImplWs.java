@@ -3,15 +3,15 @@ package ar.edu.iua.modelo_webservices.academico.plan;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AnioPlanImpl_ws extends AnioPlan_ws {
+public class AnioPlanImplWs extends AnioPlanWs {
 
     private Integer numero;
     private String nombre;
-    private List<MateriaImpl_ws> materias = new ArrayList<>();
+    private List<MateriaImplWs> materias = new ArrayList<>();
 
-    public AnioPlanImpl_ws(){}
+    public AnioPlanImplWs(){}
 
-    public AnioPlanImpl_ws(Integer numero, String nombre) {
+    public AnioPlanImplWs(Integer numero, String nombre) {
         this.numero = numero;
         this.nombre = nombre;
     }
@@ -33,11 +33,11 @@ public class AnioPlanImpl_ws extends AnioPlan_ws {
         this.nombre = nombre;
     }
 
-    public List<MateriaImpl_ws> getMaterias() {
+    public List<MateriaImplWs> getMaterias() {
         return materias;
     }
 
-    public void setMaterias(List<MateriaImpl_ws> materias) {
+    public void setMaterias(List<MateriaImplWs> materias) {
         this.materias = materias;
     }
 
@@ -57,7 +57,7 @@ public class AnioPlanImpl_ws extends AnioPlan_ws {
             return false;
         if (getClass() != obj.getClass())
             return false;
-        AnioPlanImpl_ws other = (AnioPlanImpl_ws) obj;
+        AnioPlanImplWs other = (AnioPlanImplWs) obj;
         if (numero == null) {
             if (other.numero != null)
                 return false;
@@ -74,7 +74,7 @@ public class AnioPlanImpl_ws extends AnioPlan_ws {
 
         String z = (numero != null ? numero.toString() : "") + "\n" + (nombre != null ? nombre.toString() : "") + "\n";
 
-        for (Materia_ws materia : materias) {
+        for (MateriaWs materia : materias) {
             String m = materia.fullToString().trim();
             z += (m.length() > 0) ? m + "\n" : "";
         }
@@ -104,11 +104,11 @@ public class AnioPlanImpl_ws extends AnioPlan_ws {
     }
 
     public Object clone() throws CloneNotSupportedException {
-        AnioPlan_ws anio = (AnioPlan_ws) super.clone();
-        List<MateriaImpl_ws> auxMaterias = new ArrayList<>();
-        for (Materia_ws materia : this.materias) {
+        AnioPlanWs anio = (AnioPlanWs) super.clone();
+        List<MateriaImplWs> auxMaterias = new ArrayList<>();
+        for (MateriaWs materia : this.materias) {
             if (materia != null) {
-                auxMaterias.add((MateriaImpl_ws) materia.clone());
+                auxMaterias.add((MateriaImplWs) materia.clone());
             }
         }
         anio.setMaterias(auxMaterias);

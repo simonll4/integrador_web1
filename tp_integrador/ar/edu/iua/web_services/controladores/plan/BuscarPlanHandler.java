@@ -10,8 +10,8 @@ import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 
 import ar.edu.iua.excepciones.modelo_ex.BuscarPlanEx;
-import ar.edu.iua.modelo_webservices.academico.plan.PlanImpl_ws;
-import ar.edu.iua.negocio_webservices.academico.plan.BuscarPlanImpl_ws;
+import ar.edu.iua.modelo_webservices.academico.plan.PlanImplWs;
+import ar.edu.iua.negocio_webservices.academico.plan.BuscarPlanImplWs;
 import ar.edu.iua.util.UtilTranslate;
 import ar.edu.iua.web_services.util.utilWebServices;
 
@@ -36,18 +36,17 @@ public class BuscarPlanHandler implements HttpHandler{
             os.write(msg.getBytes());
             os.close();
         }
-     
     }
 
     private void ejecutarRespuesta(HttpExchange exchange,Map<String, String> params,String body) throws IOException{
         
         
-        BuscarPlanImpl_ws buscador = new BuscarPlanImpl_ws();
+        BuscarPlanImplWs buscador = new BuscarPlanImplWs();
         int anio = Integer.parseInt(params.get("anio"));
-        PlanImpl_ws buscado = null; 
+        PlanImplWs buscado = null; 
         
         try {
-            buscado = (PlanImpl_ws)buscador.buscar(anio);
+            buscado = (PlanImplWs)buscador.buscar(anio);
         } catch (BuscarPlanEx e) {
             System.out.println(e.getMessage());
             String msg = "204 NO CONTENT: no hay resultados para la busqueda";

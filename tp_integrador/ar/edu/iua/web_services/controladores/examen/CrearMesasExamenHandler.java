@@ -11,9 +11,9 @@ import com.google.gson.Gson;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 
-import ar.edu.iua.excepciones.modelo_ex.CrearPlanEx;
-import ar.edu.iua.modelo_webservices.academico.plan.PlanImpl_ws;
-import ar.edu.iua.negocio_webservices.academico.plan.CrearPlanesImpl_ws;
+import ar.edu.iua.excepciones.modelo_ex.CrearMesaEx;
+import ar.edu.iua.modelo_webservices.academico.examen.MesaExamenWs;
+import ar.edu.iua.negocio_webservices.academico.examen.CrearMesasExamenWs;
 import ar.edu.iua.web_services.util.utilWebServices;
 
 public class CrearMesasExamenHandler implements HttpHandler {
@@ -40,23 +40,23 @@ public class CrearMesasExamenHandler implements HttpHandler {
 
     private void ejecutarRespuesta(HttpExchange exchange,Map<String, String> params,String body) throws IOException{
         
-        PlanImpl_ws[] planArray = new Gson().fromJson(body, PlanImpl_ws[].class);
-        List<PlanImpl_ws> creados = Arrays.asList(planArray);
+        MesaExamenWs[] mesaArray = new Gson().fromJson(body, MesaExamenWs[].class);
+        List<MesaExamenWs> creadas = Arrays.asList(mesaArray);
 
-        CrearPlanesImpl_ws creador = new CrearPlanesImpl_ws();
+        CrearMesasExamenWs creador = new CrearMesasExamenWs();
 
         try {
-            creador.crear(creados);
-        } catch (CrearPlanEx e) {
+            creador.crear(creadas);
+        } catch (CrearMesaEx e) {
             System.out.println(e.getMessage());
-            String msg = "409 ERROR DE CONFLICTO: no se pudieron crear los planes";
+            String msg = "409 ERROR DE CONFLICTO: no se pudieron crear las mesas";
             exchange.sendResponseHeaders(204,0);
             OutputStream os = exchange.getResponseBody();
             os.write(msg.getBytes());
             os.close();
         }
         
-        String msg = "200: Se crearon los planes";
+        String msg = "200: Se crearon las mesas";
         exchange.sendResponseHeaders(200, msg.length());
         OutputStream os = exchange.getResponseBody();
         os.write(msg.getBytes());

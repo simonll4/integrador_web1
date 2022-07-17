@@ -1,6 +1,6 @@
 package ar.edu.iua.modelo_webservices;
 
-public abstract class Objeto_ws implements Cloneable {
+public abstract class ObjetoWs implements Cloneable {
 
     abstract public int hashCode();
 

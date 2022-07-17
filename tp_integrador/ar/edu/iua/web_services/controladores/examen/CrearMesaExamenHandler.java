@@ -9,10 +9,10 @@ import com.google.gson.Gson;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 
-import ar.edu.iua.excepciones.modelo_ex.CrearPlanEx;
-import ar.edu.iua.modelo_webservices.academico.plan.PlanImpl_ws;
-import ar.edu.iua.modelo_webservices.academico.plan.Plan_ws;
-import ar.edu.iua.negocio_webservices.academico.plan.CrearPlanImpl_ws;
+import ar.edu.iua.excepciones.modelo_ex.CrearMesaEx;
+import ar.edu.iua.modelo_webservices.academico.examen.MesaExamenWs;
+import ar.edu.iua.negocio_webservices.academico.examen.CrearMesaExamenWs;
+import ar.edu.iua.persistencia.BaseDeDatos;
 import ar.edu.iua.web_services.util.utilWebServices;
 
 public class CrearMesaExamenHandler implements HttpHandler {
@@ -39,23 +39,25 @@ public class CrearMesaExamenHandler implements HttpHandler {
 
     private void ejecutarRespuesta(HttpExchange exchange,Map<String, String> params,String body) throws IOException{
         
-        Plan_ws creado = new PlanImpl_ws();
-        creado = new Gson().fromJson(body, PlanImpl_ws.class);
+        MesaExamenWs creado = new MesaExamenWs();
+        creado = new Gson().fromJson(body, MesaExamenWs.class);
 
-        CrearPlanImpl_ws creador = new CrearPlanImpl_ws();
+        CrearMesaExamenWs creador = new CrearMesaExamenWs();
 
         try {
+            System.out.println(BaseDeDatos.mesasSizeWs());
             creador.crear(creado);
-        } catch (CrearPlanEx e) {
+            System.out.println(BaseDeDatos.mesasSizeWs());            
+        } catch (CrearMesaEx e) {
             System.out.println(e.getMessage());
-            String msg = "409 ERROR DE CONFLICTO: no se pudo crear el plan";
+            String msg = "409 ERROR DE CONFLICTO: no se pudo crear la mesa";
             exchange.sendResponseHeaders(204,0);
             OutputStream os = exchange.getResponseBody();
             os.write(msg.getBytes());
             os.close();
         }
         
-        String msg = "200: Se creo el plan";
+        String msg = "200: Se creo la mesa";
         exchange.sendResponseHeaders(200, msg.length());
         OutputStream os = exchange.getResponseBody();
         os.write(msg.getBytes());

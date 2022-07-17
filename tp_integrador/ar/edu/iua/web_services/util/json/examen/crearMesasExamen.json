@@ -1,0 +1,122 @@
+[
+  {
+    "id": 203940926072039,
+    "materia": {
+      "codigo": 2039409,
+      "nombre": "Historia del Arte",
+      "cargaHoraria": 3.0
+    },
+    "fecha": "26072039",
+    "presidente": {
+      "id": 109,
+      "nombre": "Lucas",
+      "apellido": "Alvarez",
+      "edad": 28,
+      "nacionalidad": "Argentino"
+    },
+    "vocal": {
+      "id": 209,
+      "nombre": "Saul",
+      "apellido": "Lopez",
+      "edad": 36,
+      "nacionalidad": "Argentino"
+    },
+    "alumnos": [
+      {
+        "id": 37,
+        "nombre": "Martin",
+        "apellido": "Martinez",
+        "edad": 15,
+        "nacionalidad": "Argentino"
+      },
+      {
+        "id": 38,
+        "nombre": "Daniel",
+        "apellido": "Flores",
+        "edad": 15,
+        "nacionalidad": "Argentino"
+      },
+      {
+        "id": 39,
+        "nombre": "Esteban",
+        "apellido": "Sosa",
+        "edad": 15,
+        "nacionalidad": "Argentino"
+      },
+      {
+        "id": 40,
+        "nombre": "Renato",
+        "apellido": "Gimenez",
+        "edad": 15,
+        "nacionalidad": "Argentino"
+      },
+      {
+        "id": 41,
+        "nombre": "Gautam",
+        "apellido": "Suarez",
+        "edad": 15,
+        "nacionalidad": "Argentino"
+      },
+      {
+        "id": 42,
+        "nombre": "Javier",
+        "apellido": "Ipollitti",
+        "edad": 15,
+        "nacionalidad": "Argentino"
+      },
+      {
+        "id": 43,
+        "nombre": "Gabriel",
+        "apellido": "Flores",
+        "edad": 15,
+        "nacionalidad": "Argentino"
+      }
+    ]
+  },
+  {
+    "id": 204020801082040,
+    "materia": {
+      "codigo": 2040208,
+      "nombre": "Ciencias Naturales II",
+      "cargaHoraria": 4.0
+    },
+    "fecha": "01082040",
+    "presidente": {
+      "id": 110,
+      "nombre": "Daniel",
+      "apellido": "Flores",
+      "edad": 30,
+      "nacionalidad": "Argentino"
+    },
+    "vocal": {
+      "id": 210,
+      "nombre": "Alejandro",
+      "apellido": "Sanchez",
+      "edad": 76,
+      "nacionalidad": "Argentino"
+    },
+    "alumnos": [
+      {
+        "id": 44,
+        "nombre": "Domenico",
+        "apellido": "Ruiz",
+        "edad": 13,
+        "nacionalidad": "Argentino"
+      },
+      {
+        "id": 45,
+        "nombre": "Omar",
+        "apellido": "Sosa",
+        "edad": 13,
+        "nacionalidad": "Argentino"
+      },
+      {
+        "id": 46,
+        "nombre": "Drago",
+        "apellido": "Alvarez",
+        "edad": 13,
+        "nacionalidad": "Argentino"
+      }
+    ]
+  }
+]

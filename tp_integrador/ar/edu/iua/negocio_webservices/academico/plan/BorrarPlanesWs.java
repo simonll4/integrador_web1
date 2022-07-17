@@ -3,9 +3,9 @@ package ar.edu.iua.negocio_webservices.academico.plan;
 import java.util.List;
 
 import ar.edu.iua.excepciones.modelo_ex.BorrarPlanEx;
-import ar.edu.iua.modelo_webservices.academico.plan.Plan_ws;
+import ar.edu.iua.modelo_webservices.academico.plan.PlanWs;
 
-public interface BorrarPlanes_ws {
+public interface BorrarPlanesWs {
 
     /*
         Este metodo requiere que se quite de la base de datos un listado de planes
@@ -14,6 +14,6 @@ public interface BorrarPlanes_ws {
             - Ver las mismas reglas de BorrarPlan.borrar(Plan plan)
 
     */
-    boolean borrar(List<Plan_ws> plan) throws BorrarPlanEx;    
+    boolean borrar(List<PlanWs> plan) throws BorrarPlanEx;    
     
 }

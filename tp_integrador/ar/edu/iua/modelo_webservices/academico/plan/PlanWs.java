@@ -4,7 +4,7 @@ import java.util.List;
 
 import ar.edu.iua.modelo.Objeto;
 
-public abstract class Plan_ws extends Objeto {
+public abstract class PlanWs extends Objeto {
 
     abstract public Integer getAnio();
 
@@ -26,8 +26,8 @@ public abstract class Plan_ws extends Objeto {
 
     abstract public boolean isEstadoNulo();
 
-    abstract public List<AnioPlanImpl_ws> getAnios();
+    abstract public List<AnioPlanImplWs> getAnios();
 
-    abstract public void setAnios(List<AnioPlanImpl_ws> anios);
+    abstract public void setAnios(List<AnioPlanImplWs> anios);
 
 }

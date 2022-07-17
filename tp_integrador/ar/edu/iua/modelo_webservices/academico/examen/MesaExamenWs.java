@@ -4,22 +4,22 @@ import java.util.ArrayList;
 import java.util.List;
 
 import ar.edu.iua.modelo.Objeto;
-import ar.edu.iua.modelo.academico.plan.Materia;
+import ar.edu.iua.modelo_webservices.academico.plan.MateriaImplWs;
 
-public class MesaExamen_ws extends Objeto {
+public class MesaExamenWs extends Objeto {
 
     private Long id;
-    private Materia materia;
+    private MateriaImplWs materia;
     private String fecha;
-    private Profesor_ws presidente;
-    private Profesor_ws vocal;
-    private List<Alumno_ws> alumnos = new ArrayList<Alumno_ws>();
+    private ProfesorWs presidente;
+    private ProfesorWs vocal;
+    private List<AlumnoWs> alumnos = new ArrayList<AlumnoWs>();
 
-    public MesaExamen_ws() {
+    public MesaExamenWs() {
 
     }
 
-    public MesaExamen_ws(Long id, Materia materia, Profesor_ws presidente, Profesor_ws vocal, List<Alumno_ws> alumnos,
+    public MesaExamenWs(Long id, MateriaImplWs materia, ProfesorWs presidente, ProfesorWs vocal, List<AlumnoWs> alumnos,
             String fecha) {
         this.id = id;
         this.materia = materia;
@@ -37,35 +37,35 @@ public class MesaExamen_ws extends Objeto {
         this.id = id;
     }
 
-    public Materia getMateria() {
+    public MateriaImplWs getMateria() {
         return materia;
     }
 
-    public void setMateria(Materia materia) {
+    public void setMateria(MateriaImplWs materia) {
         this.materia = materia;
     }
 
-    public Profesor_ws getPresidente() {
+    public ProfesorWs getPresidente() {
         return presidente;
     }
 
-    public void setPresidente(Profesor_ws presidente) {
+    public void setPresidente(ProfesorWs presidente) {
         this.presidente = presidente;
     }
 
-    public Profesor_ws getVocal() {
+    public ProfesorWs getVocal() {
         return vocal;
     }
 
-    public void setVocal(Profesor_ws vocal) {
+    public void setVocal(ProfesorWs vocal) {
         this.vocal = vocal;
     }
 
-    public List<Alumno_ws> getAlumnos() {
+    public List<AlumnoWs> getAlumnos() {
         return alumnos;
     }
 
-    public void setAlumnos(List<Alumno_ws> alumnos) {
+    public void setAlumnos(List<AlumnoWs> alumnos) {
         this.alumnos = alumnos;
     }
 
@@ -84,7 +84,7 @@ public class MesaExamen_ws extends Objeto {
             return false;
         if (getClass() != obj.getClass())
             return false;
-        MesaExamen_ws other = (MesaExamen_ws) obj;
+        MesaExamenWs other = (MesaExamenWs) obj;
         if (id == null) {
             if (other.id != null)
                 return false;
@@ -110,7 +110,7 @@ public class MesaExamen_ws extends Objeto {
                 + (vocal != null ? vocal.getNombre().toString() : "") + " "
                 + (vocal != null ? vocal.getApellido().toString() : "") + "\n" + "Alumnos: \n";
 
-        for (Alumno_ws alumno : alumnos) {
+        for (AlumnoWs alumno : alumnos) {
             String a = alumno.getNombre().toString() + " " + alumno.getApellido().toString();
             s += (a.length() > 0) ? a + "\n" : "";
         }
@@ -131,11 +131,11 @@ public class MesaExamen_ws extends Objeto {
     }
 
     public Object clone() throws CloneNotSupportedException {
-        MesaExamen_ws mesa = (MesaExamen_ws) super.clone();
-        List<Alumno_ws> auxAlumnos = new ArrayList<>();
-        for (Alumno_ws alumno : this.alumnos) {
+        MesaExamenWs mesa = (MesaExamenWs) super.clone();
+        List<AlumnoWs> auxAlumnos = new ArrayList<>();
+        for (AlumnoWs alumno : this.alumnos) {
             if (alumno != null) {
-                auxAlumnos.add((Alumno_ws) alumno.clone());
+                auxAlumnos.add((AlumnoWs) alumno.clone());
             }
         }
         mesa.setAlumnos(auxAlumnos);

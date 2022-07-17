@@ -1,17 +1,17 @@
 package ar.edu.iua.negocio_webservices.academico.plan;
 
 import ar.edu.iua.excepciones.modelo_ex.BuscarPlanEx;
-import ar.edu.iua.modelo_webservices.academico.plan.Plan_ws;
+import ar.edu.iua.modelo_webservices.academico.plan.PlanWs;
 import ar.edu.iua.persistencia.BaseDeDatos;
 
-public class BuscarPlanImpl_ws implements BuscarPlan_ws {
+public class BuscarPlanImplWs implements BuscarPlanWs {
 
     @Override
-    public Plan_ws buscar(int anio) throws BuscarPlanEx{
-        for(int ii = 0; ii < BaseDeDatos.planesSize_ws(); ii++){
+    public PlanWs buscar(int anio) throws BuscarPlanEx{
+        for(int ii = 0; ii < BaseDeDatos.planesSizeWs(); ii++){
             try {
-                if(BaseDeDatos.getPlan_ws(ii).getAnio().intValue() == anio){
-                    return BaseDeDatos.getPlan_ws(ii);
+                if(BaseDeDatos.getPlanWs(ii).getAnio().intValue() == anio){
+                    return BaseDeDatos.getPlanWs(ii);
                 }
             } catch (CloneNotSupportedException e) {
                 throw new BuscarPlanEx("No se pudo obtener el plan " + ii + " de la base de datos BuscarPlanImpl ln 13");

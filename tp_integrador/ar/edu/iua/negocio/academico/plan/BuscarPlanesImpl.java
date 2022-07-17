@@ -31,6 +31,9 @@ public class BuscarPlanesImpl implements BuscarPlanes{
 					}
 				}
 			}
+			if(buscados.size() == 0){
+				throw new BuscarPlanEx("No se encontraron resultados para la busqueda");
+			}
 		}
 		else if(terminos == null || terminos.length()==0){
 			throw new BuscarPlanEx("No se ingresaron terminos. BuscarPlanesImpl.java ln 15");

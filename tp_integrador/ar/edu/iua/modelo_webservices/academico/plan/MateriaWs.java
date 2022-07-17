@@ -2,7 +2,7 @@ package ar.edu.iua.modelo_webservices.academico.plan;
 
 import ar.edu.iua.modelo.Objeto;
 
-public abstract class Materia_ws extends Objeto {
+public abstract class MateriaWs extends Objeto {
 
     abstract public Integer getCodigo();
 

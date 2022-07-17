@@ -1,14 +1,16 @@
 package ar.edu.iua.modelo_webservices.academico.plan;
 
-public class MateriaImpl_ws extends Materia_ws{
+public class MateriaImplWs extends MateriaWs{
 
     private Integer codigo;
     private String nombre;
     private Double cargaHoraria;
 
-    public MateriaImpl_ws(){}
+    public MateriaImplWs(){
+
+    }
     
-    public MateriaImpl_ws(Integer codigo, String nombre, Double cargaHoraria) {
+    public MateriaImplWs(Integer codigo, String nombre, Double cargaHoraria) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.cargaHoraria = cargaHoraria;
@@ -53,7 +55,7 @@ public class MateriaImpl_ws extends Materia_ws{
             return false;
         if (getClass() != obj.getClass())
             return false;
-        MateriaImpl_ws other = (MateriaImpl_ws) obj;
+        MateriaImplWs other = (MateriaImplWs) obj;
         if (codigo == null) {
             if (other.codigo != null)
                 return false;

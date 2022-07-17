@@ -36,9 +36,9 @@ public class Server {
             server.createContext("/crearPlanes", new CrearPlanesHandler()); //http://localhost:8080/crearPlanes
             server.createContext("/modificarPlan", new ModificarPlanHandler()); //http://localhost:8080/modificarPlan
             //examen
-            server.createContext("/buscarExamenes", new BuscarMesasExamenHandler()); //http://localhost:8080/buscarMesas
-            server.createContext("/crearExamen", new CrearMesaExamenHandler()); //http://localhost:8080/crearMesa
-            server.createContext("/crearExamenes", new CrearMesasExamenHandler()); //http://localhost:8080/crearMesas
+            server.createContext("/buscarExamen", new BuscarMesasExamenHandler()); //http://localhost:8080/buscarExamenes
+            server.createContext("/crearExamen", new CrearMesaExamenHandler()); //http://localhost:8080/crearExamen
+            server.createContext("/crearExamenes", new CrearMesasExamenHandler()); //http://localhost:8080/crearExamenes
             
             
             server.setExecutor(null); // creates a default executor

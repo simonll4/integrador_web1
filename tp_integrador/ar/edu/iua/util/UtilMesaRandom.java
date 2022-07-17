@@ -13,8 +13,8 @@ import ar.edu.iua.persistencia.BaseDeDatos;
 
 public class UtilMesaRandom {
 
-    private static int idPresidente = 0;
-    private static int idVocal = 0;
+    private static int idPresidente = 100;
+    private static int idVocal = 200;
     private static int idAlumno = 0;
     private static String[] apellidos = { "González", "Rodríguez", "Gomez", "Fernandez", "Lopez", "Díaz", "Martínez",
             "Perez",

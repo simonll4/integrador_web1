@@ -1,9 +1,9 @@
 package ar.edu.iua.negocio_webservices.academico.plan;
 
 import ar.edu.iua.excepciones.modelo_ex.CrearPlanEx;
-import ar.edu.iua.modelo_webservices.academico.plan.Plan_ws;
+import ar.edu.iua.modelo_webservices.academico.plan.PlanWs;
 
-public interface CrearPlan_ws {
+public interface CrearPlanWs {
 
     /*  
         Este metodo requiere que se guarde en la base de datos un plan
@@ -27,6 +27,6 @@ public interface CrearPlan_ws {
             - No se permite que una materia no tenga carga horaria, excepto si el estado del plan es BORRADOR 
             - No se permite que una materias tenga carga horaria < 0, recordar que si el estado del plan es BORRADOR, este att puede ser null, pero nunca <= 0 
     */
-    boolean crear(Plan_ws plan) throws CrearPlanEx;    
+    boolean crear(PlanWs plan) throws CrearPlanEx;    
     
 }

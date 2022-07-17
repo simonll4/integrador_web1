@@ -12,11 +12,11 @@ import java.util.Map;
 
 import ar.edu.iua.excepciones.modelo_ex.BorrarPlanEx;
 import ar.edu.iua.excepciones.modelo_ex.BuscarPlanEx;
-import ar.edu.iua.modelo_webservices.academico.plan.PlanImpl_ws;
-import ar.edu.iua.modelo_webservices.academico.plan.Plan_ws;
-import ar.edu.iua.negocio_webservices.academico.plan.BorrarPlanesImpl_ws;
-import ar.edu.iua.negocio_webservices.academico.plan.BorrarPlanes_ws;
-import ar.edu.iua.negocio_webservices.academico.plan.BuscarPlanImpl_ws;
+import ar.edu.iua.modelo_webservices.academico.plan.PlanImplWs;
+import ar.edu.iua.modelo_webservices.academico.plan.PlanWs;
+import ar.edu.iua.negocio_webservices.academico.plan.BorrarPlanesImplWs;
+import ar.edu.iua.negocio_webservices.academico.plan.BorrarPlanesWs;
+import ar.edu.iua.negocio_webservices.academico.plan.BuscarPlanImplWs;
 import ar.edu.iua.web_services.util.utilWebServices;
 
 public class BorrarPlanesHandler implements HttpHandler {
@@ -44,16 +44,16 @@ public class BorrarPlanesHandler implements HttpHandler {
     }
 
     private void ejecutarRespuesta(HttpExchange exchange,Map<String, String> params,String body) throws BuscarPlanEx,IOException{
-        List<Plan_ws> borrados = new ArrayList<>();
+        List<PlanWs> borrados = new ArrayList<>();
         
         for (String value : params.values()) {
-            Plan_ws plan = new PlanImpl_ws();
-            BuscarPlanImpl_ws buscador = new BuscarPlanImpl_ws();
+            PlanWs plan = new PlanImplWs();
+            BuscarPlanImplWs buscador = new BuscarPlanImplWs();
             plan = buscador.buscar(Integer.parseInt(value));
             borrados.add(plan);
         }
 
-        BorrarPlanes_ws borrador = new BorrarPlanesImpl_ws();
+        BorrarPlanesWs borrador = new BorrarPlanesImplWs();
         try {
             borrador.borrar(borrados);
         } catch (BorrarPlanEx e) {

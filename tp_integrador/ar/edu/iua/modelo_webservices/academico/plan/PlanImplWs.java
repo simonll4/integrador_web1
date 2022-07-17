@@ -3,11 +3,11 @@ package ar.edu.iua.modelo_webservices.academico.plan;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PlanImpl_ws extends Plan_ws {
+public class PlanImplWs extends PlanWs {
 
     private Integer anio;
     private Estado estado;
-    private List<AnioPlanImpl_ws> anios = new ArrayList<>();
+    private List<AnioPlanImplWs> anios = new ArrayList<>();
 
     private enum Estado {
         BORRADOR,
@@ -54,11 +54,11 @@ public class PlanImpl_ws extends Plan_ws {
     public boolean isEstadoNulo() {
         return estado == null;
     }
-    public List<AnioPlanImpl_ws> getAnios() {
+    public List<AnioPlanImplWs> getAnios() {
         return anios;
     }
 
-    public void setAnios(List<AnioPlanImpl_ws> anios) {
+    public void setAnios(List<AnioPlanImplWs> anios) {
         this.anios = anios;
     }
 
@@ -78,7 +78,7 @@ public class PlanImpl_ws extends Plan_ws {
             return false;
         if (getClass() != obj.getClass())
             return false;
-        PlanImpl_ws other = (PlanImpl_ws) obj;
+        PlanImplWs other = (PlanImplWs) obj;
         if (anio == null) {
             if (other.anio != null)
                 return false;
@@ -95,7 +95,7 @@ public class PlanImpl_ws extends Plan_ws {
 
         String s = (anio != null ? anio.toString() : "") + "\n" + (estado != null ? estado.toString() : "") + "\n";
 
-        for(AnioPlan_ws anioList : anios){
+        for(AnioPlanWs anioList : anios){
             String p = anioList.fullToString().trim();
             s += (p.length() > 0) ? p + "\n" : "";
         }
@@ -104,11 +104,11 @@ public class PlanImpl_ws extends Plan_ws {
     }
 
     public Object clone() throws CloneNotSupportedException {
-        Plan_ws plan = (Plan_ws)super.clone();
-        List<AnioPlanImpl_ws> auxAnios = new ArrayList<>();
-        for(AnioPlan_ws anio : this.anios){
+        PlanWs plan = (PlanWs)super.clone();
+        List<AnioPlanImplWs> auxAnios = new ArrayList<>();
+        for(AnioPlanWs anio : this.anios){
             if(anio != null){
-                auxAnios.add((AnioPlanImpl_ws)anio.clone());
+                auxAnios.add((AnioPlanImplWs)anio.clone());
             }
         }
         plan.setAnios(auxAnios);

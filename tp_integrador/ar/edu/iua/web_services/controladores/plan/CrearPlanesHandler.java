@@ -12,8 +12,8 @@ import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 
 import ar.edu.iua.excepciones.modelo_ex.CrearPlanEx;
-import ar.edu.iua.modelo_webservices.academico.plan.PlanImpl_ws;
-import ar.edu.iua.negocio_webservices.academico.plan.CrearPlanesImpl_ws;
+import ar.edu.iua.modelo_webservices.academico.plan.PlanImplWs;
+import ar.edu.iua.negocio_webservices.academico.plan.CrearPlanesImplWs;
 import ar.edu.iua.web_services.util.utilWebServices;
 
 public class CrearPlanesHandler implements HttpHandler {
@@ -40,10 +40,10 @@ public class CrearPlanesHandler implements HttpHandler {
 
     private void ejecutarRespuesta(HttpExchange exchange,Map<String, String> params,String body) throws IOException{
         
-        PlanImpl_ws[] planArray = new Gson().fromJson(body, PlanImpl_ws[].class);
-        List<PlanImpl_ws> creados = Arrays.asList(planArray);
+        PlanImplWs[] planArray = new Gson().fromJson(body, PlanImplWs[].class);
+        List<PlanImplWs> creados = Arrays.asList(planArray);
 
-        CrearPlanesImpl_ws creador = new CrearPlanesImpl_ws();
+        CrearPlanesImplWs creador = new CrearPlanesImplWs();
 
         try {
             creador.crear(creados);

@@ -4,13 +4,13 @@ import java.util.List;
 
 import ar.edu.iua.excepciones.modelo_ex.ModificarPlanEx;
 import ar.edu.iua.excepciones.modelo_ex.VerificadorEx;
-import ar.edu.iua.modelo_webservices.academico.plan.Plan_ws;
+import ar.edu.iua.modelo_webservices.academico.plan.PlanWs;
 import ar.edu.iua.util.verificadores.VerificarIntegridad;
 
-public class ModificarPlanesImpl_ws implements ModificarPlanes_ws {
+public class ModificarPlanesImplWs implements ModificarPlanesWs {
 
-    public boolean modificar(List<Plan_ws> planes) throws ModificarPlanEx {
-        ModificarPlan_ws modificador = new ModificarPlanImpl_ws();
+    public boolean modificar(List<PlanWs> planes) throws ModificarPlanEx {
+        ModificarPlanWs modificador = new ModificarPlanImplWs();
         Boolean bandera = false;
 
         for(int ii = 0; ii < planes.size(); ii++){
@@ -27,7 +27,7 @@ public class ModificarPlanesImpl_ws implements ModificarPlanes_ws {
             }
         }
 
-        for(Plan_ws plan : planes){
+        for(PlanWs plan : planes){
             bandera = modificador.modificar(plan);
             if(!bandera) return bandera;
         }

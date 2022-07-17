@@ -4,21 +4,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 import ar.edu.iua.excepciones.modelo_ex.BuscarPlanEx;
-import ar.edu.iua.modelo_webservices.academico.plan.Plan_ws;
+import ar.edu.iua.modelo_webservices.academico.plan.PlanWs;
 import ar.edu.iua.persistencia.BaseDeDatos;
 import ar.edu.iua.util.UtilTranslate;
 
-public class BuscarPlanesImpl_ws implements BuscarPlanes_ws{
+public class BuscarPlanesImplWs implements BuscarPlanesWs{
 
-	public List<Plan_ws> buscar(String terminos) throws BuscarPlanEx{
-		List<Plan_ws> buscados = new ArrayList<>();
+	public List<PlanWs> buscar(String terminos) throws BuscarPlanEx{
+		List<PlanWs> buscados = new ArrayList<>();
 		if(terminos != null){
 			terminos = UtilTranslate.traducirCadena(terminos);
 			String[] terminosArray = terminos.trim().toLowerCase().split(" ");
-			for(int ii = 0; ii < BaseDeDatos.planesSize_ws(); ii++){
-				Plan_ws plan = null;
+			for(int ii = 0; ii < BaseDeDatos.planesSizeWs(); ii++){
+				PlanWs plan = null;
 				try {
-					plan = BaseDeDatos.getPlan_ws(ii);
+					plan = BaseDeDatos.getPlanWs(ii);
 				} catch (CloneNotSupportedException e) {
 					throw new BuscarPlanEx("No se pudo obtener el plan " + ii + " de la base de datos BuscarPlanesImpl ln 21");
 				}
@@ -30,6 +30,9 @@ public class BuscarPlanesImpl_ws implements BuscarPlanes_ws{
 						break;
 					}
 				}
+			}
+			if(buscados.size() == 0){
+				throw new BuscarPlanEx("No se encontraron resultados para la busqueda");
 			}
 		}
 		else if(terminos == null || terminos.length()==0){
