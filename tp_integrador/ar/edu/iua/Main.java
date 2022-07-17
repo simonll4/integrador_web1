@@ -1,10 +1,5 @@
 package ar.edu.iua;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import com.google.gson.Gson;
-
 import ar.edu.iua.excepciones.ObjetoEx;
 import ar.edu.iua.util.Launcher;
 

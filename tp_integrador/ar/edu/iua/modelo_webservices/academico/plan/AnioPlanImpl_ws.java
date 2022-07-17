@@ -7,7 +7,9 @@ public class AnioPlanImpl_ws extends AnioPlan_ws {
 
     private Integer numero;
     private String nombre;
-    private List<Materia_ws> materias = new ArrayList<Materia_ws>();
+    private List<MateriaImpl_ws> materias = new ArrayList<>();
+
+    public AnioPlanImpl_ws(){}
 
     public AnioPlanImpl_ws(Integer numero, String nombre) {
         this.numero = numero;
@@ -31,11 +33,11 @@ public class AnioPlanImpl_ws extends AnioPlan_ws {
         this.nombre = nombre;
     }
 
-    public List<Materia_ws> getMaterias() {
+    public List<MateriaImpl_ws> getMaterias() {
         return materias;
     }
 
-    public void setMaterias(List<Materia_ws> materias) {
+    public void setMaterias(List<MateriaImpl_ws> materias) {
         this.materias = materias;
     }
 
@@ -103,10 +105,10 @@ public class AnioPlanImpl_ws extends AnioPlan_ws {
 
     public Object clone() throws CloneNotSupportedException {
         AnioPlan_ws anio = (AnioPlan_ws) super.clone();
-        List<Materia_ws> auxMaterias = new ArrayList<>();
+        List<MateriaImpl_ws> auxMaterias = new ArrayList<>();
         for (Materia_ws materia : this.materias) {
             if (materia != null) {
-                auxMaterias.add((Materia_ws) materia.clone());
+                auxMaterias.add((MateriaImpl_ws) materia.clone());
             }
         }
         anio.setMaterias(auxMaterias);

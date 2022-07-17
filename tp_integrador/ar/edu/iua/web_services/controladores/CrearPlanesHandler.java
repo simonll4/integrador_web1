@@ -5,29 +5,28 @@ import java.io.OutputStream;
 import java.net.URI;
 import java.util.Map;
 
+import com.google.gson.Gson;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 
-import ar.edu.iua.excepciones.modelo_ex.BorrarPlanEx;
+import ar.edu.iua.excepciones.modelo_ex.CrearPlanEx;
 import ar.edu.iua.modelo_webservices.academico.plan.PlanImpl_ws;
 import ar.edu.iua.modelo_webservices.academico.plan.Plan_ws;
-import ar.edu.iua.negocio_webservices.academico.plan.BorrarPlanImpl_ws;
+import ar.edu.iua.negocio_webservices.academico.plan.CrearPlanImpl_ws;
 import ar.edu.iua.web_services.util.utilWebServices;
 
-public class BorrarPlanHandler implements HttpHandler {
+public class CrearPlanesHandler implements HttpHandler {
 
-    @Override
     public void handle(HttpExchange exchange) throws IOException {
-        
         String contextPath = exchange.getHttpContext().getPath();
         URI uri = exchange.getRequestURI();
         String path = uri.toString().replaceFirst(contextPath, "");
         Map<String, String> params = utilWebServices.leerParametrosConsulta(path);
         String body = utilWebServices.leerBody(exchange);
 
-        try {
+        try{
             ejecutarRespuesta(exchange, params, body);
-        } catch (IOException e) {
+        }catch(Exception e){
             System.out.println(e.getMessage());
             String msg = "504 ERROR INTERNO";
             exchange.sendResponseHeaders(504,0);
@@ -35,33 +34,32 @@ public class BorrarPlanHandler implements HttpHandler {
             os.write(msg.getBytes());
             os.close();
         }
-
+        
     }
 
     private void ejecutarRespuesta(HttpExchange exchange,Map<String, String> params,String body) throws IOException{
-        Plan_ws borrado = new PlanImpl_ws();
-        int anio = Integer.parseInt(params.get("anio"));
+        
+        Plan_ws creado = new PlanImpl_ws();
+        creado = new Gson().fromJson(body, PlanImpl_ws.class);
 
-        borrado.setAnio(anio);
-        BorrarPlanImpl_ws borrador = new BorrarPlanImpl_ws();
+        CrearPlanImpl_ws creador = new CrearPlanImpl_ws();
+
         try {
-            borrador.borrar(borrado);
-        } catch (BorrarPlanEx e) {
+            creador.crear(creado);
+        } catch (CrearPlanEx e) {
             System.out.println(e.getMessage());
-            String msg = "409 ERROR DE CONFLICTO: no se pudo borrar el plan";
-            exchange.sendResponseHeaders(409,msg.length());
+            String msg = "409 ERROR DE CONFLICTO: no se pudo crear el plan";
+            exchange.sendResponseHeaders(204,0);
             OutputStream os = exchange.getResponseBody();
             os.write(msg.getBytes());
             os.close();
         }
-
-        String msg = "200: Se borro el plan";
+        
+        String msg = "200: Se creo el plan";
         exchange.sendResponseHeaders(200, msg.length());
         OutputStream os = exchange.getResponseBody();
         os.write(msg.getBytes());
         os.close();
-
+        
     }
-    
 }
-

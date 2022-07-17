@@ -26,8 +26,8 @@ public abstract class Plan_ws extends Objeto {
 
     abstract public boolean isEstadoNulo();
 
-    abstract public List<AnioPlan_ws> getAnios();
+    abstract public List<AnioPlanImpl_ws> getAnios();
 
-    abstract public void setAnios(List<AnioPlan_ws> anios);
+    abstract public void setAnios(List<AnioPlanImpl_ws> anios);
 
 }

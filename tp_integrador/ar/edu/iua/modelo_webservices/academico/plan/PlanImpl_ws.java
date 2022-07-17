@@ -7,7 +7,7 @@ public class PlanImpl_ws extends Plan_ws {
 
     private Integer anio;
     private Estado estado;
-    private List<AnioPlan_ws> anios = new ArrayList<AnioPlan_ws>();
+    private List<AnioPlanImpl_ws> anios = new ArrayList<>();
 
     private enum Estado {
         BORRADOR,
@@ -54,11 +54,11 @@ public class PlanImpl_ws extends Plan_ws {
     public boolean isEstadoNulo() {
         return estado == null;
     }
-    public List<AnioPlan_ws> getAnios() {
+    public List<AnioPlanImpl_ws> getAnios() {
         return anios;
     }
 
-    public void setAnios(List<AnioPlan_ws> anios) {
+    public void setAnios(List<AnioPlanImpl_ws> anios) {
         this.anios = anios;
     }
 
@@ -105,10 +105,10 @@ public class PlanImpl_ws extends Plan_ws {
 
     public Object clone() throws CloneNotSupportedException {
         Plan_ws plan = (Plan_ws)super.clone();
-        List<AnioPlan_ws> auxAnios = new ArrayList<>();
+        List<AnioPlanImpl_ws> auxAnios = new ArrayList<>();
         for(AnioPlan_ws anio : this.anios){
             if(anio != null){
-                auxAnios.add((AnioPlan_ws)anio.clone());
+                auxAnios.add((AnioPlanImpl_ws)anio.clone());
             }
         }
         plan.setAnios(auxAnios);

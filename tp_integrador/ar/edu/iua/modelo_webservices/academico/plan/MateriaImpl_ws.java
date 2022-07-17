@@ -6,6 +6,8 @@ public class MateriaImpl_ws extends Materia_ws{
     private String nombre;
     private Double cargaHoraria;
 
+    public MateriaImpl_ws(){}
+    
     public MateriaImpl_ws(Integer codigo, String nombre, Double cargaHoraria) {
         this.codigo = codigo;
         this.nombre = nombre;

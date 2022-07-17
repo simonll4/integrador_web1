@@ -46,7 +46,7 @@ public class BuscarPlanHandler implements HttpHandler{
         int anio = Integer.parseInt(params.get("anio"));
         PlanImpl_ws buscado = null; 
         
-       try {
+        try {
             buscado = (PlanImpl_ws)buscador.buscar(anio);
         } catch (BuscarPlanEx e) {
             System.out.println(e.getMessage());

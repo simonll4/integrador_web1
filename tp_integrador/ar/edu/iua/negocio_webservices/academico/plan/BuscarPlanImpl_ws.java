@@ -8,7 +8,7 @@ public class BuscarPlanImpl_ws implements BuscarPlan_ws {
 
     @Override
     public Plan_ws buscar(int anio) throws BuscarPlanEx{
-        for(int ii = 0; ii < BaseDeDatos.planesSize(); ii++){
+        for(int ii = 0; ii < BaseDeDatos.planesSize_ws(); ii++){
             try {
                 if(BaseDeDatos.getPlan_ws(ii).getAnio().intValue() == anio){
                     return BaseDeDatos.getPlan_ws(ii);

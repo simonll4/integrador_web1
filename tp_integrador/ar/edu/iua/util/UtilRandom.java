@@ -19,11 +19,11 @@ public class UtilRandom {
         ObtenerPlan planObtenido = new ObtenerPlan();
         List<AnioPlan> aniosPlan = new ArrayList<AnioPlan>();
 
-        planAleatorio.setAnio((int) (Math.random() * 40) + 1995);
+        planAleatorio.setAnio((int) (Math.random() * 39) + 1995);
 
         for (int jj = 0; jj < listaPlanes.size(); jj++) {
             if (planAleatorio.getAnio().equals(listaPlanes.get(jj).getAnio())) {
-                planAleatorio.setAnio((int) (Math.random() * 40) + 1995);
+                planAleatorio.setAnio((int) (Math.random() * 39) + 1995);
                 jj = -1;
             }
         }

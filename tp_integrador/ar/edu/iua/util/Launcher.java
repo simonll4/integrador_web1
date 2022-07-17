@@ -5,17 +5,13 @@ import java.util.List;
 import ar.edu.iua.excepciones.ObjetoEx;
 import ar.edu.iua.modelo.academico.examen.MesaExamen;
 import ar.edu.iua.modelo.academico.plan.Plan;
-import ar.edu.iua.modelo_webservices.academico.plan.PlanImpl_ws;
-import ar.edu.iua.modelo_webservices.academico.plan.Plan_ws;
 import ar.edu.iua.negocio.academico.examen.CrearMesasExamen;
 import ar.edu.iua.negocio.academico.plan.CrearPlanes;
 import ar.edu.iua.negocio.academico.plan.CrearPlanesImpl;
-import ar.edu.iua.negocio_webservices.academico.plan.ModificarPlanImpl_ws;
 import ar.edu.iua.persistencia.BaseDeDatos;
 import ar.edu.iua.util.generadores.GenerarEjemplosDeMesas;
 import ar.edu.iua.util.generadores.GenerarEjemplosDePlanes;
 import ar.edu.iua.web_services.Server;
-import ar.edu.iua.util.UtilTransformer;
 
 public class Launcher {
 

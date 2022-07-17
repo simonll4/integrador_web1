@@ -14,8 +14,8 @@ public abstract class AnioPlan_ws extends Objeto {
 
     abstract public void setNombre(String nombre);
 
-    abstract public List<Materia_ws> getMaterias();
+    abstract public List<MateriaImpl_ws> getMaterias();
 
-    abstract public void setMaterias(List<Materia_ws> materias);
+    abstract public void setMaterias(List<MateriaImpl_ws> materias);
 
 }
